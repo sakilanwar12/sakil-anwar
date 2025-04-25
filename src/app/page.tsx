@@ -1,8 +1,10 @@
+"use client";
 import BannerSection from "@/components/sections/banner";
 
 export default function Home() {
+
   return (
-    <div>
+    <div >
       <BannerSection />
     </div>
   );

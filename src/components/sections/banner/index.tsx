@@ -9,6 +9,7 @@ const BannerSection = () => {
         <p>
          {" Hi! I'm Sakil Anwar. A creative Frontend Developer with 3+ years of  experience in building high-performance, scalable, and responsive web solutions."}
         </p>
+        
       </div>
     </div>
   );
