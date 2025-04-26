@@ -1,33 +1,38 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import Particle from "./particle";
 
+type ParticleType = {
+  id: string;
+};
+
 const FallingParticlesAnimation = () => {
-  const [particles, setParticles] = useState<number[]>([]);
-  const idRef = useRef(0); // unique ID generator
+  const [particles, setParticles] = useState<ParticleType[]>([]);
+
+  const updateParticles = () => {
+    const id = crypto.randomUUID(); // create a unique id
+    setParticles((prev) => [...prev, { id }]);
+
+    // Remove this particle after 3 seconds
+    setTimeout(() => {
+      setParticles((prev) => prev.filter((p) => p.id !== id));
+    }, 10000);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const id = idRef.current++;
-
-      setParticles((prev) => [...prev, id]);
-
-      // Remove particle after 5 seconds
-      setTimeout(() => {
-        setParticles((prev) => prev.filter((pid) => pid !== id));
-      }, 5000);
-    }, 100);
-
+      updateParticles();
+    }, 300); 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-full h-full overflow-hidden">
-      {particles.map((id) => (
-        <Particle key={id} />
+    <>
+      {particles.map((particle) => (
+        <Particle key={particle.id} />
       ))}
-    </div>
+    </>
   );
 };
 
