@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FallingParticlesAnimation from "@/components/animations/falling-particles-animation";
+import SmoothScrollWrapper from "@/components/animations/SmoothScrollWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,8 +29,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-100`}
       >
-              <FallingParticlesAnimation />
-        {children}
+        <FallingParticlesAnimation />
+        <SmoothScrollWrapper>{children}</SmoothScrollWrapper>
       </body>
     </html>
   );

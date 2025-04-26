@@ -119,8 +119,11 @@
   body {
     @apply bg-background text-foreground;
   }
-  html {
-    scroll-behavior: smooth;
+  html, body {
+    overflow: hidden;
+  }
+  [data-scroll-container] {
+    will-change: transform;
   }
 }
 @utility container {
