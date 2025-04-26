@@ -4,7 +4,7 @@ import BannerSection from "@/components/sections/banner";
 
 export default function Home() {
   return (
-    <div className="relative overflow-hidden">
+    <div>
       <FallingParticlesAnimation />
       <BannerSection />
       <BannerSection />
