@@ -14,7 +14,7 @@ const Particle = () => {
 
   return (
     <div
-      className="absolute -top-1 rounded-full bg-gray-400 drop-shadow animate-fall"
+      className="fixed -top-1 rounded-full bg-gray-400 drop-shadow animate-fall"
       style={{
         left: `${startX}%`,
         opacity,

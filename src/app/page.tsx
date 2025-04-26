@@ -7,6 +7,11 @@ export default function Home() {
     <div className="relative overflow-hidden">
       <FallingParticlesAnimation />
       <BannerSection />
+      <BannerSection />
+      <BannerSection />
+      <BannerSection />
+      <BannerSection />
+      <BannerSection />
     </div>
   );
 }
