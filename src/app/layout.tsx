@@ -5,6 +5,7 @@ import FallingParticlesAnimation from "@/components/animations/falling-particles
 import { ScrollProvider } from "@/components/animations/scrollbar/ScrollContext";
 import ScrollProgressBar from "@/components/animations/scrollbar/ScrollProgressBar";
 import SmoothScrollWrapper from "@/components/animations/scrollbar/SmoothScrollWrapper";
+import MountedProvider from "@/providers/mounted-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,11 +32,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-100`}
       >
-        <FallingParticlesAnimation />
-        <ScrollProvider>
-          <ScrollProgressBar />
-          <SmoothScrollWrapper>{children}</SmoothScrollWrapper>
-        </ScrollProvider>
+        <MountedProvider>
+          <FallingParticlesAnimation />
+          <ScrollProvider>
+            <ScrollProgressBar />
+            <SmoothScrollWrapper>{children}</SmoothScrollWrapper>
+          </ScrollProvider>
+        </MountedProvider>
       </body>
     </html>
   );
