@@ -1,3 +1,5 @@
 {
-  "cSpell.words": ["lerp"]
+  "cSpell.words": ["lerp"],
+  "css.validate": false,
+  "tailwindCSS.emmetCompletions": true
 }
