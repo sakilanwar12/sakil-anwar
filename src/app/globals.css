@@ -95,7 +95,7 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 
   --default-50: oklch(98.42% 0.003 247.86);
-  --default-100: oklch(96.83% 0.007 247.9);
+  --default-100: hsl(0 0% 71%);
   --default-200: oklch(92.88% 0.013 255.51);
   --default-300: oklch(86.9% 0.02 252.89);
   --default-400: oklch(71.07% 0.035 256.79);
