@@ -1,21 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FallingParticlesAnimation from "@/components/animations/falling-particles-animation";
 import { ScrollProvider } from "@/components/animations/scrollbar/ScrollContext";
 import ScrollProgressBar from "@/components/animations/scrollbar/ScrollProgressBar";
 import SmoothScrollWrapper from "@/components/animations/scrollbar/SmoothScrollWrapper";
 import MountedProvider from "@/providers/mounted-provider";
+import { fontAnton, fontRobotoFlex } from "@/config/fonts";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,9 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-hidden">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-100`}
+        className={`${fontAnton.variable} ${fontRobotoFlex.variable}  antialiased  font-roboto-flex bg-background text-default-100 overflow-hidden`}
       >
         <MountedProvider>
           <FallingParticlesAnimation />

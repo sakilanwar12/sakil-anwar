@@ -16,7 +16,7 @@ export default function ScrollProgressBar() {
     });
 
     return () => {
-      scroll.off("scroll");
+     scroll.destroy();
     };
   }, [scroll]);
 

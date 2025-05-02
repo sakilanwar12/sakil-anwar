@@ -24,7 +24,6 @@ export function ScrollProvider({ children }: { children: React.ReactNode }) {
       el: container,
       smooth: true,
       smartphone: { smooth: true },
-      tablet: { smooth: true },
     });
 
     setScroll(locoScroll);
