@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 const BannerSection = () => {
   return (
     <div className="h-screen w-full flex flex-col justify-center">
-      <div className="container mx-auto">
+      <div className="container mx-auto mt-[180px]">
         <h1 className="text-[80px] leading-[80px] uppercase">
           <span className="text-primary">Frontend </span> <br />
           <span className="ms-4 text-white">Developer</span>

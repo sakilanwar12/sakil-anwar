@@ -6,6 +6,7 @@ import SmoothScrollWrapper from "@/components/animations/scrollbar/SmoothScrollW
 import MountedProvider from "@/providers/mounted-provider";
 import { fontAnton, fontRobotoFlex } from "@/config/fonts";
 import { getSeoMeta } from "@/lib/utils/get-seo-meta";
+import FixedEmail from "@/components/fixed-email";
 
 export const metadata = getSeoMeta({
   title: "Portfolio - Sakil Anwar",
@@ -23,6 +24,7 @@ export default function RootLayout({
       >
         <MountedProvider>
           <FallingParticlesAnimation />
+          <FixedEmail />
           <ScrollProvider>
             <ScrollProgressBar />
             <SmoothScrollWrapper>{children}</SmoothScrollWrapper>
