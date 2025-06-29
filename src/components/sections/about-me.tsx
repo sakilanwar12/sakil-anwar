@@ -4,12 +4,12 @@ const AboutMe = () => {
   return (
     <section>
       <div className="container">
-        <p className="text-[60px] leading-[70px]">
+        <p className="text-[60px] leading-[70px] py-10">
           I believe in a user centered design approach, ensuring that every
           project I work on is tailored to meet the specific needs of its users.
         </p>
         <p>This is me</p>
-        <Separator />
+        <Separator className="my-5" />
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-4">
             <h2>Hi, I'm Sakil Anwar.</h2>
