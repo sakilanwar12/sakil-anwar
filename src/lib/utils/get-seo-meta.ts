@@ -6,7 +6,7 @@ export const getSeoMeta = (props: TGetSeoMetaArgs): Metadata => {
     title = "Portfolio - Sakil Anwar",
     applicationName = "Portfolio - Sakil Anwar",
     description,
-    manifest = "/assets/fav-icon/site.webmanifest",
+    // manifest = "/assets/fav-icon/site.webmanifest",
     icons = {
       icon: "/assets/fav-icon/favicon-32x32.png",
       apple: "/assets/fav-icon/apple-touch-icon.png",
@@ -17,7 +17,7 @@ export const getSeoMeta = (props: TGetSeoMetaArgs): Metadata => {
     title,
     applicationName,
     description,
-    manifest,
+    // manifest,
     icons,
     ...restProps,
   };
