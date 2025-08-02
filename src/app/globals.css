@@ -164,7 +164,7 @@
   padding-inline: 1rem;
 
   @variant xl {
-    max-width: 1140px;
+    max-width: 1040px;
   }
 }
 @layer utilities {

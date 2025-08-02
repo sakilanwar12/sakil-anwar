@@ -10,11 +10,11 @@ const AboutMe = () => {
         </p>
         <p>This is me</p>
         <Separator className="my-5" />
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-12 lg:col-span-4">
+        <div className="flex flex-col lg:flex-row gap-6">
+          <div className="flex-none w-full lg:max-w-[400px]">
             <h2>Hi, I'm Sakil Anwar.</h2>
           </div>
-          <div className="col-span-12 lg:col-span-8">
+          <div className="flex-1">
             <p>
               I'm a frontend web developer dedicated to turning ideas into
               creative solutions. I specialize in creating seamless and
