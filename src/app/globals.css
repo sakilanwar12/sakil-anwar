@@ -62,10 +62,10 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(24.78% 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --background: #181C22;
+  --foreground: #fff;
+  --card: #23272F;
+  --card-foreground: #fff;
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
   --primary:oklch(83.11% 0.254 145.99);
@@ -77,7 +77,7 @@
   --accent: oklch(0.968 0.007 247.896);
   --accent-foreground: oklch(0.208 0.042 265.755);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.929 0.013 255.508);
+  --border: #23272f;
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -94,7 +94,7 @@
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
 
-  --default-50: oklch(98.42% 0.003 247.86);
+  --default-50: #fff;
   --default-100: hsl(0 0% 71%);
   --default-200: oklch(92.88% 0.013 255.51);
   --default-300: oklch(86.9% 0.02 252.89);
@@ -164,7 +164,7 @@
   padding-inline: 1rem;
 
   @variant xl {
-    max-width: 1040px;
+    max-width: 992px;
   }
 }
 @layer utilities {

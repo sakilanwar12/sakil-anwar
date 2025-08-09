@@ -4,7 +4,7 @@ import { ScrollProvider } from "@/components/animations/scrollbar/ScrollContext"
 import ScrollProgressBar from "@/components/animations/scrollbar/ScrollProgressBar";
 import SmoothScrollWrapper from "@/components/animations/scrollbar/SmoothScrollWrapper";
 import MountedProvider from "@/providers/mounted-provider";
-import { fontAnton, fontRobotoFlex } from "@/config/fonts";
+import { fontInter } from "@/config/fonts";
 import { getSeoMeta } from "@/lib/utils/get-seo-meta";
 import FixedEmail from "@/components/fixed-email";
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-hidden">
       <body
-        className={`${fontAnton.variable} ${fontRobotoFlex.variable}  antialiased  font-roboto-flex bg-background text-default-100 overflow-hidden`}
+        className={`${fontInter.variable}  antialiased  font-inter bg-background text-default-100 overflow-hidden`}
       >
         <MountedProvider>
           <FallingParticlesAnimation />
