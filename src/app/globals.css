@@ -164,7 +164,7 @@
   padding-inline: 1rem;
 
   @variant xl {
-    max-width: 992px;
+    max-width: 1350px;
   }
 }
 @layer utilities {
@@ -185,4 +185,16 @@
   .animate-fall {
     animation: fall 10s linear forwards;
   }
+  @keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-wave {
+  animation: wave 5s ease-in-out infinite;
+}
 }
