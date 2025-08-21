@@ -198,3 +198,19 @@
   animation: wave 5s ease-in-out infinite;
 }
 }
+
+.animated-border {
+  animation: border 5s ease-in-out infinite;
+}
+
+@keyframes border {
+  0% {
+    border-color: var(--primary);
+  }
+  50% {
+    border-color: var(--secondary);
+  }
+  100% {
+    border-color: var(--primary);
+  }
+}

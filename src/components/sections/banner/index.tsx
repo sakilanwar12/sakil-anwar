@@ -1,4 +1,5 @@
 import FlowerIcon from "@/components/svg/FlowerIcon";
+import { Button } from "@/components/ui/button";
 import WaveText from "@/components/WaveText";
 
 const BannerSection = () => {
@@ -20,6 +21,9 @@ const BannerSection = () => {
           responsive web solutions, including dashboards, landing pages, and
           more.
         </p>
+        <Button className="animated-border hover:bg-transparent rounded-full w-[250px] mt-5 bg-transparent border-2 h-12 text-lg cursor-pointer">
+          Download CV
+        </Button>
       </div>
     </div>
   );
