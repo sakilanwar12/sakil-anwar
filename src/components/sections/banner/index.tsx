@@ -17,9 +17,7 @@ const BannerSection = () => {
         </div>
 
         <p className="max-w-[800px] leading-12   mt-10 text-3xl  mb-4">
-          A creative Frontend Developer with 3+ years of experience crafting
-          responsive web solutions, including dashboards, landing pages, and
-          more.
+      Creative Frontend Developer with 3+ years of experience designing and developing interactive dashboards, scalable web apps, and pixel-perfect landing pages.
         </p>
         <Button className="animated-border hover:bg-transparent rounded-full w-[250px] mt-5 bg-transparent border-2 h-12 text-lg cursor-pointer">
           Download CV
