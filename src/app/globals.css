@@ -62,13 +62,13 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #181C22;
+  --background: #181c22;
   --foreground: #fff;
-  --card: #23272F;
+  --card: #23272f;
   --card-foreground: #fff;
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary:oklch(83.11% 0.254 145.99);
+  --primary: oklch(83.11% 0.254 145.99);
   --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
@@ -186,17 +186,44 @@
     animation: fall 10s linear forwards;
   }
   @keyframes wave {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(180deg);
+      }
+    }
 
-.animate-wave {
-  animation: wave 5s ease-in-out infinite;
-}
+    @keyframes spin-slow {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-spin-slow {
+      animation: spin-slow 8s linear infinite;
+    }
+  }
+
+  .animate-wave {
+    animation: wave 5s ease-in-out infinite;
+  }
 }
 
 .animated-border {

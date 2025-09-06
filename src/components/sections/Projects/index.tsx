@@ -2,7 +2,7 @@ import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
   return (
-    <section>
+    <section className="py-24" id="projects">
       <div className="container">
         <h3 className="text-3xl text-center text-white mb-2">My Projects</h3>
         <p className="text-lg text-center">Explore My Latest Created Sites</p>
