@@ -25,7 +25,7 @@ const Navbar = () => {
         {menus.map((menu) => {
           return (
             <li key={menu.name}>
-              <Link href={menu.path} className="text-base text-gray-200 hover:text-primary transition-all duration-300 ">{menu.name}</Link>
+              <Link href={menu.path} className="text-base uppercase text-default-400 hover:text-primary transition-all duration-300 ">{menu.name}</Link>
             </li>
           )
         })}

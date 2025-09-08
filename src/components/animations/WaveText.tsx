@@ -15,7 +15,7 @@ const WaveText = ({ text, className, delay = 0 }: IWaveText) => {
 
   return (
     <div className="wave-container overflow-hidden">
-      <h1 className="wave-text">
+      <h1 className="wave-text font-anton animate-wave">
         {text.split("").map((char, index) => (
           <span
             key={index}

@@ -45,7 +45,7 @@ const BannerSection = () => {
 
       <FloatingParticles />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 pt-20">
         <div className="text-left relative">
           {/* Main heading with improved animations */}
           <div className="relative">
