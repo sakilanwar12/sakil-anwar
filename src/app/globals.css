@@ -158,6 +158,10 @@
   [data-scroll-container] {
     will-change: transform;
   }
+  .grid-background {
+    background-image: linear-gradient(hsla(0,0%,100%,.1) 1px,transparent 0),linear-gradient(90deg,hsla(0,0%,100%,.1) 1px,transparent 0);
+}
+
 }
 @utility container {
   margin-inline: auto;
@@ -167,77 +171,4 @@
     max-width: 1350px;
   }
 }
-@layer utilities {
-  @keyframes fall {
-    0% {
-      transform: translateY(0);
-      opacity: 0.4;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(80vh);
-      opacity: 0;
-    }
-  }
 
-  .animate-fall {
-    animation: fall 10s linear forwards;
-  }
-  @keyframes wave {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    @keyframes float {
-      0%,
-      100% {
-        transform: translateY(0px) rotate(0deg);
-      }
-      50% {
-        transform: translateY(-10px) rotate(180deg);
-      }
-    }
-
-    @keyframes spin-slow {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .animate-float {
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .animate-spin-slow {
-      animation: spin-slow 8s linear infinite;
-    }
-  }
-
-  .animate-wave {
-    animation: wave 5s ease-in-out infinite;
-  }
-}
-
-.animated-border {
-  animation: border 5s ease-in-out infinite;
-}
-
-@keyframes border {
-  0% {
-    border-color: var(--primary);
-  }
-  50% {
-    border-color: var(--secondary);
-  }
-  100% {
-    border-color: var(--primary);
-  }
-}

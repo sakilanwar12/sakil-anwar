@@ -6,7 +6,6 @@ import FloatingParticles from "@/components/animations/FloatingParticles";
 import AnimatedButton from "@/components/animations/AnimatedButton";
 import SocialLinks from "./SocialLinks";
 
-
 const BannerSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
@@ -32,7 +31,7 @@ const BannerSection = () => {
   return (
     <div className="relative h-screen w-full flex flex-col justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden">
       {/* Animated background gradient */}
-      <div
+      {/* <div
         className="absolute inset-0 opacity-20"
         style={{
           background: `radial-gradient(circle at ${
@@ -41,13 +40,12 @@ const BannerSection = () => {
             50 + mousePosition.y * 10
           }%, rgb(34, 197, 94) 0%, transparent 50%)`,
         }}
-      />
+      /> */}
 
       <FloatingParticles />
 
       <div className="container mx-auto px-6 relative z-10 pt-20">
         <div className="text-left relative">
-          {/* Main heading with improved animations */}
           <div className="relative">
             <WaveText
               text="FRONTEND"
@@ -62,7 +60,6 @@ const BannerSection = () => {
               />
             </div>
 
-            {/* Floating decorative element */}
             <div
               className="absolute top-10 right-0 w-16 h-16 opacity-60"
               style={{
@@ -76,7 +73,6 @@ const BannerSection = () => {
             </div>
           </div>
 
-          {/* Enhanced description */}
           <div
             className={`max-w-4xl mt-12 transform transition-all duration-1000 delay-1000 ${
               isLoaded
@@ -138,8 +134,7 @@ const BannerSection = () => {
           </div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
+{/* 
       <div
         className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1600 ${
           isLoaded ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
@@ -152,7 +147,7 @@ const BannerSection = () => {
           <span className="text-sm mb-2 tracking-wider">SCROLL DOWN</span>
           <ChevronDown className="w-6 h-6 animate-bounce group-hover:scale-110 transition-transform" />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
