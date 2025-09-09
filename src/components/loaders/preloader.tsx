@@ -1,41 +1,131 @@
+"use client";
 
 const PreLoader = () => {
-
   return (
-    <div className="fixed inset-0 z-50  bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white flex items-center justify-center">
-      {/* Animated grid background */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDIpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-50 animate-pulse"></div>
-      
-      <div className="text-center z-10">
-        {/* Animated name */}
-        <div className="mb-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-wider">
-            <span className="inline-block animate-bounce" style={{animationDelay: '0s'}}>M</span>
-            <span className="inline-block animate-bounce" style={{animationDelay: '0.1s'}}>D</span>
-            <span className="inline-block animate-bounce" style={{animationDelay: '0.2s'}}>.</span>
-            <span className="inline-block mx-4"></span>
-            <span className="inline-block animate-bounce" style={{animationDelay: '0.3s'}}>S</span>
-            <span className="inline-block animate-bounce" style={{animationDelay: '0.4s'}}>A</span>
-            <span className="inline-block animate-bounce" style={{animationDelay: '0.5s'}}>K</span>
-            <span className="inline-block animate-bounce" style={{animationDelay: '0.6s'}}>I</span>
-            <span className="inline-block animate-bounce" style={{animationDelay: '0.7s'}}>L</span>
-            <span className="inline-block mx-4"></span>
-            <span className="inline-block animate-bounce" style={{animationDelay: '0.8s'}}>A</span>
-            <span className="inline-block animate-bounce" style={{animationDelay: '0.9s'}}>N</span>
-            <span className="inline-block animate-bounce" style={{animationDelay: '1.0s'}}>W</span>
-            <span className="inline-block animate-bounce" style={{animationDelay: '1.1s'}}>A</span>
-            <span className="inline-block animate-bounce" style={{animationDelay: '1.2s'}}>R</span>
-          </h1>
-        </div>
-        
-        {/* Loading animation */}
-        <div className="flex justify-center items-center gap-2 mb-8">
-          <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '0s'}}></div>
-          <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
-          <div className="w-2 h-2 bg-white rounded-full animate-bounce" style={{animationDelay: '0.4s'}}></div>
-        </div>
-        
+    <div className="fixed inset-0 z-50 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
+      {/* Animated particles background */}
+      <div className="absolute inset-0">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-white rounded-full opacity-20"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 2}s`,
+            }}
+          />
+        ))}
       </div>
+
+      {/* Subtle geometric patterns */}
+      <div className="absolute inset-0 opacity-5">
+        <svg className="w-full h-full" viewBox="0 0 400 400">
+          <defs>
+            <pattern
+              id="grid"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 40 0 L 0 0 0 40"
+                fill="none"
+                stroke="white"
+                strokeWidth="0.5"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </div>
+
+      {/* Glowing orb effect */}
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500 rounded-full opacity-10 blur-3xl animate-pulse" />
+      <div
+        className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-blue-500 rounded-full opacity-10 blur-3xl animate-pulse"
+        style={{ animationDelay: "1s" }}
+      />
+
+      <div className="flex flex-col items-center justify-center min-h-screen z-10 relative">
+        {/* Main content container */}
+        <div className="text-center space-y-8">
+          {/* Elegant name animation */}
+          <div className="relative z-50">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-white tracking-widest opacity-100 animate-fade-in-up">
+              MD. SAKIL ANWAR
+            </h1>
+            {/* Subtle underline effect */}
+            <div
+              className="h-px bg-gradient-to-r from-transparent via-white to-transparent mt-6 opacity-100"
+              style={{
+                animation: "fadeIn 1s ease-out 2s forwards",
+              }}
+            />
+          </div>
+
+          {/* Elegant loading indicator */}
+          <div
+            className="space-y-6 opacity-100"
+            style={{
+              animation: "fadeIn 0.8s ease-out 2.5s forwards",
+            }}
+          >
+            {/* Animated dots */}
+            <div className="flex justify-center items-center gap-3">
+              {[0, 1, 2].map((i) => (
+                <div
+                  key={i}
+                  className="w-2 h-2 bg-white/60 rounded-full"
+                  style={{
+                    animation: `pulse 2s ease-in-out infinite`,
+                    animationDelay: `${i * 0.3}s`,
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Custom CSS animations */}
+      <style jsx>{`
+        @keyframes slideInUp {
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+
+        @keyframes fadeIn {
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
+
+        @keyframes pulse {
+          0%,
+          100% {
+            opacity: 0.6;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.2);
+          }
+        }
+      `}</style>
     </div>
   );
 };

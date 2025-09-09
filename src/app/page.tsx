@@ -29,7 +29,6 @@ import {
   Mail,
 } from "lucide-react";
 import Footer from "@/components/sections/Footer";
-import PreLoader from "@/components/loaders/preloader";
 
 const WebDeveloperPortfolio = () => {
   const skills = [
@@ -361,7 +360,7 @@ const WebDeveloperPortfolio = () => {
           </div>
         </div>
       </section>
-  <PreLoader />
+
       <Footer />
     </div>
   );
