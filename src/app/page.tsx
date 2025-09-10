@@ -29,6 +29,7 @@ import {
   Mail,
 } from "lucide-react";
 import Footer from "@/components/sections/Footer";
+import Hero from "@/components/sections/Hero";
 
 const WebDeveloperPortfolio = () => {
   const skills = [
@@ -123,70 +124,9 @@ const WebDeveloperPortfolio = () => {
     },
   ];
 
-  const technologies = ["React", "TypeScript", "Node.js", "Next.js", "GraphQL"];
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
-      {/* Hero Section */}
- 
-      <section className="relative min-h-screen flex items-center justify-center px-4">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+PC9zdmc+')] opacity-20"></div>
-   
-        <div className="text-center z-10 max-w-4xl mx-auto">
-          <div className="flex justify-center gap-4 mb-6 text-4xl md:text-6xl">
-            <span className="animate-bounce" style={{ animationDelay: "0s" }}>
-              ⚛️
-            </span>
-            <span className="animate-bounce" style={{ animationDelay: "0.2s" }}>
-              🚀
-            </span>
-            <span className="animate-bounce" style={{ animationDelay: "0.4s" }}>
-              💻
-            </span>
-            <span className="animate-bounce" style={{ animationDelay: "0.6s" }}>
-              🔥
-            </span>
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            MD. Sakil Anwar
-          </h1>
-
-          <h2 className="text-2xl md:text-3xl text-slate-300 mb-6 font-light">
-            Web Developer
-          </h2>
-
-          <p className="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Crafting exceptional digital experiences with modern web
-            technologies
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {technologies.map((tech, index) => (
-              <Badge
-                key={index}
-                variant="secondary"
-                className="px-4 py-2 text-sm bg-white/10 hover:bg-white/20 transition-colors"
-              >
-                {tech}
-              </Badge>
-            ))}
-          </div>
-
-          <div className="flex flex-col items-center gap-4">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-3 text-lg"
-            >
-              View My Work
-            </Button>
-            <div className="flex items-center gap-2 text-slate-400 animate-pulse">
-              <span className="text-sm">Scroll to explore</span>
-              <ChevronDown className="w-4 h-4" />
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen bg-gradient-to-br from-default-900 via-black/60 to-default-100 text-foreground overflow-hidden">
+      <Hero />
 
       {/* Technical Expertise Section */}
       <section className="py-20 px-4">
