@@ -15,10 +15,10 @@ const Particle = () => {
 
   return (
     <div
-      className="fixed rounded-full bg-gray-400 drop-shadow animate-fall"
+      className="fixed rounded-full bg-default-600 drop-shadow animate-fall"
       style={{
         left: `${startX}%`,
-        top: `${startY}%`, // Random top position
+        top: `${startY}%`, 
         opacity,
         width: `${size}px`,
         height: `${size}px`,

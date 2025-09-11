@@ -1,37 +1,43 @@
-import Link from "next/link"
-
+"use client"
 const menus = [
   {
-    name: "About",
-    path: "/about"
+    name: "Home",
+    path: "hero",
   },
   {
     name: "Projects",
-    path: "/projects"
+    path: "projects",
   },
   {
     name: "Blog",
-    path: "/blog"
+    path: "blog",
   },
   {
     name: "Contact",
-    path: "/contact"
-  }
-]
+    path: "contact",
+  },
+];
 const Navbar = () => {
+  const handleScrollDown = (path: string) => {
+    document.getElementById(path)?.scrollIntoView();
+  };
   return (
     <nav className="flex justify-end">
       <ul className="flex gap-5">
         {menus.map((menu) => {
           return (
-            <li key={menu.name}>
-              <Link href={menu.path} className="text-base uppercase text-default-400 hover:text-primary transition-all duration-300 ">{menu.name}</Link>
+            <li
+              key={menu.name}
+              className="text-sm capitalize text-default-400 hover:text-primary transition-all duration-300 cursor-pointer"
+              onClick={() => handleScrollDown(menu?.path)}
+            >
+              {menu.name}
             </li>
-          )
+          );
         })}
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

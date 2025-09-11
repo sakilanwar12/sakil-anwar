@@ -1,13 +1,27 @@
+"use client";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import { Separator } from "../ui/separator";
+import Link from "next/link";
+import { gsap } from "@/lib/gsap";
 const technologies = ["React", "TypeScript", "Node.js", "Next.js", "Vue.js"];
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 function Hero() {
+  const handleDown = () => {
+    gsap.to(window, {
+      duration: 1.2,
+      scrollTo: { y: "#skills", offsetY: 0 },
+      ease: "power2.inOut",
+    });
+  };
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4">
-   
+    <section
+      className="relative min-h-screen flex items-center justify-center px-4"
+      id="hero"
+    >
       <div className="text-center z-10 max-w-4xl mx-auto relative">
         <div className="relative inline-block px-4 sm:px-0">
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl blur-xl opacity-75"></div>
@@ -16,10 +30,10 @@ function Hero() {
           </h1>
         </div>
 
-        <div className="flex items-center gap-3 justify-center mb-6 mt-16">
+        <div className="flex items-center gap-3 justify-center mb-6 mt-10">
           <Separator className="data-[orientation=horizontal]:w-16 bg-primary/30" />
           <h2 className="text-2xl md:text-3xl text-primary/60  font-light whitespace-nowrap">
-            Web Developer
+            Frontend Developer
           </h2>
           <Separator className="data-[orientation=horizontal]:w-16 bg-primary/30" />
         </div>
@@ -28,29 +42,45 @@ function Hero() {
           Crafting exceptional digital experiences with modern web technologies
         </p>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
           {technologies.map((tech, index) => (
             <Badge
               key={index}
-              className="px-4 py-2 text-sm text-default-200 transition-colors border border-border  hover:border-primary rounded-full hover:bg-[#2D333B]"
+              className="px-4 py-2 text-sm text-default-200 transition-colors border border-border  hover:border-primary/40 rounded-full hover:bg-[#2D333B]"
             >
               {tech}
             </Badge>
           ))}
         </div>
 
-        <div className="flex flex-col items-center gap-4">
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-3 text-lg"
+        <div className="flex justify-center  items-center gap-4">
+          <Link
+            href="#work"
+            className="group relative inline-flex items-center justify-center"
           >
-            View My Work
-          </Button>
-          <div className="flex items-center gap-2 text-default-400 animate-pulse">
-            <span className="text-sm">Scroll to explore</span>
-            <ChevronDown className="w-4 h-4" />
-          </div>
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-75 group-hover:opacity-100 transition"></div>
+            <span className="relative px-6 sm:px-8 py-3 bg-[#161B22] rounded-full inline-flex items-center justify-center w-full sm:w-auto">
+              View My Work
+              <ArrowRight className="size-3" />
+            </span>
+          </Link>
+          <Link
+            href="#contact"
+            className="px-6 sm:px-8 py-3 bg-background rounded-full hover:bg-[#2D333B] transition-colors border border-[#2D333B] hover:border-gray-600 text-center"
+          >
+            Get in Touch
+          </Link>
         </div>
+      </div>
+      <div
+        onClick={handleDown}
+        className="absolute bottom-8 inset-x-0 flex flex-col items-center animate-bounce cursor-pointer"
+      >
+        <span className="text-default-400 text-sm mb-2 text-center">
+          Scroll to explore
+        </span>
+
+        <ArrowDown className="text-default-400 size-6" />
       </div>
     </section>
   );
