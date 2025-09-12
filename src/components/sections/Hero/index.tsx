@@ -1,11 +1,12 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, ArrowRight } from "lucide-react";
-import { Separator } from "../ui/separator";
+import { Separator } from "../../ui/separator";
 import Link from "next/link";
-const technologies = ["React", "TypeScript", "Node.js", "Next.js", "Vue.js"];
 import useTargetScroll from "@/hooks/useTargetScroll";
+import SocialItems from "./SocialItems";
 
+const technologies = ["React", "TypeScript", "Node.js", "Next.js", "Vue.js"];
 function Hero() {
   const scrollToTarget = useTargetScroll();
 
@@ -63,6 +64,7 @@ function Hero() {
             Get in Touch
           </Link>
         </div>
+        <SocialItems />
       </div>
       <div
         onClick={() => scrollToTarget("#skills", 50)}

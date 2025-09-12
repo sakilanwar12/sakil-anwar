@@ -1,4 +1,3 @@
-
 function GridBlock() {
   return (
     <svg
@@ -7,12 +6,12 @@ function GridBlock() {
       preserveAspectRatio="xMidYMid slice"
     >
       <defs>
-        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
           <path
-            d="M 40 0 L 0 0 0 40"
+            d="M 50 0 L 100 10 L 0 0 L 0 0 0 10"
             fill="none"
-            stroke="white"
-            strokeWidth="0.5"
+            stroke="#475569"
+            strokeWidth="0.2"
           />
         </pattern>
       </defs>
