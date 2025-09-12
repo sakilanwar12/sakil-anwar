@@ -2,7 +2,7 @@ import "./globals.css";
 import FallingParticlesAnimation from "@/components/animations/falling-particles-animation";
 import MountedProvider from "@/providers/mounted-provider";
 import { fontAnton, fontRobotoFlex } from "@/config/fonts";
-import { getSeoMeta } from "@/lib/utils/get-seo-meta";
+import { getSeoMeta } from "@/lib/get-seo-meta";
 import GridBackground from "@/components/GridBackground";
 
 export const metadata = getSeoMeta({

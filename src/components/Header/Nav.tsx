@@ -1,4 +1,7 @@
-"use client"
+"use client";
+
+import useTargetScroll from "@/hooks/useTargetScroll";
+
 const menus = [
   {
     name: "Home",
@@ -18,9 +21,8 @@ const menus = [
   },
 ];
 const Navbar = () => {
-  const handleScrollDown = (path: string) => {
-    document.getElementById(path)?.scrollIntoView();
-  };
+  const scrollToTarget = useTargetScroll();
+
   return (
     <nav className="flex justify-end">
       <ul className="flex gap-5">
@@ -29,7 +31,7 @@ const Navbar = () => {
             <li
               key={menu.name}
               className="text-sm capitalize text-default-400 hover:text-primary transition-all duration-300 cursor-pointer"
-              onClick={() => handleScrollDown(menu?.path)}
+            onClick={() => scrollToTarget(`#${menu.path}`)}
             >
               {menu.name}
             </li>

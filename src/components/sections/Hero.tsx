@@ -3,20 +3,12 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { Separator } from "../ui/separator";
 import Link from "next/link";
-import { gsap } from "@/lib/gsap";
 const technologies = ["React", "TypeScript", "Node.js", "Next.js", "Vue.js"];
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-gsap.registerPlugin(ScrollToPlugin);
+import useTargetScroll from "@/hooks/useTargetScroll";
 
 function Hero() {
-  const handleDown = () => {
-    gsap.to(window, {
-      duration: 1.2,
-      scrollTo: { y: "#skills", offsetY: 0 },
-      ease: "power2.inOut",
-    });
-  };
+  const scrollToTarget = useTargetScroll();
+
   return (
     <section
       className="relative min-h-screen flex items-center justify-center px-4"
@@ -73,7 +65,7 @@ function Hero() {
         </div>
       </div>
       <div
-        onClick={handleDown}
+        onClick={() => scrollToTarget("#skills", 50)}
         className="absolute bottom-8 inset-x-0 flex flex-col items-center animate-bounce cursor-pointer"
       >
         <span className="text-default-400 text-sm mb-2 text-center">
