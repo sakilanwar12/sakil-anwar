@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 
 const WebDeveloperPortfolio = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-default-900 via-black/60 to-default-700 text-foreground overflow-hidden">
+    <div className="min-h-screen  text-foreground overflow-hidden">
       <Header />
       <Hero />
       <Skills />

@@ -155,7 +155,7 @@
   padding-inline: 1rem;
 
   @variant xl {
-    max-width: 1350px;
+    max-width: 1210px;
   }
 }
 @utility grid-background {

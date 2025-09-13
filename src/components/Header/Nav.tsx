@@ -24,7 +24,7 @@ const Navbar = () => {
   const scrollToTarget = useTargetScroll();
 
   return (
-    <nav className="flex justify-end">
+    <nav>
       <ul className="flex gap-5">
         {menus.map((menu) => {
           return (

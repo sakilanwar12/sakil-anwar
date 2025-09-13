@@ -1,16 +1,7 @@
 import React from "react";
-import {
-  Code,
-  Palette,
-  Zap,
-  Server,
-  Database,
-  Globe,
-  Frame,
-} from "lucide-react";
+import { Code, Palette, Zap, Frame } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
+import SectionHeader from "../SectionHeader";
 
 const Skills = () => {
   const skills = [
@@ -22,22 +13,44 @@ const Skills = () => {
         { name: "CSS3", level: 95 },
         { name: "JavaScript", level: 90 },
         { name: "TypeScript", level: 75 },
-        { name: "SVG", level: 95 },
+        { name: "Markdown", level: 85 },
       ],
     },
     {
-      category: "Frameworks & Libraries",
+      category: "Frameworks",
       icon: <Frame className="h-5 w-5" />,
       items: [
-        { name: "React & Next.js", level: 90 },
-        { name: "Vue & Nuxt.js", level: 90 },
+        { name: "React", level: 90 },
+        { name: "Next.js", level: 90 },
+        { name: "Vue.js", level: 90 },
+        { name: "Nuxt.js", level: 85 },
         { name: "Angular", level: 80 },
-        { name: "Express & Nest.js", level: 70 },
-        { name: "Bootstrap & Tailwind CSS", level: 75 },
       ],
     },
     {
-      category: "UI & Products",
+      category: "CSS Libraries",
+      icon: <Palette className="h-5 w-5" />,
+      items: [
+        { name: "Bootstrap", level: 75 },
+        { name: "Tailwind CSS", level: 75 },
+        { name: "Material UI", level: 70 },
+        { name: "Ant Design", level: 70 },
+        { name: "Radix UI", level: 70 },
+      ],
+    },
+    {
+      category: "State Management Tools",
+      icon: <Zap className="h-5 w-5" />,
+      items: [
+        { name: "Redux", level: 85 },
+        { name: "RTK Query", level: 80 },
+        { name: "React Query", level: 85 },
+        { name: "Zustand", level: 80 },
+        { name: "Pinia", level: 75 },
+      ],
+    },
+    {
+      category: "UI / Products",
       icon: <Palette className="h-5 w-5" />,
       items: [
         { name: "Custom Dashboard Templates", level: 95 },
@@ -53,33 +66,25 @@ const Skills = () => {
       items: [
         { name: "VS Code", level: 95 },
         { name: "Cursor", level: 90 },
-        { name: "Git & GitHub", level: 90 },
+        { name: "Git", level: 90 },
+        { name: "GitHub", level: 90 },
         { name: "Chrome DevTools", level: 95 },
-        { name: "Vite & Webpack", level: 90 },
       ],
     },
   ];
 
   return (
     <div className="min-h-screen bg-background py-20  relative" id="skills">
-      <div className="max-w-2xl mx-auto relative z-10">
-        <div className="text-center mb-12 space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            My{" "}
-            <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-              Expertise
-            </span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Technologies and tools I use to build exceptional digital
-            experiences
-          </p>
-        </div>
+      <div className="container relative z-10">
+        <SectionHeader
+          title="Expertise"
+          description="Technologies and tools I use to build exceptional digital
+            experiences"
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4">
           {skills.map((skillCategory, index) => (
             <Card key={skillCategory.category} className="relative">
-                
               <CardHeader>
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-primary/10 rounded-lg border border-primary/20">
