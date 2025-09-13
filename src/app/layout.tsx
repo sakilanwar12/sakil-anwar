@@ -5,6 +5,8 @@ import { fontAnton, fontRobotoFlex } from "@/config/fonts";
 import { getSeoMeta } from "@/lib/get-seo-meta";
 import GridBackground from "@/components/GridBackground";
 import SocialItems from "@/components/sections/Hero/SocialItems";
+import { MouseEffectProvider } from "@/context/MouseEffectContext";
+import MouseEffect from "@/components/MouseEffect";
 
 export const metadata = getSeoMeta({
   title: "Portfolio - Sakil Anwar",
@@ -22,7 +24,11 @@ export default function RootLayout({
         className={`${fontRobotoFlex.variable} ${fontAnton.variable} antialiased font-roboto-flex bg-background text-default-100`}
       >
         <MountedProvider>
-          {children}
+          <MouseEffectProvider>
+            <MouseEffect />
+            {children}
+          </MouseEffectProvider>
+
           <FallingParticlesAnimation />
 
           <GridBackground />
