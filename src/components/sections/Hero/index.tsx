@@ -5,6 +5,7 @@ import { Separator } from "../../ui/separator";
 import Link from "next/link";
 import useTargetScroll from "@/hooks/useTargetScroll";
 import SocialItems from "./SocialItems";
+import ScrollDown from "@/components/ScrollDown";
 
 const technologies = ["React", "TypeScript", "Node.js", "Next.js", "Vue.js"];
 function Hero() {
@@ -64,18 +65,9 @@ function Hero() {
             Get in Touch
           </Link>
         </div>
-
       </div>
-      <div
-        onClick={() => scrollToTarget("#skills", 50)}
-        className="absolute bottom-8 inset-x-0 flex flex-col items-center animate-bounce cursor-pointer"
-      >
-        <span className="text-default-400 text-sm mb-2 text-center">
-          Scroll to explore
-        </span>
+      <ScrollDown />
 
-        <ArrowDown className="text-default-400 size-6" />
-      </div>
     </section>
   );
 }
