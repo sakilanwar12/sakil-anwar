@@ -25,7 +25,7 @@ function Hero() {
 
         <div className="flex items-center gap-3 justify-center mb-6 mt-10">
           <Separator className="data-[orientation=horizontal]:w-16 bg-primary/30" />
-          <h2 className="text-2xl md:text-3xl text-primary/60  font-light whitespace-nowrap">
+          <h2 className="text-2xl md:text-3xl text-primary/80  font-light whitespace-nowrap">
             Frontend Developer
           </h2>
           <Separator className="data-[orientation=horizontal]:w-16 bg-primary/30" />
@@ -53,7 +53,7 @@ function Hero() {
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-75 group-hover:opacity-100 transition"></div>
             <span className="relative px-6 sm:px-8 py-3 bg-[#161B22] rounded-full inline-flex items-center justify-center w-full sm:w-auto">
-              View My Work
+              Explore My Projects
               <ArrowRight className="size-3" />
             </span>
           </Link>
@@ -64,7 +64,7 @@ function Hero() {
             Get in Touch
           </Link>
         </div>
-        <SocialItems />
+
       </div>
       <div
         onClick={() => scrollToTarget("#skills", 50)}
