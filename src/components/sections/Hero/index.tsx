@@ -1,15 +1,12 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import {  ArrowRight } from "lucide-react";
 import { Separator } from "../../ui/separator";
 import Link from "next/link";
-import useTargetScroll from "@/hooks/useTargetScroll";
-import SocialItems from "./SocialItems";
 import ScrollDown from "@/components/ScrollDown";
 
 const technologies = ["React", "TypeScript", "Node.js", "Next.js", "Vue.js"];
 function Hero() {
-  const scrollToTarget = useTargetScroll();
 
   return (
     <section
