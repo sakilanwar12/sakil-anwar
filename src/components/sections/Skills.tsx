@@ -74,7 +74,7 @@ const Skills = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background py-20  relative" id="skills">
+    <div className="min-h-screen bg-background py-32  relative" id="skills">
       <div className="container relative z-10">
         <SectionHeader
           title="Expertise"

@@ -1,6 +1,8 @@
 "use client";
 
 import useTargetScroll from "@/hooks/useTargetScroll";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 const menus = [
   {
@@ -8,13 +10,14 @@ const menus = [
     path: "hero",
   },
   {
+    name: "Skills",
+    path: "skills",
+  },
+  {
     name: "Projects",
     path: "projects",
   },
-  {
-    name: "Blog",
-    path: "blog",
-  },
+
   {
     name: "Contact",
     path: "contact",
@@ -22,6 +25,7 @@ const menus = [
 ];
 const Navbar = () => {
   const scrollToTarget = useTargetScroll();
+  const [activeMenu, setActiveMenu] = useState<string | null>("hero");
 
   return (
     <nav>
@@ -30,8 +34,16 @@ const Navbar = () => {
           return (
             <li
               key={menu.name}
-              className="text-sm capitalize text-default-400 hover:text-primary transition-all duration-300 cursor-pointer"
-            onClick={() => scrollToTarget(`#${menu.path}`)}
+              className={cn(
+                "text-sm uppercase text-default-400 hover:text-primary transition-all duration-300 cursor-pointer select-none",
+                {
+                  "text-primary": activeMenu === menu.path,
+                }
+              )}
+              onClick={() => {
+                scrollToTarget(`#${menu.path}`);
+                setActiveMenu(menu.path);
+              }}
             >
               {menu.name}
             </li>

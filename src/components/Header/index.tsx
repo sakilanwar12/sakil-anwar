@@ -4,7 +4,7 @@ import Navbar from "./Nav";
 
 const Header = () => {
   return (
-    <header className="py-2.5 fixed top-6 left-1/2 -translate-x-1/2 container px-6 rounded-full w-full mx-auto z-[9999] bg-default border border-border backdrop-blur-2xl">
+    <header className="py-2.5 fixed top-6 left-1/2 -translate-x-1/2 max-w-2xl mx-auto px-3 rounded-full w-full  z-[9999] bg-default border border-border backdrop-blur-2xl">
       <div className="flex items-center">
         <div className="flex-none">
           <AppLogo />

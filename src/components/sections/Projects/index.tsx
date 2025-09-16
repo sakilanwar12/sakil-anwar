@@ -23,7 +23,7 @@ const ProjectsSection = () => {
       : projects?.filter((project) => project?.category === selectedCategory);
 
   return (
-    <div className="py-20 bg-gradient-to-br from-default-900 via-black/60 to-default-900 ">
+    <div className="py-32 bg-gradient-to-br from-default-900 via-black/60 to-default-900" id="projects">
       <div className="container">
         <SectionHeader
           title="Projects"

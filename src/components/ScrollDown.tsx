@@ -5,7 +5,7 @@ function ScrollDown() {
 
   return (
     <div
-      className="text-center text-default-400 font-bold uppercase  cursor-pointer absolute bottom-8 inset-x-0 "
+      className="text-center text-default-400 font-bold uppercase  cursor-pointer absolute bottom-12 inset-x-0 "
       onClick={() => scrollToTarget("#skills", 50)}
     >
       <span className="block mb-3">Scroll to explore</span>

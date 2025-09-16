@@ -9,7 +9,7 @@ import TwitterIcon from "../svg/TwitterIcon";
 
 function Footer() {
   return (
-    <footer className="py-20 px-4 bg-card">
+    <footer className="py-32 px-4 bg-card" id="contact">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-default-1000">
           Let's Build Something Amazing

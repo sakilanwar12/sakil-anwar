@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 
 const WebDeveloperPortfolio = () => {
   return (
-    <div className="min-h-screen  text-foreground overflow-hidden">
+    <div className="min-h-screen">
       <Header />
       <Hero />
       <Skills />
