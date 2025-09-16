@@ -1,5 +1,4 @@
-
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 
 interface MousePosition {
   x: number;
@@ -29,10 +28,15 @@ interface UseMouseEffectReturn {
   isMoving: boolean;
 }
 
-export const useMouseEffect = (options: UseMouseEffectOptions = {}): UseMouseEffectReturn => {
+export const useMouseEffect = (
+  options: UseMouseEffectOptions = {}
+): UseMouseEffectReturn => {
   const { particleCount = 15, colors, enabled = true } = options;
-  
-  const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
+
+  const [mousePosition, setMousePosition] = useState<MousePosition>({
+    x: 0,
+    y: 0,
+  });
   const [particles, setParticles] = useState<Particle[]>([]);
   const [isMoving, setIsMoving] = useState<boolean>(false);
   const particleIdRef = useRef<number>(0);
@@ -48,13 +52,13 @@ export const useMouseEffect = (options: UseMouseEffectOptions = {}): UseMouseEff
     if (!enabled) return;
 
     let timeoutId: NodeJS.Timeout;
-    
+
     const handleMouseMove = (e: MouseEvent): void => {
       setMousePosition({ x: e.clientX, y: e.clientY });
       setIsMoving(true);
-      
+
       clearTimeout(timeoutId);
-      
+
       const newParticle: Particle = {
         id: particleIdRef.current++,
         x: e.clientX,
@@ -65,15 +69,15 @@ export const useMouseEffect = (options: UseMouseEffectOptions = {}): UseMouseEff
         vy: (Math.random() - 0.5) * 4,
         life: 1,
       };
-      
-      setParticles(prev => [...prev.slice(-particleCount), newParticle]);
+
+      setParticles((prev) => [...prev.slice(-particleCount), newParticle]);
       timeoutId = setTimeout(() => setIsMoving(false), 100);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    
+    window.addEventListener("mousemove", handleMouseMove);
+
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
       clearTimeout(timeoutId);
     };
   }, [enabled, particleCount, colors]);
@@ -82,15 +86,17 @@ export const useMouseEffect = (options: UseMouseEffectOptions = {}): UseMouseEff
     if (!enabled) return;
 
     const interval = setInterval(() => {
-      setParticles(prev => 
+      setParticles((prev) =>
         prev
-          .map((particle: Particle): Particle => ({
-            ...particle,
-            x: particle.x + particle.vx,
-            y: particle.y + particle.vy,
-            life: particle.life - 0.02,
-            vy: particle.vy + 0.1,
-          }))
+          .map(
+            (particle: Particle): Particle => ({
+              ...particle,
+              x: particle.x + particle.vx,
+              y: particle.y + particle.vy,
+              life: particle.life - 0.02,
+              vy: particle.vy + 0.1,
+            })
+          )
           .filter((particle: Particle) => particle.life > 0)
       );
     }, 16);

@@ -102,7 +102,6 @@ const MouseEffect: React.FC = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-40">
-      {/* Custom Cursor */}
       <div
         className="fixed pointer-events-none z-50 mix-blend-difference transition-transform duration-100"
         style={{
@@ -114,7 +113,6 @@ const MouseEffect: React.FC = () => {
         <div className="w-5 h-5 rounded-full bg-gradient-to-br from-default-50 to-primary bg-primary blur-lg border-primary"></div>
       </div>
 
-      {/* Cursor Dot */}
       <div
         className={cn("fixed w-1 h-1 rounded-full pointer-events-none z-50", {
           "bg-primary": isMoving,
@@ -124,8 +122,6 @@ const MouseEffect: React.FC = () => {
           top: mousePosition.y - 2,
         }}
       ></div>
-
-      {/* Particles */}
       {particles.map((particle: Particle) => (
         <div
           key={particle.id}
