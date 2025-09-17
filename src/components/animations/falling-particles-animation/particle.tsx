@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 
-const Particle = () => {
+function Particle() {
   const { startX, startY, opacity, size, fallDuration } = useMemo(() => {
     return {
       startX: Math.random() * 100, // Random X position
@@ -18,7 +18,7 @@ const Particle = () => {
       className="fixed rounded-full bg-default-600 drop-shadow animate-fall"
       style={{
         left: `${startX}%`,
-        top: `${startY}%`, 
+        top: `${startY}%`,
         opacity,
         width: `${size}px`,
         height: `${size}px`,
@@ -27,6 +27,6 @@ const Particle = () => {
       }}
     />
   );
-};
+}
 
 export default Particle;

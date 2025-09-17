@@ -12,7 +12,7 @@ function Footer() {
     <footer className="py-32 px-4 bg-card" id="contact">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-default-1000">
-          Let's Build Something Amazing
+          {"Let's Build Something Amazing"}
         </h2>
 
         <p className="text-sm sm:text-base text-default-400 mb-6">
@@ -35,9 +35,9 @@ function Footer() {
           </Link>
         </div>
         <div className="flex justify-center gap-6 mt-7">
-          <SocialButtonLink href="" icon={<GithubIcon/>}/>
-          <SocialButtonLink href="" icon={<LinkedinIcon/>}/>
-          <SocialButtonLink href="" icon={<TwitterIcon/>}/>
+          <SocialButtonLink href="" icon={<GithubIcon />} />
+          <SocialButtonLink href="" icon={<LinkedinIcon />} />
+          <SocialButtonLink href="" icon={<TwitterIcon />} />
         </div>
       </div>
     </footer>

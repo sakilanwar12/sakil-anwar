@@ -80,7 +80,7 @@ export const useMouseEffect = (
       window.removeEventListener("mousemove", handleMouseMove);
       clearTimeout(timeoutId);
     };
-  }, [enabled, particleCount, colors]);
+  }, [enabled, particleCount, colors, getRandomColor]);
 
   useEffect(() => {
     if (!enabled) return;

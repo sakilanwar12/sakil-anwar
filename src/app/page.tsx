@@ -4,7 +4,7 @@ import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Header from "@/components/Header";
 
-const WebDeveloperPortfolio = () => {
+function WebDeveloperPortfolio() {
   return (
     <div className="min-h-screen">
       <Header />
@@ -14,6 +14,6 @@ const WebDeveloperPortfolio = () => {
       <Footer />
     </div>
   );
-};
+}
 
 export default WebDeveloperPortfolio;

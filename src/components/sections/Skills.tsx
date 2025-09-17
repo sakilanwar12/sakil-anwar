@@ -3,7 +3,7 @@ import { Code, Palette, Zap, Frame } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import SectionHeader from "../SectionHeader";
 
-const Skills = () => {
+function Skills() {
   const skills = [
     {
       category: "Programming Languages",
@@ -83,7 +83,7 @@ const Skills = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4">
-          {skills.map((skillCategory, index) => (
+          {skills.map((skillCategory) => (
             <Card key={skillCategory.category} className="relative">
               <CardHeader>
                 <div className="flex items-center gap-3">
@@ -99,7 +99,7 @@ const Skills = () => {
               </CardHeader>
 
               <CardContent className="space-y-4 relative">
-                {skillCategory.items.map((skill, skillIndex) => (
+                {skillCategory.items.map((skill) => (
                   <div key={skill.name} className="space-y-2 ">
                     <div className="flex justify-between items-center group">
                       <span className="text-sm font-medium">{skill.name}</span>
@@ -116,6 +116,6 @@ const Skills = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Skills;

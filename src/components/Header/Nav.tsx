@@ -23,7 +23,7 @@ const menus = [
     path: "contact",
   },
 ];
-const Navbar = () => {
+function Navbar() {
   const scrollToTarget = useTargetScroll();
   const [activeMenu, setActiveMenu] = useState<string | null>("hero");
 
@@ -52,6 +52,6 @@ const Navbar = () => {
       </ul>
     </nav>
   );
-};
+}
 
 export default Navbar;

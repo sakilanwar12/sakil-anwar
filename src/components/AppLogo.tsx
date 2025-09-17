@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const AppLogo = () => {
+function AppLogo() {
   return (
     <Avatar>
       <AvatarImage
@@ -12,6 +12,6 @@ const AppLogo = () => {
       <AvatarFallback>SA</AvatarFallback>
     </Avatar>
   );
-};
+}
 
 export default AppLogo;

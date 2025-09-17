@@ -1,4 +1,4 @@
-const FloatingParticles = () => {
+function FloatingParticles() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {[...Array(20)].map((_, i) => (
@@ -15,6 +15,6 @@ const FloatingParticles = () => {
       ))}
     </div>
   );
-};
+}
 
 export default FloatingParticles;

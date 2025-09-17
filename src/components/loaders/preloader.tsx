@@ -1,6 +1,6 @@
 "use client";
 
-const PreLoader = () => {
+function PreLoader() {
   return (
     <div className="fixed inset-0 z-50 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
       {/* Animated particles background */}
@@ -128,6 +128,6 @@ const PreLoader = () => {
       `}</style>
     </div>
   );
-};
+}
 
 export default PreLoader;

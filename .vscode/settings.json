@@ -1,5 +1,10 @@
 {
   "cSpell.words": ["dashtail", "lerp", "shadecn", "Spellon", "webapps"],
   "css.validate": false,
-  "tailwindCSS.emmetCompletions": true
+  "tailwindCSS.emmetCompletions": true,
+  "eslint.enable": true,
+  "eslint.run": "onType",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  }
 }

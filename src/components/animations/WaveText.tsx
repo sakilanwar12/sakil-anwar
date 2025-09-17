@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-interface IWaveText{
-  text: string,
-  className?: string,
-  delay?: number
+interface IWaveText {
+  text: string;
+  className?: string;
+  delay?: number;
 }
-const WaveText = ({ text, className, delay = 0 }: IWaveText) => {
+function WaveText({ text, className, delay = 0 }: IWaveText) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -32,5 +32,5 @@ const WaveText = ({ text, className, delay = 0 }: IWaveText) => {
       </h1>
     </div>
   );
-};
+}
 export default WaveText;

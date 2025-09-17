@@ -1,9 +1,8 @@
-import { ExternalLink, Github, Calendar, Users, Star } from "lucide-react";
+import { ExternalLink, Github, Users } from "lucide-react";
 import { TProject } from "./constant";
 import Image from "next/image";
 import Link from "next/link";
-const ProjectCard = ({ project }: { project: TProject }) => {
- 
+function ProjectCard({ project }: { project: TProject }) {
   return (
     <div className="group relative transform transition-all duration-500 cursor-pointer">
       <div className="relative bg-default-800/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-default-700/50 hover:border-default-600/50 transition-all duration-500 h-full">
@@ -43,15 +42,14 @@ const ProjectCard = ({ project }: { project: TProject }) => {
           </p>
 
           <div className="flex flex-wrap gap-2 mb-4">
-            {project.technologies
-              .map((tech, techIndex) => (
-                <span
-                  key={techIndex}
-                  className="px-3 py-1 bg-default-700/50 text-default-300 rounded-full text-xs font-medium border border-default-600/30 hover:border-blue-500/50 transition-colors"
-                >
-                  {tech}
-                </span>
-              ))}
+            {project.technologies.map((tech, techIndex) => (
+              <span
+                key={techIndex}
+                className="px-3 py-1 bg-default-700/50 text-default-300 rounded-full text-xs font-medium border border-default-600/30 hover:border-blue-500/50 transition-colors"
+              >
+                {tech}
+              </span>
+            ))}
           </div>
 
           <div className="flex items-center justify-between pt-4 border-t border-default-700/30">
@@ -69,5 +67,5 @@ const ProjectCard = ({ project }: { project: TProject }) => {
       </div>
     </div>
   );
-};
+}
 export default ProjectCard;

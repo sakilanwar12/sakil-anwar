@@ -7,7 +7,7 @@ type ParticleType = {
   id: string;
 };
 
-const FallingParticlesAnimation = () => {
+function FallingParticlesAnimation() {
   const [particles, setParticles] = useState<ParticleType[]>([]);
 
   const updateParticles = () => {
@@ -23,7 +23,7 @@ const FallingParticlesAnimation = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       updateParticles();
-    }, 300); 
+    }, 300);
     return () => clearInterval(interval);
   }, []);
 
@@ -34,6 +34,6 @@ const FallingParticlesAnimation = () => {
       ))}
     </>
   );
-};
+}
 
 export default FallingParticlesAnimation;

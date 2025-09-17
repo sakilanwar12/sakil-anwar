@@ -2,7 +2,7 @@ import { Sun } from "lucide-react";
 import AppLogo from "../AppLogo";
 import Navbar from "./Nav";
 
-const Header = () => {
+function Header() {
   return (
     <header className="py-2.5 fixed top-6 left-1/2 -translate-x-1/2 max-w-2xl mx-auto px-3 rounded-full w-full  z-[9999] bg-default border border-border backdrop-blur-2xl">
       <div className="flex items-center">
@@ -13,11 +13,11 @@ const Header = () => {
           <Navbar />
         </div>
         <div className="flex-none cursor-pointer">
-          <Sun className="size-6"/>
+          <Sun className="size-6" />
         </div>
       </div>
     </header>
   );
-};
+}
 
 export default Header;

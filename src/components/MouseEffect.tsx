@@ -20,7 +20,7 @@ interface Particle {
   life: number;
 }
 
-const MouseEffect: React.FC = () => {
+function MouseEffect() {
   const { settings } = useMouseEffectContext();
   const [mousePosition, setMousePosition] = useState<MousePosition>({
     x: 0,
@@ -74,7 +74,12 @@ const MouseEffect: React.FC = () => {
       window.removeEventListener("mousemove", handleMouseMove);
       clearTimeout(timeoutId);
     };
-  }, [settings.enabled, settings.particleCount, settings.colors]);
+  }, [
+    settings.enabled,
+    settings.particleCount,
+    settings.colors,
+    getRandomColor,
+  ]);
 
   useEffect(() => {
     if (!settings.enabled) return;
@@ -139,6 +144,6 @@ const MouseEffect: React.FC = () => {
       ))}
     </div>
   );
-};
+}
 
 export default MouseEffect;
