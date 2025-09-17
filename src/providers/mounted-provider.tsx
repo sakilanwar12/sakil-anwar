@@ -1,5 +1,4 @@
 "use client";
-import { memo } from "react";
 
 import useMounted from "@/hooks/use-mounted";
 import PreLoader from "@/components/loaders/preloader";
@@ -12,4 +11,4 @@ function MountedProvider({ children }: { children: React.ReactNode }) {
   return children;
 }
 
-export default memo(MountedProvider);
+export default MountedProvider;
