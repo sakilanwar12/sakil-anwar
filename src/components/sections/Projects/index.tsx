@@ -14,7 +14,7 @@ const categories = [
   { id: "ui", name: "UI Components", icon: Layers },
 ];
 
-const ProjectsSection = () => {
+function ProjectsSection() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const filteredProjects =
@@ -23,7 +23,10 @@ const ProjectsSection = () => {
       : projects?.filter((project) => project?.category === selectedCategory);
 
   return (
-    <div className="py-32 bg-gradient-to-br from-default-900 via-black/60 to-default-900" id="projects">
+    <div
+      className="py-32 bg-gradient-to-br from-default-900 via-black/60 to-default-900"
+      id="projects"
+    >
       <div className="container">
         <SectionHeader
           title="Projects"
@@ -54,6 +57,6 @@ const ProjectsSection = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ProjectsSection;

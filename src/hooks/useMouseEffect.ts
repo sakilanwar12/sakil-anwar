@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 interface MousePosition {
   x: number;
@@ -41,15 +41,17 @@ export const useMouseEffect = (
   const [isMoving, setIsMoving] = useState<boolean>(false);
   const particleIdRef = useRef<number>(0);
 
-  const getRandomColor = (): string => {
+  const getRandomColor = useCallback((): string => {
     if (colors && colors.length > 0) {
       return colors[Math.floor(Math.random() * colors.length)];
     }
     return `hsl(${Math.random() * 360}, 70%, 60%)`;
-  };
-
+  }, [colors]);
+  
   useEffect(() => {
-    if (!enabled) return;
+    if (!enabled) {
+      return;
+    }
 
     let timeoutId: NodeJS.Timeout;
 

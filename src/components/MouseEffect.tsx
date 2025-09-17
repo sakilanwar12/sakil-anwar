@@ -2,7 +2,7 @@
 
 import { useMouseEffectContext } from "@/context/MouseEffectContext";
 import { cn } from "@/lib/utils";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 
 interface MousePosition {
   x: number;
@@ -30,14 +30,14 @@ function MouseEffect() {
   const [isMoving, setIsMoving] = useState<boolean>(false);
   const particleIdRef = useRef<number>(0);
 
-  const getRandomColor = (): string => {
+  const getRandomColor = useCallback((): string => {
     if (settings.colors && settings.colors.length > 0) {
       return settings.colors[
         Math.floor(Math.random() * settings.colors.length)
       ];
     }
     return `hsl(${Math.random() * 360}, 70%, 60%)`;
-  };
+  }, [settings.colors]);
 
   useEffect(() => {
     if (!settings.enabled) return;
