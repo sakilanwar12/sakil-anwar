@@ -34,7 +34,7 @@ function Hero() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 mb-8">
-          {technologies.map((tech, index) => (
+          {technologies?.map((tech, index) => (
             <Badge
               key={index}
               className="px-4 py-2 text-sm text-default-200 transition-colors border border-border  hover:border-primary/40 rounded-full hover:bg-[#2D333B]"

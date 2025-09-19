@@ -1,11 +1,10 @@
-import { MapPin } from "lucide-react";
+import { FacebookIcon, MapPin } from "lucide-react";
 import ContactForm from "./ContactForm";
 import Link from "next/link";
 import PageIcon from "../svg/PageIcon";
 import SocialButtonLink from "../SocialButtonLink";
 import GithubIcon from "../svg/GithubIcon";
 import LinkedinIcon from "../svg/LinkedinIcon";
-import TwitterIcon from "../svg/TwitterIcon";
 
 function Footer() {
   return (
@@ -35,9 +34,9 @@ function Footer() {
           </Link>
         </div>
         <div className="flex justify-center gap-6 mt-7">
-          <SocialButtonLink href="" icon={<GithubIcon />} />
-          <SocialButtonLink href="" icon={<LinkedinIcon />} />
-          <SocialButtonLink href="" icon={<TwitterIcon />} />
+          <SocialButtonLink href="https://github.com/sakilanwar12" icon={<GithubIcon />} />
+          <SocialButtonLink href="https://www.linkedin.com/in/md-sakil-anwar-4b6941241/" icon={<LinkedinIcon />} />
+          <SocialButtonLink href="https://www.facebook.com/shakilahmed.omi.5" icon={<FacebookIcon />} />
         </div>
       </div>
     </footer>
