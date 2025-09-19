@@ -13,7 +13,7 @@ function SocialLink({ socialLink, icon }: ISocialLink) {
 }
 function SocialItems() {
   return (
-    <div className="flex flex-col items-center gap-3.5 fixed top-1/2 -translate-y-1/2 right-5 bg-background border border-border  px-2.5 py-3.5 rounded-full">
+    <div className="hidden lg:flex flex-col items-center gap-3.5 fixed top-1/2 -translate-y-1/2 right-5 bg-background border border-border  px-2.5 py-3.5 rounded-full">
       <SocialLink icon={<GithubIcon className="size-4" />} socialLink="" />
       <SocialLink icon={<Linkedin className="size-4" />} socialLink="" />
       <SocialLink icon={<FacebookIcon className="size-4" />} socialLink="" />

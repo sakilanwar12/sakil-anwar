@@ -2,7 +2,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 function AppLogo() {
   return (
-    <Avatar>
+    <Avatar className="size-7">
       <AvatarImage
         src={"/images/developer.png"}
         alt="Logo"

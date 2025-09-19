@@ -7,6 +7,7 @@ import GridBackground from "@/components/GridBackground";
 import SocialItems from "@/components/sections/Hero/SocialItems";
 import { MouseEffectProvider } from "@/context/MouseEffectContext";
 import MouseEffect from "@/components/MouseEffect";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = getSeoMeta({
   title: "Portfolio - Sakil Anwar",
@@ -34,6 +35,7 @@ export default function RootLayout({
           <GridBackground />
           <SocialItems />
         </MountedProvider>
+        <Toaster />
       </body>
     </html>
   );

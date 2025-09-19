@@ -1,6 +1,7 @@
-import { Sun } from "lucide-react";
+import { Phone, Sun } from "lucide-react";
 import AppLogo from "../AppLogo";
 import Navbar from "./Nav";
+import CopyButton from "../CopyButton";
 
 function Header() {
   return (
@@ -12,9 +13,14 @@ function Header() {
         <div className="flex-1 flex justify-center">
           <Navbar />
         </div>
-        <div className="flex-none cursor-pointer">
-          <Sun className="size-6" />
-        </div>
+
+        <CopyButton
+          text="01823231725"
+          copySuccessMessage="Copied phone number to clipboard"
+          className="flex-none grid place-content-center hover:border-primary cursor-pointer text-default-500 hover:text-primary size-7 rounded-full bg-card border border-border"
+        >
+          <Phone className="size-4" />
+        </CopyButton>
       </div>
     </header>
   );
