@@ -21,6 +21,7 @@ interface Particle {
 }
 
 function MouseEffect() {
+  const isHero = doc
   const { settings } = useMouseEffectContext();
   const [mousePosition, setMousePosition] = useState<MousePosition>({
     x: 0,
@@ -103,7 +104,9 @@ function MouseEffect() {
     return () => clearInterval(interval);
   }, [settings.enabled]);
 
-  if (!settings.enabled) return null;
+  if (!settings.enabled) {
+    return null;
+  }
 
   return (
     <div className="fixed inset-0 pointer-events-none z-40">
@@ -127,7 +130,7 @@ function MouseEffect() {
           top: mousePosition.y - 2,
         }}
       ></div>
-      {particles.map((particle: Particle) => (
+      {particles?.map((particle: Particle) => (
         <div
           key={particle.id}
           className="fixed pointer-events-none z-45 rounded-full"
