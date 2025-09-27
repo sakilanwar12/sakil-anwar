@@ -21,7 +21,7 @@ interface Particle {
 }
 
 function MouseEffect() {
-  const isHero = doc
+  const isHero = document?.getElementById("hero");
   const { settings } = useMouseEffectContext();
   const [mousePosition, setMousePosition] = useState<MousePosition>({
     x: 0,
