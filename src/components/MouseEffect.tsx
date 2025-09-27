@@ -1,8 +1,7 @@
 "use client";
 
 import { useMouseEffectContext } from "@/context/MouseEffectContext";
-import { cn } from "@/lib/utils";
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 interface MousePosition {
   x: number;
@@ -21,7 +20,9 @@ interface Particle {
 }
 
 function MouseEffect() {
-  const isHero = document?.getElementById("hero");
+  const heroRef = useRef<HTMLElement | null>(null);
+
+  const [isInHero, setIsInHero] = useState<boolean>(false);
   const { settings } = useMouseEffectContext();
   const [mousePosition, setMousePosition] = useState<MousePosition>({
     x: 0,
@@ -49,6 +50,16 @@ function MouseEffect() {
       setMousePosition({ x: e.clientX, y: e.clientY });
       setIsMoving(true);
 
+      if (heroRef.current) {
+        const rect = heroRef.current.getBoundingClientRect();
+        const inside =
+          e.clientX >= rect.left &&
+          e.clientX <= rect.right &&
+          e.clientY >= rect.top &&
+          e.clientY <= rect.bottom;
+
+        setIsInHero(inside);
+      }
       clearTimeout(timeoutId);
 
       const newParticle: Particle = {
@@ -108,6 +119,10 @@ function MouseEffect() {
     return null;
   }
 
+  useEffect(() => {
+    heroRef.current = document.getElementById("hero");
+  }, []);
+
   return (
     <div className="fixed inset-0 pointer-events-none z-40">
       <div
@@ -121,30 +136,22 @@ function MouseEffect() {
         <div className="w-5 h-5 rounded-full bg-gradient-to-br from-default-50 to-primary bg-primary blur-lg border-primary"></div>
       </div>
 
-      <div
-        className={cn("fixed w-1 h-1 rounded-full pointer-events-none z-50", {
-          "bg-primary": isMoving,
-        })}
-        style={{
-          left: mousePosition.x - 2,
-          top: mousePosition.y - 2,
-        }}
-      ></div>
-      {particles?.map((particle: Particle) => (
-        <div
-          key={particle.id}
-          className="fixed pointer-events-none z-45 rounded-full"
-          style={{
-            left: particle.x - particle.size / 2,
-            top: particle.y - particle.size / 2,
-            width: particle.size,
-            height: particle.size,
-            backgroundColor: particle.color,
-            opacity: particle.life,
-            boxShadow: `0 0 ${particle.size * 2}px ${particle.color}`,
-          }}
-        />
-      ))}
+      {isInHero &&
+        particles?.map((particle: Particle) => (
+          <div
+            key={particle.id}
+            className="fixed pointer-events-none z-45 rounded-full"
+            style={{
+              left: particle.x - particle.size / 2,
+              top: particle.y - particle.size / 2,
+              width: particle.size,
+              height: particle.size,
+              backgroundColor: particle.color,
+              opacity: particle.life,
+              boxShadow: `0 0 ${particle.size * 2}px ${particle.color}`,
+            }}
+          />
+        ))}
     </div>
   );
 }
