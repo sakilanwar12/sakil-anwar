@@ -1,26 +1,19 @@
-import { Phone, Sun } from "lucide-react";
 import AppLogo from "../AppLogo";
 import Navbar from "./Nav";
-import CopyButton from "../CopyButton";
+import BookACall from "./BookACall";
 
 function Header() {
   return (
-    <header className="py-2.5 fixed top-6 left-1/2 -translate-x-1/2 max-w-2xl mx-auto px-3 rounded-full w-full  z-[9999] bg-default border border-border backdrop-blur-2xl">
+    <header className="bg-default border-border fixed top-6 left-1/2 z-[9999] container w-full -translate-x-1/2 rounded-xl border-2 px-4 py-3 backdrop-blur-2xl">
       <div className="flex items-center">
         <div className="flex-none">
           <AppLogo />
         </div>
-        <div className="flex-1 flex justify-center">
+        <div className="flex flex-1 justify-center">
           <Navbar />
         </div>
 
-        <CopyButton
-          text="01823231725"
-          copySuccessMessage="Copied phone number to clipboard"
-          className="flex-none grid place-content-center hover:border-primary cursor-pointer text-default-500 hover:text-primary size-7 rounded-full bg-card border border-border"
-        >
-          <Phone className="size-4" />
-        </CopyButton>
+        <BookACall />
       </div>
     </header>
   );

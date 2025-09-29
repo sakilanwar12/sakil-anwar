@@ -17,7 +17,14 @@ const menus = [
     name: "Projects",
     path: "projects",
   },
-
+  {
+    name: "Shop",
+    path: "shop",
+  },
+  {
+    name: "Blog",
+    path: "blog",
+  },
   {
     name: "Contact",
     path: "contact",
@@ -29,16 +36,16 @@ function Navbar() {
 
   return (
     <nav>
-      <ul className="flex gap-2.5 md:gap-5">
+      <ul className="flex gap-7">
         {menus.map((menu) => {
           return (
             <li
               key={menu.name}
               className={cn(
-                "text-xs md:text-sm uppercase text-default-400 hover:text-primary transition-all duration-300 cursor-pointer select-none",
+                "text-default-500 hover:text-primary cursor-pointer text-lg capitalize transition-all duration-300 select-none",
                 {
                   "text-primary": activeMenu === menu.path,
-                }
+                },
               )}
               onClick={() => {
                 scrollToTarget(`#${menu.path}`);

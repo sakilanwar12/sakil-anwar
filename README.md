@@ -1,1 +1,2 @@
-https://www.devportfoliotemplates.com/portfolio-templates/web-developer
+https://chinho.webflow.io/
+https://noman.design/
