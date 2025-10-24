@@ -1,4 +1,5 @@
-import "./globals.css";
+import "@/styles/globals.css";
+import "@/styles/style.css";
 import FallingParticlesAnimation from "@/components/animations/falling-particles-animation";
 import MountedProvider from "@/providers/mounted-provider";
 import { fontAnton, fontRobotoFlex } from "@/config/fonts";

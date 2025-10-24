@@ -1,0 +1,80 @@
+/*
+************************************************
+Animation CSS
+1. Animated Border
+2. Animate Scroll
+************************************************
+*/
+
+/*
+1. Animated Border 
+*/
+.animated-border {
+  --border-width: 1px;
+  --radius: 8px;
+  position: relative;
+  border-radius: var(--radius);
+  border: var(--border-width) solid transparent;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--border-width) * -1);
+  z-index: -1;
+  border: inherit;
+  border-radius: inherit;
+
+  background-image: conic-gradient(
+    from var(--angle, 0deg),
+    rgba(0, 166, 244, 0.2) 20deg,
+    rgba(0, 166, 244, 0.6) 40deg,
+    rgba(0, 166, 244, 1) 50deg,
+    transparent 20deg
+  );
+
+  background-origin: border-box;
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-clip: content-box, border-box;
+  mask-composite: exclude;
+
+  animation: border-spin 10s linear infinite;
+}
+@property --angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+@keyframes border-spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+/*
+2. Animate Scroll 
+*/
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(16px);
+  }
+}
+.animate-scroll {
+  animation: scroll 1.5s linear infinite;
+}

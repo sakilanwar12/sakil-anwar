@@ -146,9 +146,11 @@
     will-change: transform;
   }
   .grid-background {
-    background-image: linear-gradient(hsla(0, 0%, 100%, 0.1) 1px, transparent 0),
+    background-image:
+      linear-gradient(hsla(0, 0%, 100%, 0.1) 1px, transparent 0),
       linear-gradient(90deg, hsla(0, 0%, 100%, 0.1) 1px, transparent 0);
   }
+
 }
 @utility container {
   margin-inline: auto;
@@ -159,7 +161,8 @@
   }
 }
 @utility grid-background {
-  background-image: linear-gradient(hsla(0, 0%, 100%, 0.1) 1px, transparent 0),
+  background-image:
+    linear-gradient(hsla(0, 0%, 100%, 0.1) 1px, transparent 0),
     linear-gradient(90deg, hsla(0, 0%, 100%, 0.1) 1px, transparent 0);
 }
 
@@ -172,7 +175,7 @@
     rgba(13, 17, 23, 0.5) 40%,
     #0d1117
   );
-   background-size: '60px 60px'
+  background-size: "60px 60px";
 }
 
 @utility animate-pulse-slow {
@@ -189,34 +192,19 @@
   }
 }
 
-@utility animate-fall{
+@utility animate-fall {
   animation: fall 6s linear infinite;
 }
 
-@keyframes fall{
-  0%{
+@keyframes fall {
+  0% {
     transform: translateY(0) scale(1);
   }
-  25%{
+  25% {
     transform: scale(1.1);
   }
-  100%{
+  100% {
     transform: translateY(100vh) scale(1);
   }
 }
 
-@layer utilities {
-  @keyframes scroll {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(16px);
-    }
-  }
-  .animate-scroll {
-    animation: scroll 1.5s linear infinite;
-  }
-}
