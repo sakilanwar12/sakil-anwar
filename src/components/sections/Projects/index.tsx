@@ -1,17 +1,16 @@
 "use client";
+
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
-import { Zap, Globe, Code2, Smartphone, Layers } from "lucide-react";
+import { Zap, Globe, Smartphone } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 import { projects } from "./constant";
 import CategoryButton from "./CategoryButton";
 
 const categories = [
   { id: "all", name: "All Projects", icon: Globe },
-  { id: "dashboards", name: "Dashboards", icon: Code2 },
-  { id: "webapps", name: "Web Apps", icon: Zap },
-  { id: "landing", name: "Landing Pages", icon: Smartphone },
-  { id: "ui", name: "UI Components", icon: Layers },
+  { id: "dashboard", name: "Dashboards", icon: Zap },
+  { id: "website", name: "Website", icon: Smartphone },
 ];
 
 function ProjectsSection() {

@@ -27,9 +27,9 @@ Animation CSS
 
   background-image: conic-gradient(
     from var(--angle, 0deg),
-    rgba(0, 166, 244, 0.2) 20deg,
-    rgba(0, 166, 244, 0.6) 40deg,
-    rgba(0, 166, 244, 1) 50deg,
+    rgba(0, 166, 244, 0.2) 2deg,
+    rgba(0, 166, 244, 0.6) 20deg,
+    rgba(0, 166, 244, 1) 20deg,
     transparent 20deg
   );
 
