@@ -22,7 +22,7 @@ export const projects: TProject[] = [
     title: "Fennec Admin Management",
     category: "dashboard",
     description:
-      "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
+      "Fennec Admin Management is a modern and responsive dashboard for managing organizations, event companies, nightclubs, promoters, and more.",
     image: "/images/projects/fennec-admin.png",
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Chart.js"],
     github: "#",
@@ -33,10 +33,10 @@ export const projects: TProject[] = [
     title: "Fennec Night Club",
     category: "dashboard",
     description:
-      "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
+      "Fennec Night Club is a modern and responsive platform for managing nightclub events, inventory,tickets, discount,challenge,promotion, promoters, guests, and more.",
     image: "/images/projects/fennec-admin.png",
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Chart.js"],
-    github: "https://github.com/sakilanwar12/taskflow-dashboard",
+    github: "#",
     live: "https://taskflow-demo.vercel.app",
   },
   {
@@ -44,7 +44,7 @@ export const projects: TProject[] = [
     title: "Fennec Event Company",
     category: "dashboard",
     description:
-      "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
+      "Fennec Event Company is a modern and responsive platform for managing events, clients, organizers, vendors,host event, and more.",
     image: "/images/projects/fennec-event-company.png",
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Chart.js"],
     github: "https://github.com/sakilanwar12/taskflow-dashboard",
@@ -55,7 +55,7 @@ export const projects: TProject[] = [
     title: "Fennec Promoter Management",
     category: "dashboard",
     description:
-      "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
+      "Fennec Promoter Management is a modern and responsive platform where promoters can manage their promoted events, track earnings, view associated organizations, and more.",
     image: "/images/projects/fennec-promoter.png",
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Chart.js"],
     github: "https://github.com/sakilanwar12/taskflow-dashboard",
@@ -66,7 +66,7 @@ export const projects: TProject[] = [
     title: "Toinpark user management",
     category: "dashboard",
     description:
-      "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
+      "Toinpark User Management is a modern and responsive platform for managing users, accounts, transactions, activity, and more in a cryptocurrency project.",
     image: "/images/projects/fennec-admin.png",
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Chart.js"],
     github: "https://github.com/sakilanwar12/taskflow-dashboard",
