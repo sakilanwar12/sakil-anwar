@@ -9,7 +9,6 @@ export type TProject = {
   technologies: string[];
   github: string;
   live: string;
-
 };
 
 export const categories = [
@@ -26,7 +25,7 @@ export const projects: TProject[] = [
       "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
     image: "/images/projects/fennec-admin.png",
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Chart.js"],
-    github: "https://github.com/sakilanwar12/taskflow-dashboard",
+    github: "#",
     live: "https://taskflow-demo.vercel.app",
   },
   {
@@ -46,7 +45,7 @@ export const projects: TProject[] = [
     category: "dashboard",
     description:
       "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
-    image: "/images/projects/fennec-admin.png",
+    image: "/images/projects/fennec-event-company.png",
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Chart.js"],
     github: "https://github.com/sakilanwar12/taskflow-dashboard",
     live: "https://taskflow-demo.vercel.app",
@@ -57,7 +56,7 @@ export const projects: TProject[] = [
     category: "dashboard",
     description:
       "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
-    image: "/images/projects/fennec-admin.png",
+    image: "/images/projects/fennec-promoter.png",
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Chart.js"],
     github: "https://github.com/sakilanwar12/taskflow-dashboard",
     live: "https://taskflow-demo.vercel.app",
@@ -79,7 +78,7 @@ export const projects: TProject[] = [
     category: "dashboard",
     description:
       "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
-    image: "/images/projects/fennec-admin.png",
+    image: "/images/projects/dashtail.png",
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Chart.js"],
     github: "https://github.com/sakilanwar12/taskflow-dashboard",
     live: "https://taskflow-demo.vercel.app",
@@ -90,7 +89,7 @@ export const projects: TProject[] = [
     category: "dashboard",
     description:
       "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
-    image: "/images/projects/fennec-admin.png",
+    image: "/images/projects/dashtail.png",
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Chart.js"],
     github: "https://github.com/sakilanwar12/taskflow-dashboard",
     live: "https://taskflow-demo.vercel.app",
@@ -101,7 +100,7 @@ export const projects: TProject[] = [
     category: "dashboard",
     description:
       "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
-    image: "/images/projects/fennec-admin.png",
+    image: "/images/projects/dashcode.png",
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Chart.js"],
     github: "https://github.com/sakilanwar12/taskflow-dashboard",
     live: "https://taskflow-demo.vercel.app",
@@ -112,7 +111,7 @@ export const projects: TProject[] = [
     category: "website",
     description:
       "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
-    image: "/images/projects/fennec-admin.png",
+    image: "/images/projects/transco.png",
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Chart.js"],
     github: "https://github.com/sakilanwar12/taskflow-dashboard",
     live: "https://taskflow-demo.vercel.app",
@@ -123,7 +122,7 @@ export const projects: TProject[] = [
     category: "website",
     description:
       "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
-    image: "/images/projects/fennec-admin.png",
+    image: "/images/projects/payquad.png",
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Chart.js"],
     github: "https://github.com/sakilanwar12/taskflow-dashboard",
     live: "https://taskflow-demo.vercel.app",
