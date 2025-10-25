@@ -38,7 +38,7 @@ function ProjectCard({ project }: { project: TProject }) {
             {project.title}
           </h3>
 
-          <p className="text-default-300 mb-4 line-clamp-2">
+          <p className="text-default-300 mb-4 line-clamp-4">
             {project.description}
           </p>
 
