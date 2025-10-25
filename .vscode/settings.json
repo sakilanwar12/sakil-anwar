@@ -1,5 +1,12 @@
 {
-  "cSpell.words": ["dashtail", "lerp", "shadecn", "Spellon", "webapps"],
+  "cSpell.words": [
+    "dashtail",
+    "lerp",
+    "shadecn",
+    "Spellon",
+    "turbopack",
+    "webapps"
+  ],
   "css.validate": false,
   "tailwindCSS.emmetCompletions": true,
   "eslint.enable": true,
@@ -8,5 +15,5 @@
     "source.fixAll.eslint": "always"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": true
 }
