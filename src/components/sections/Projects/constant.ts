@@ -1,5 +1,5 @@
 export type TProjectCategory = "all" | "dashboard" | "website";
-
+import { Zap, Globe, Smartphone } from "lucide-react";
 export type TProject = {
   id: string | number;
   title: string;
@@ -11,6 +11,12 @@ export type TProject = {
   live: string;
 
 };
+
+export const categories = [
+  { id: "all", name: "All Projects", icon: Globe },
+  { id: "dashboard", name: "Dashboards", icon: Zap },
+  { id: "website", name: "Website", icon: Smartphone },
+];
 export const projects: TProject[] = [
   {
     id: crypto.randomUUID(),
@@ -103,7 +109,7 @@ export const projects: TProject[] = [
   {
     id: crypto.randomUUID(),
     title: "Transco React Template",
-    category: "dashboard",
+    category: "website",
     description:
       "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
     image: "/images/projects/fennec-admin.png",
@@ -114,7 +120,7 @@ export const projects: TProject[] = [
   {
     id: crypto.randomUUID(),
     title: "Payquad Website Template",
-    category: "dashboard",
+    category: "website",
     description:
       "A comprehensive project management dashboard with real-time collaboration, task tracking, and analytics.",
     image: "/images/projects/fennec-admin.png",

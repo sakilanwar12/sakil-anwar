@@ -3,49 +3,42 @@
 import { useState, useMemo } from "react";
 import ProjectCard from "./ProjectCard";
 import Pagination from "./Pagination";
-import { Zap, Globe, Smartphone } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
-import { projects } from "./constant";
+import { categories, projects } from "./constant";
 import CategoryButton from "./CategoryButton";
+import usePagination from "@/hooks/usePagination";
 
-const categories = [
-  { id: "all", name: "All Projects", icon: Globe },
-  { id: "dashboard", name: "Dashboards", icon: Zap },
-  { id: "website", name: "Website", icon: Smartphone },
-];
+
 
 const PROJECTS_PER_PAGE = 6;
 
 function ProjectsSection() {
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [currentPage, setCurrentPage] = useState(1);
 
   const filteredProjects = useMemo(() => {
-    const filtered =
-      selectedCategory === "all"
-        ? projects
-        : projects?.filter((project) => project?.category === selectedCategory);
-
-    // Reset to page 1 when category changes
-    setCurrentPage(1);
-    return filtered;
+    return selectedCategory === "all"
+      ? projects
+      : projects?.filter((project) => project?.category === selectedCategory);
   }, [selectedCategory]);
 
-  const totalPages = Math.ceil(filteredProjects.length / PROJECTS_PER_PAGE);
-
-  const paginatedProjects = useMemo(() => {
-    const startIndex = (currentPage - 1) * PROJECTS_PER_PAGE;
-    const endIndex = startIndex + PROJECTS_PER_PAGE;
-    return filteredProjects.slice(startIndex, endIndex);
-  }, [filteredProjects, currentPage]);
+  const {
+    currentPage,
+    totalPages,
+    paginatedData: paginatedProjects,
+    goToPage,
+  } = usePagination({
+    data: filteredProjects,
+    itemsPerPage: PROJECTS_PER_PAGE,
+    onPageChange: (page) => {
+      const projectsSection = document.getElementById("projects");
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    },
+  });
 
   const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-    // Scroll to top of projects section
-    const projectsSection = document.getElementById("projects");
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    goToPage(page);
   };
 
   return (
