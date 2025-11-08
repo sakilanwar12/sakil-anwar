@@ -1,5 +1,5 @@
-export type TProjectCategory = "all" | "dashboard" | "website";
-import { Zap, Globe, Smartphone } from "lucide-react";
+export type TProjectCategory = "all" | "dashboard" | "website" | "package";
+import { Zap, Globe, Smartphone, Package } from "lucide-react";
 export type TProject = {
   id: string | number;
   title: string;
@@ -15,6 +15,7 @@ export const categories = [
   { id: "all", name: "All Projects", icon: Globe },
   { id: "dashboard", name: "Dashboards", icon: Zap },
   { id: "website", name: "Website", icon: Smartphone },
+  { id: "package", name: "Packages", icon: Package },
 ];
 export const projects: TProject[] = [
   {
@@ -126,5 +127,16 @@ export const projects: TProject[] = [
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Chart.js"],
     github: "https://github.com/sakilanwar12/taskflow-dashboard",
     live: "https://taskflow-demo.vercel.app",
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "NPM PACKAGE: js-utility-method",
+    category: "package",
+    description:
+      "A lightweight utility library that provides essential JavaScript helper methods like generateCode, pickKeys, omitKeys, and more — designed to simplify everyday development tasks.",
+    image: "/images/projects/js-utility-method.png",
+    technologies: ["TypeScript", "NPM", "Node.js", "Utilities"],
+    github: "https://github.com/sakilanwar12/js-utility-method",
+    live: "https://www.npmjs.com/package/js-utility-method",
   },
 ];
