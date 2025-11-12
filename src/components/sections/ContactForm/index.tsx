@@ -4,15 +4,15 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import toast from "react-hot-toast";
 
 function ContactForm() {
-  const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
+  const [formKey, setFormKey] = useState(Date.now());
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setStatus("");
 
     const form = new FormData(e.currentTarget);
     const data = {
@@ -26,19 +26,18 @@ function ContactForm() {
       body: JSON.stringify(data),
     });
 
-
     if (res.ok) {
-      setStatus("✅ Message sent!");
-      e?.currentTarget?.reset();
+      toast.success("Message sent successfully.");
+      setFormKey(Date.now()); 
     } else {
-      setStatus("❌ Failed to send.");
+      toast.error("Failed to send message.");
     }
 
     setLoading(false);
   };
 
   return (
-    <form className="space-y-5" onSubmit={handleSubmit}>
+    <form key={formKey} className="space-y-5" onSubmit={handleSubmit}>
       <Input label="Name" id="name" name="name" required />
       <Input label="Email" id="email" name="email" type="email" required />
       <Textarea label="Message" id="message" name="message" required />
