@@ -9,8 +9,7 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "build:analyze": "ANALYZE=true next build",
-    "clean": "rm -rf .next out",
-    "preinstall": "node preinstall.js"
+    "clean": "rm -rf .next out"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
@@ -28,6 +27,7 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-hot-toast": "^2.6.0",
+    "resend": "^6.4.2",
     "tailwind-merge": "^3.2.0",
     "tw-animate-css": "^1.2.5"
   },
