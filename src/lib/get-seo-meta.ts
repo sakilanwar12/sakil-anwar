@@ -8,8 +8,8 @@ export const getSeoMeta = (props: TGetSeoMetaArgs): Metadata => {
     description,
     // manifest = "/assets/fav-icon/site.webmanifest",
     icons = {
-      icon: "/favicon.ico",
-      apple: "/favicon.ico",
+      icon: "/images/logo/me-circle.png",
+      apple: "/images/logo/me-circle.png",
     },
     ...restProps
   } = props || {};

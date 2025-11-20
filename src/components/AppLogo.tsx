@@ -5,10 +5,10 @@ function AppLogo() {
     <div className="flex items-center gap-3">
       <Avatar className="size-9">
         <AvatarImage
-          src={"/images/developer.png"}
+          src={"/images/logo/me.jpg"}
           alt="Logo"
-          width={50}
-          height={50}
+          width={40}
+          height={40}
         />
         <AvatarFallback>SA</AvatarFallback>
       </Avatar>
