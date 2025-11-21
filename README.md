@@ -1,11 +1,11 @@
-![Portfolio Screenshot](public/images/other/screenshot-1.png)
-
 ## Personal Portfolio — Sakil Anwar
 
 This repository contains the source code for my personal portfolio website, built with Next.js 16, TypeScript, and Tailwind CSS.
 The project is structured as a clean, modern, and scalable frontend foundation that showcases my work and experience as a Frontend Web Developer.
 
 The codebase is fully open-source, so developers are welcome to use it as a reference, learn from it, or customize it for their own portfolio.
+
+![Portfolio Screenshot](public/images/other/screenshot-1.png)
 
 ## Tech Stack
 
