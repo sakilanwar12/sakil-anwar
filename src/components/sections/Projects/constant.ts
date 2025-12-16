@@ -139,4 +139,15 @@ export const projects: TProject[] = [
     github: "https://github.com/sakilanwar12/js-utility-method",
     live: "https://www.npmjs.com/package/js-utility-method",
   },
+  {
+    id: crypto.randomUUID(),
+    title: "NPM PACKAGE: react-file-upload-ui",
+    category: "package",
+    description:
+      "A customizable and reusable React file upload UI component with drag-and-drop support, progress handling, and a clean modern interface — designed to simplify file upload experiences in React applications.",
+    image: "/images/projects/react-file-upload-ui.png",
+    technologies: ["React", "TypeScript", "NPM", "File Upload", "UI Component"],
+    github: "https://github.com/sakilanwar12/react-file-upload-ui",
+    live: "https://www.npmjs.com/package/react-file-upload-ui",
+  },
 ];
