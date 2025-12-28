@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
@@ -16,6 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import toast from "react-hot-toast";
 
 const navigation = [
   { name: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
@@ -32,6 +34,30 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const router = useRouter();
+  const [loggingOut, setLoggingOut] = useState(false);
+
+  const handleLogout = async () => {
+    setLoggingOut(true);
+    try {
+      const response = await fetch("/api/auth/logout", {
+        method: "POST",
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        toast.success("Logged out successfully");
+        router.push("/admin/login");
+        router.refresh();
+      } else {
+        toast.error("Logout failed");
+      }
+    } catch (error) {
+      toast.error("An error occurred");
+    } finally {
+      setLoggingOut(false);
+    }
+  };
 
   return (
     <div className="bg-background flex h-screen overflow-hidden">
@@ -75,14 +101,13 @@ export default function AdminLayout({
           {/* User Section */}
           <div className="border-t p-4">
             <Button
-              variant="ghost"
+              color="ghost"
               className="w-full justify-start gap-2"
-              asChild
+              onClick={handleLogout}
+              disabled={loggingOut}
             >
-              <Link href="/admin/login">
-                <LogOut className="h-5 w-5" />
-                Logout
-              </Link>
+              <LogOut className="h-5 w-5" />
+              {loggingOut ? "Logging out..." : "Logout"}
             </Button>
           </div>
         </div>
@@ -94,7 +119,7 @@ export default function AdminLayout({
         <header className="bg-card flex h-16 items-center gap-4 border-b px-4 lg:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button color="ghost" size="icon">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
@@ -140,14 +165,13 @@ export default function AdminLayout({
                 {/* User Section */}
                 <div className="border-t p-4">
                   <Button
-                    variant="ghost"
+                    color="ghost"
                     className="w-full justify-start gap-2"
-                    asChild
+                    onClick={handleLogout}
+                    disabled={loggingOut}
                   >
-                    <Link href="/admin/login">
-                      <LogOut className="h-5 w-5" />
-                      Logout
-                    </Link>
+                    <LogOut className="h-5 w-5" />
+                    {loggingOut ? "Logging out..." : "Logout"}
                   </Button>
                 </div>
               </div>

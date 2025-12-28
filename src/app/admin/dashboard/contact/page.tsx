@@ -188,14 +188,14 @@ export default function ContactMessagesPage() {
                     <TableCell className="text-right">
                       <div className="flex justify-end gap-2">
                         <Button
-                          variant="ghost"
+                          color="ghost"
                           size="sm"
                           onClick={() => handleViewMessage(message)}
                         >
                           View
                         </Button>
                         <Button
-                          variant="ghost"
+                          color="ghost"
                           size="icon"
                           onClick={() => handleDelete(message._id!)}
                         >
@@ -265,7 +265,7 @@ export default function ContactMessagesPage() {
               </div>
 
               <div className="flex justify-end gap-2">
-                <Button variant="outline" onClick={() => setDialogOpen(false)}>
+                <Button color="outline" onClick={() => setDialogOpen(false)}>
                   Close
                 </Button>
                 <Button asChild>

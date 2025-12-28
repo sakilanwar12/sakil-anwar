@@ -293,7 +293,7 @@ export default function BlogManagementPage() {
                     }
                     placeholder="Add tag"
                   />
-                  <Button type="button" onClick={addTag} variant="outline">
+                  <Button type="button" onClick={addTag} color="outline">
                     Add
                   </Button>
                 </div>
@@ -329,7 +329,7 @@ export default function BlogManagementPage() {
               <div className="flex justify-end gap-2">
                 <Button
                   type="button"
-                  variant="outline"
+                  color="outline"
                   onClick={() => setDialogOpen(false)}
                 >
                   Cancel
@@ -406,14 +406,14 @@ export default function BlogManagementPage() {
                     <TableCell className="text-right">
                       <div className="flex justify-end gap-2">
                         <Button
-                          variant="ghost"
+                          color="ghost"
                           size="icon"
                           onClick={() => handleEdit(post)}
                         >
                           <Pencil className="h-4 w-4" />
                         </Button>
                         <Button
-                          variant="ghost"
+                          color="ghost"
                           size="icon"
                           onClick={() => handleDelete(post._id!)}
                         >

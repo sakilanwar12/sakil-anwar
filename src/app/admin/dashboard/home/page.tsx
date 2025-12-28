@@ -285,7 +285,7 @@ export default function HomeManagementPage() {
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <Label>Highlights</Label>
-              <Button onClick={addHighlight} variant="outline" size="sm">
+              <Button onClick={addHighlight} color="outline" size="sm">
                 Add Highlight
               </Button>
             </div>
@@ -298,7 +298,7 @@ export default function HomeManagementPage() {
                 />
                 <Button
                   onClick={() => removeHighlight(index)}
-                  variant="destructive"
+                  color="destructive"
                   size="icon"
                 >
                   ×

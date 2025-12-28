@@ -247,11 +247,7 @@ export default function ProjectsManagementPage() {
                     }
                     placeholder="Add technology"
                   />
-                  <Button
-                    type="button"
-                    onClick={addTechnology}
-                    variant="outline"
-                  >
+                  <Button type="button" onClick={addTechnology} color="outline">
                     Add
                   </Button>
                 </div>
@@ -328,7 +324,7 @@ export default function ProjectsManagementPage() {
               <div className="flex justify-end gap-2">
                 <Button
                   type="button"
-                  variant="outline"
+                  color="outline"
                   onClick={() => setDialogOpen(false)}
                 >
                   Cancel
@@ -389,7 +385,7 @@ export default function ProjectsManagementPage() {
                 </div>
                 <div className="flex gap-2">
                   <Button
-                    variant="outline"
+                    color="outline"
                     size="sm"
                     className="flex-1"
                     onClick={() => handleEdit(project)}
@@ -398,7 +394,7 @@ export default function ProjectsManagementPage() {
                     Edit
                   </Button>
                   <Button
-                    variant="destructive"
+                    color="destructive"
                     size="sm"
                     onClick={() => handleDelete(project._id!)}
                   >

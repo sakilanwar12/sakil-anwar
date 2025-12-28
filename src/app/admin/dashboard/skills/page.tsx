@@ -240,7 +240,7 @@ export default function SkillsManagementPage() {
               <div className="flex justify-end gap-2">
                 <Button
                   type="button"
-                  variant="outline"
+                  color="outline"
                   onClick={() => handleDialogChange(false)}
                 >
                   Cancel
@@ -303,14 +303,14 @@ export default function SkillsManagementPage() {
                     <TableCell className="text-right">
                       <div className="flex justify-end gap-2">
                         <Button
-                          variant="ghost"
+                          color="ghost"
                           size="icon"
                           onClick={() => handleEdit(skill)}
                         >
                           <Pencil className="h-4 w-4" />
                         </Button>
                         <Button
-                          variant="ghost"
+                          color="ghost"
                           size="icon"
                           onClick={() => handleDelete(skill._id!)}
                         >
