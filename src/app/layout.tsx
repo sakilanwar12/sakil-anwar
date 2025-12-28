@@ -1,13 +1,8 @@
 import "@/styles/globals.css";
 import "@/styles/style.css";
-import FallingParticlesAnimation from "@/components/animations/falling-particles-animation";
 import MountedProvider from "@/providers/mounted-provider";
 import { fontAnton, fontRobotoFlex } from "@/config/fonts";
 import { getSeoMeta } from "@/lib/get-seo-meta";
-import GridBackground from "@/components/GridBackground";
-import SocialItems from "@/components/sections/Hero/SocialItems";
-import { MouseEffectProvider } from "@/context/MouseEffectContext";
-import MouseEffect from "@/components/MouseEffect";
 import { Toaster } from "react-hot-toast";
 
 export const metadata = getSeoMeta({
@@ -23,19 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fontRobotoFlex.variable} ${fontAnton.variable} antialiased font-roboto-flex bg-background text-default-100`}
+        className={`${fontRobotoFlex.variable} ${fontAnton.variable} font-roboto-flex bg-background text-default-100 antialiased`}
       >
-        <MountedProvider>
-          <MouseEffectProvider>
-            <MouseEffect />
-            {children}
-          </MouseEffectProvider>
-
-          <FallingParticlesAnimation />
-
-          <GridBackground />
-          <SocialItems />
-        </MountedProvider>
+        <MountedProvider>{children}</MountedProvider>
         <Toaster />
       </body>
     </html>
