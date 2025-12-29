@@ -18,6 +18,11 @@ async function WebDeveloperPortfolio() {
   let skillsData = null;
   let projectsData = null;
 
+  // Helper to serialize MongoDB objects for client components
+  const serializeForClient = (data: any) => {
+    return JSON.parse(JSON.stringify(data));
+  };
+
   try {
     const [home, skills, projects] = await Promise.all([
       portfolioDb.getHomeSection(),
@@ -25,9 +30,9 @@ async function WebDeveloperPortfolio() {
       portfolioDb.getPublishedProjects(),
     ]);
 
-    homeData = home;
-    skillsData = skills;
-    projectsData = projects;
+    homeData = serializeForClient(home);
+    skillsData = serializeForClient(skills);
+    projectsData = serializeForClient(projects);
   } catch (error) {
     console.error("Failed to fetch portfolio data", error);
   }

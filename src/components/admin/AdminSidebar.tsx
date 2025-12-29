@@ -11,9 +11,9 @@ import { cn } from "@/lib/utils";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
-import { HomeSection } from "@/lib/types/portfolio";
 import SkillsForm from "./SkillsForm";
 import ProjectsForm from "./ProjectsForm";
+import { LogOut } from "lucide-react";
 
 import { useAdminContext } from "@/context/admin-context";
 
@@ -56,6 +56,16 @@ export default function AdminSidebar() {
     }
   };
 
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/auth/logout", { method: "POST" });
+      toast.success("Logged out successfully");
+      window.location.reload(); // Hard reload to clear client state
+    } catch (error) {
+      toast.error("Logout failed");
+    }
+  };
+
   if (loading || !isAdmin) return null;
 
   return (
@@ -64,7 +74,7 @@ export default function AdminSidebar() {
         color="default"
         size="icon"
         className={cn(
-          "fixed bottom-4 left-4 z-50 h-12 w-12 rounded-full shadow-lg transition-transform",
+          "fixed right-4 bottom-4 z-[9999] h-12 w-12 rounded-full shadow-2xl transition-all duration-300 hover:scale-105",
           isOpen && "scale-0 rotate-90",
         )}
         onClick={() => openSidebar()}
@@ -75,7 +85,7 @@ export default function AdminSidebar() {
       {/* Overlay to close on click outside */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-[90] bg-black/50 backdrop-blur-sm transition-opacity"
+          className="fixed inset-0 z-[9998] bg-black/60 backdrop-blur-sm transition-opacity"
           onClick={() => closeSidebar()}
         />
       )}
@@ -83,16 +93,37 @@ export default function AdminSidebar() {
       {/* Sidebar Panel */}
       <div
         className={cn(
-          "bg-background fixed top-0 left-0 z-[100] h-screen w-full border-r transition-transform duration-300 ease-in-out sm:w-[500px]",
+          "fixed top-0 left-0 z-[10000] h-screen w-full border-r border-[#333] bg-[#1e1e1e] text-white shadow-2xl transition-transform duration-300 ease-in-out sm:w-[500px]",
           isOpen ? "translate-x-0" : "-translate-x-full",
         )}
       >
         <div className="flex h-full flex-col p-6">
-          <div className="flex items-center justify-between pb-6">
-            <h2 className="text-xl font-semibold">Edit Content</h2>
-            <Button color="ghost" size="icon" onClick={() => closeSidebar()}>
-              <X className="h-5 w-5" />
-            </Button>
+          <div className="flex items-center justify-between border-b border-[#333] pb-6">
+            <div className="flex items-center gap-2">
+              <Settings className="text-primary h-5 w-5" />
+              <h2 className="text-xl font-bold tracking-tight">
+                Portfolio Editor
+              </h2>
+            </div>
+            <div className="flex items-center gap-2">
+              <Button
+                color="ghost"
+                size="icon"
+                onClick={handleLogout}
+                title="Logout"
+                className="text-gray-400 hover:bg-red-500/10 hover:text-red-500"
+              >
+                <LogOut className="h-5 w-5" />
+              </Button>
+              <Button
+                color="ghost"
+                size="icon"
+                onClick={() => closeSidebar()}
+                className="hover:bg-white/10"
+              >
+                <X className="h-5 w-5" />
+              </Button>
+            </div>
           </div>
 
           <div className="flex-1 overflow-y-auto">

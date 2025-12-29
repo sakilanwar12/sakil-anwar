@@ -2,18 +2,15 @@ import { NextResponse } from "next/server";
 import { deleteSession } from "@/lib/auth";
 
 export async function POST() {
-  try {
-    await deleteSession();
+  await deleteSession();
 
-    return NextResponse.json({
-      success: true,
-      message: "Logged out successfully",
-    });
-  } catch (error) {
-    console.error("Logout error:", error);
-    return NextResponse.json(
-      { success: false, error: "Logout failed" },
-      { status: 500 },
-    );
-  }
+  const response = NextResponse.json({ success: true, message: "Logged out" });
+
+  // Also explicitly expire the cookie on the response object for safety
+  response.cookies.set("admin-session", "", {
+    maxAge: 0,
+    path: "/",
+  });
+
+  return response;
 }
