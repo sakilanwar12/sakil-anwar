@@ -98,8 +98,9 @@ export const portfolioDb = {
   async updateHomeSection(data: Partial<HomeSection>) {
     const existing = await this.getHomeSection();
     if (existing && existing._id) {
+      const { _id, ...updateData } = data;
       return homeService.update(existing._id, {
-        ...data,
+        ...updateData,
         updatedAt: new Date(),
       });
     } else {
@@ -123,6 +124,30 @@ export const portfolioDb = {
     return grouped;
   },
 
+  async getAllSkills() {
+    return skillsService.findAll({}, { sort: { order: 1 } });
+  },
+
+  async upsertSkill(skill: Partial<Skill>) {
+    if (skill._id) {
+      const { _id, ...updateData } = skill;
+      return skillsService.update(_id, {
+        ...updateData,
+        updatedAt: new Date(),
+      });
+    } else {
+      return skillsService.create({
+        ...skill,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      } as any);
+    }
+  },
+
+  async deleteSkill(id: string) {
+    return skillsService.delete(id);
+  },
+
   // Projects
   async getFeaturedProjects() {
     return projectsService.findAll({ featured: true }, { sort: { order: 1 } });
@@ -130,6 +155,26 @@ export const portfolioDb = {
 
   async getPublishedProjects() {
     return projectsService.findAll({}, { sort: { createdAt: -1 } });
+  },
+
+  async saveProject(project: Partial<Project>) {
+    if (project._id) {
+      const { _id, ...updateData } = project;
+      return projectsService.update(_id, {
+        ...updateData,
+        updatedAt: new Date(),
+      });
+    } else {
+      return projectsService.create({
+        ...project,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      } as any);
+    }
+  },
+
+  async deleteProject(id: string) {
+    return projectsService.delete(id);
   },
 
   // Blog

@@ -1,15 +1,11 @@
-import { NextRequest, NextResponse } from "next/server";
-import { skillsService } from "@/lib/db-service";
+import { NextResponse } from "next/server";
+import { portfolioDb } from "@/lib/db-service";
 
 export async function GET() {
   try {
-    const skills = await skillsService.findAll(
-      {},
-      { sort: { category: 1, order: 1 } },
-    );
+    const skills = await portfolioDb.getAllSkills();
     return NextResponse.json({ success: true, data: skills });
   } catch (error) {
-    console.error("Error fetching skills:", error);
     return NextResponse.json(
       { success: false, error: "Failed to fetch skills" },
       { status: 500 },
@@ -17,19 +13,36 @@ export async function GET() {
   }
 }
 
-export async function POST(request: NextRequest) {
+export async function PUT(request: Request) {
   try {
     const body = await request.json();
-    const skill = await skillsService.create({
-      ...body,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    });
-    return NextResponse.json({ success: true, data: skill }, { status: 201 });
+    const result = await portfolioDb.upsertSkill(body);
+    return NextResponse.json({ success: true, data: result });
   } catch (error) {
-    console.error("Error creating skill:", error);
     return NextResponse.json(
-      { success: false, error: "Failed to create skill" },
+      { success: false, error: "Failed to update skill" },
+      { status: 500 },
+    );
+  }
+}
+
+export async function DELETE(request: Request) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const id = searchParams.get("id");
+
+    if (!id) {
+      return NextResponse.json(
+        { success: false, error: "ID is required" },
+        { status: 400 },
+      );
+    }
+
+    const result = await portfolioDb.deleteSkill(id);
+    return NextResponse.json({ success: true, data: result });
+  } catch (error) {
+    return NextResponse.json(
+      { success: false, error: "Failed to delete skill" },
       { status: 500 },
     );
   }

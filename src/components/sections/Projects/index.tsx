@@ -6,20 +6,33 @@ import Pagination from "./Pagination";
 import SectionHeader from "@/components/SectionHeader";
 import { categories, projects } from "./constant";
 import CategoryButton from "./CategoryButton";
+
 import usePagination from "@/hooks/usePagination";
+import { Button } from "@/components/ui/button";
+import { Pencil } from "lucide-react";
 
-
+import { Project } from "@/lib/types/portfolio";
 
 const PROJECTS_PER_PAGE = 6;
 
-function ProjectsSection() {
+interface ProjectsProps {
+  data?: Project[];
+}
+
+function ProjectsSection({ data }: ProjectsProps) {
   const [selectedCategory, setSelectedCategory] = useState("all");
+
+  const projectsData = data || projects;
 
   const filteredProjects = useMemo(() => {
     return selectedCategory === "all"
-      ? projects
-      : projects?.filter((project) => project?.category === selectedCategory);
-  }, [selectedCategory]);
+      ? projectsData
+      : projectsData?.filter(
+          (project) =>
+            (project as any)?.category === selectedCategory ||
+            (project as any)?.technologies?.includes(selectedCategory),
+        );
+  }, [selectedCategory, projectsData]);
 
   const {
     currentPage,

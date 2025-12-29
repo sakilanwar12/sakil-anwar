@@ -10,6 +10,7 @@ export interface HomeSection {
     image?: string;
     ctaText?: string;
     ctaLink?: string;
+    technologies?: string[];
   };
   about: {
     title: string;
