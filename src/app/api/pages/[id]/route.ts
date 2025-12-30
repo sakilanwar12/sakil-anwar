@@ -41,6 +41,11 @@ export async function PUT(
     const { id } = await params;
     const body = await request.json();
 
+    // If status is being set to published and it wasn't before (or just always set it on publish), set publishedAt
+    if (body.status === "published") {
+      body.publishedAt = new Date();
+    }
+
     const page = await Page.findByIdAndUpdate(id, body, {
       new: true,
       runValidators: true,
