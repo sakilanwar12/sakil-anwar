@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import ProjectCard from "./ProjectCard";
 import Pagination from "./Pagination";
 import SectionHeader from "@/components/SectionHeader";
-import { categories, projects } from "./constant";
+import { categories, projects, TProject } from "./constant";
 import CategoryButton from "./CategoryButton";
 
 import usePagination from "@/hooks/usePagination";
@@ -19,18 +19,32 @@ interface ProjectsProps {
   data?: Project[];
 }
 
+// Adapter to convert DB Project to UI TProject
+const normalizeProject = (project: Project): TProject => {
+  return {
+    id: project._id ? project._id.toString() : "",
+    title: project.title,
+    category: "website", // Default or derive if added to DB model later
+    description: project.description,
+    image: project.thumbnail || "",
+    technologies: project.technologies || [],
+    github: project.githubUrl || "#",
+    live: project.liveUrl || "#",
+  };
+};
+
 function ProjectsSection({ data }: ProjectsProps) {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const projectsData = data || projects;
+  const projectsData: TProject[] = data ? data.map(normalizeProject) : projects;
 
   const filteredProjects = useMemo(() => {
     return selectedCategory === "all"
       ? projectsData
       : projectsData?.filter(
           (project) =>
-            (project as any)?.category === selectedCategory ||
-            (project as any)?.technologies?.includes(selectedCategory),
+            project.category === selectedCategory ||
+            project.technologies?.includes(selectedCategory),
         );
   }, [selectedCategory, projectsData]);
 

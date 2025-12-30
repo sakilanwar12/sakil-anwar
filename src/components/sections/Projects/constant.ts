@@ -19,7 +19,7 @@ export const categories = [
 ];
 export const projects: TProject[] = [
   {
-    id: crypto.randomUUID(),
+    id: "fennec-admin",
     title: "Fennec Admin Management",
     category: "dashboard",
     description:
@@ -30,7 +30,7 @@ export const projects: TProject[] = [
     live: "https://taskflow-demo.vercel.app",
   },
   {
-    id: crypto.randomUUID(),
+    id: "fennec-night-club",
     title: "Fennec Night Club",
     category: "dashboard",
     description:
@@ -41,7 +41,7 @@ export const projects: TProject[] = [
     live: "https://taskflow-demo.vercel.app",
   },
   {
-    id: crypto.randomUUID(),
+    id: "fennec-event-company",
     title: "Fennec Event Company",
     category: "dashboard",
     description:
@@ -52,7 +52,7 @@ export const projects: TProject[] = [
     live: "https://taskflow-demo.vercel.app",
   },
   {
-    id: crypto.randomUUID(),
+    id: "fennec-promoter-management",
     title: "Fennec Promoter Management",
     category: "dashboard",
     description:
@@ -63,7 +63,7 @@ export const projects: TProject[] = [
     live: "https://taskflow-demo.vercel.app",
   },
   {
-    id: crypto.randomUUID(),
+    id: "toinpark-user-management",
     title: "Toinpark user management",
     category: "dashboard",
     description:
@@ -74,7 +74,7 @@ export const projects: TProject[] = [
     live: "https://taskflow-demo.vercel.app",
   },
   {
-    id: crypto.randomUUID(),
+    id: "dashtail-nextjs",
     title: "Dashtail Next.js Admin Template",
     category: "dashboard",
     description:
@@ -85,7 +85,7 @@ export const projects: TProject[] = [
     live: "https://taskflow-demo.vercel.app",
   },
   {
-    id: crypto.randomUUID(),
+    id: "dashtail-alpinejs",
     title: "Dashtail Alpine.js Admin Template",
     category: "dashboard",
     description:
@@ -96,7 +96,7 @@ export const projects: TProject[] = [
     live: "https://taskflow-demo.vercel.app",
   },
   {
-    id: crypto.randomUUID(),
+    id: "dashcode-nextjs",
     title: "DashCode Next.js Admin Template",
     category: "dashboard",
     description:
@@ -107,7 +107,7 @@ export const projects: TProject[] = [
     live: "https://taskflow-demo.vercel.app",
   },
   {
-    id: crypto.randomUUID(),
+    id: "transco-react",
     title: "Transco React Template",
     category: "website",
     description:
@@ -118,7 +118,7 @@ export const projects: TProject[] = [
     live: "https://taskflow-demo.vercel.app",
   },
   {
-    id: crypto.randomUUID(),
+    id: "payquad-website",
     title: "Payquad Website Template",
     category: "website",
     description:
@@ -129,7 +129,7 @@ export const projects: TProject[] = [
     live: "https://taskflow-demo.vercel.app",
   },
   {
-    id: crypto.randomUUID(),
+    id: "js-utility-method",
     title: "NPM PACKAGE: js-utility-method",
     category: "package",
     description:
@@ -140,7 +140,7 @@ export const projects: TProject[] = [
     live: "https://www.npmjs.com/package/js-utility-method",
   },
   {
-    id: crypto.randomUUID(),
+    id: "react-file-upload-ui",
     title: "NPM PACKAGE: react-file-upload-ui",
     category: "package",
     description:
