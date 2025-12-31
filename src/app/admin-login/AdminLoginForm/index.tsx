@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import toast from "react-hot-toast";
-import {  FloatingLabelInput } from "@/components/ui/floating-input";
 
 function AdminLoginForm() {
   const router = useRouter();
@@ -44,19 +43,17 @@ function AdminLoginForm() {
   };
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <FloatingLabelInput label="Email"/>
-
       <Input
         id="email"
         type="email"
-        placeholder="Enter your email"
+        placeholder="Enter Your Email"
         value={formData.email}
         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         required
         disabled={loading}
+        variant="underline"
       />
 
-   
       <Input
         id="password"
         type="password"
@@ -65,6 +62,7 @@ function AdminLoginForm() {
         onChange={(e) => setFormData({ ...formData, password: e.target.value })}
         required
         disabled={loading}
+        variant="underline"
       />
 
       <Button type="submit" className="w-full" disabled={loading}>
