@@ -65,7 +65,7 @@ function AdminLoginForm() {
         variant="underline"
       />
 
-      <Button type="submit" className="w-full" disabled={loading}>
+      <Button type="submit" className="w-fit p-0 hover:bg-transparent hover:text-primary cursor-pointer hover:underline" disabled={loading}>
         {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
         {loading ? "Signing in..." : "Sign in"}
       </Button>
