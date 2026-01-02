@@ -1,46 +1,46 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import toast from "react-hot-toast";
+import { useLoginMutation } from "@/hooks/useLoginMutation";
+import Loader from "@/components/loaders/Loader";
 
 function AdminLoginForm() {
-  const router = useRouter();
-  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const {
+    mutate: login,
+    isPending,
+    isError,
+    error,
+    isSuccess,
+  } = useLoginMutation();
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-
-    try {
-      const response = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        toast.success("Login successful!");
-        router.push("/admin/dashboard");
-        router.refresh();
-      } else {
-        toast.error(result.error || "Login failed");
-      }
-    } catch (error) {
-      toast.error("An error occurred");
-    } finally {
-      setLoading(false);
-    }
+    login(formData);
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success("Login successful!");
+    }
+  }, [isSuccess]);
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(error?.message || "An error occurred");
+    }
+  }, [isError, error]);
+  if (isPending) {
+    return <Loader />;
+  }
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <Input
@@ -50,7 +50,7 @@ function AdminLoginForm() {
         value={formData.email}
         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         required
-        disabled={loading}
+        disabled={isPending}
         variant="underline"
       />
 
@@ -61,13 +61,16 @@ function AdminLoginForm() {
         value={formData.password}
         onChange={(e) => setFormData({ ...formData, password: e.target.value })}
         required
-        disabled={loading}
+        disabled={isPending}
         variant="underline"
       />
 
-      <Button type="submit" className="w-fit p-0 hover:bg-transparent hover:text-primary cursor-pointer hover:underline" disabled={loading}>
-        {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-        {loading ? "Signing in..." : "Sign in"}
+      <Button
+        type="submit"
+        className="hover:text-primary w-fit cursor-pointer p-0 hover:bg-transparent hover:underline"
+        disabled={isPending}
+      >
+        Sign In
       </Button>
     </form>
   );
