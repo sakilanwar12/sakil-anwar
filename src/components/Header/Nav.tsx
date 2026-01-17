@@ -48,16 +48,18 @@ function Navbar() {
               className={cn(
                 "text-default-500 hover:text-primary cursor-pointer text-lg capitalize transition-all duration-300 select-none",
                 {
-                  "text-primary": activeMenu === menu.path,
+                  "text-primary":
+                    activeMenu === menu.path ||
+                    (menu.path === "resume" && pathname === "/resume") ||
+                    (menu.path === "blog" && pathname.startsWith("/blog")),
                 },
               )}
               onClick={() => {
-                if (menu.path === "blog") {
-                  if (isHomePage) {
-                    scrollToTarget(`#${menu.path}`);
-                    setActiveMenu(menu.path);
+                if (menu.path === "blog" || menu.path === "resume") {
+                  if (activeMenu === menu.path && !isHomePage) {
+                    // already on the page
                   } else {
-                    router.push("/blog");
+                    router.push(`/${menu.path}`);
                   }
                 } else {
                   if (!isHomePage) {
