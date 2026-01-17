@@ -18,10 +18,10 @@ const menus = [
     name: "Projects",
     path: "projects",
   },
-  // {
-  //   name: "Shop",
-  //   path: "shop",
-  // },
+  {
+    name: "Resume",
+    path: "resume",
+  },
   {
     name: "Blog",
     path: "blog",
