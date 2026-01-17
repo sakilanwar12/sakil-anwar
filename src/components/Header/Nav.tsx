@@ -3,6 +3,7 @@
 import useTargetScroll from "@/hooks/useTargetScroll";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 const menus = [
   {
@@ -17,10 +18,10 @@ const menus = [
     name: "Projects",
     path: "projects",
   },
-  {
-    name: "Shop",
-    path: "shop",
-  },
+  // {
+  //   name: "Shop",
+  //   path: "shop",
+  // },
   {
     name: "Blog",
     path: "blog",
@@ -33,6 +34,9 @@ const menus = [
 function Navbar() {
   const scrollToTarget = useTargetScroll();
   const [activeMenu, setActiveMenu] = useState<string | null>("hero");
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHomePage = pathname === "/";
 
   return (
     <nav>
@@ -48,8 +52,21 @@ function Navbar() {
                 },
               )}
               onClick={() => {
-                scrollToTarget(`#${menu.path}`);
-                setActiveMenu(menu.path);
+                if (menu.path === "blog") {
+                  if (isHomePage) {
+                    scrollToTarget(`#${menu.path}`);
+                    setActiveMenu(menu.path);
+                  } else {
+                    router.push("/blog");
+                  }
+                } else {
+                  if (!isHomePage) {
+                    router.push(`/#${menu.path}`);
+                  } else {
+                    scrollToTarget(`#${menu.path}`);
+                    setActiveMenu(menu.path);
+                  }
+                }
               }}
             >
               {menu.name}
