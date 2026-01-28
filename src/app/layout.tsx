@@ -9,6 +9,7 @@ import SocialItems from "@/components/sections/Hero/SocialItems";
 import { MouseEffectProvider } from "@/context/MouseEffectContext";
 import MouseEffect from "@/components/MouseEffect";
 import { Toaster } from "react-hot-toast";
+import { MetaPixel } from "@/components/MetaPixel";
 
 export const metadata = getSeoMeta({
   title: "Portfolio - Sakil Anwar",
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fontRobotoFlex.variable} ${fontAnton.variable} antialiased font-roboto-flex bg-background text-default-100`}
+        className={`${fontRobotoFlex.variable} ${fontAnton.variable} font-roboto-flex bg-background text-default-100 antialiased`}
       >
         <MountedProvider>
           <MouseEffectProvider>
@@ -37,6 +38,7 @@ export default function RootLayout({
           <SocialItems />
         </MountedProvider>
         <Toaster />
+        <MetaPixel />
       </body>
     </html>
   );
