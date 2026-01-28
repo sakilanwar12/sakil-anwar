@@ -10,6 +10,7 @@ import { MouseEffectProvider } from "@/context/MouseEffectContext";
 import MouseEffect from "@/components/MouseEffect";
 import { Toaster } from "react-hot-toast";
 import { MetaPixel } from "@/components/MetaPixel";
+import { Suspense } from "react";
 
 export const metadata = getSeoMeta({
   title: "Portfolio - Sakil Anwar",
@@ -38,7 +39,9 @@ export default function RootLayout({
           <SocialItems />
         </MountedProvider>
         <Toaster />
-        <MetaPixel />
+        <Suspense fallback={null}>
+          <MetaPixel />
+        </Suspense>
       </body>
     </html>
   );
