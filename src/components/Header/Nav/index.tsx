@@ -10,7 +10,7 @@ function NavItem({ name, path }: { name: string; path: string }) {
     <li>
       <Link
         href={`/${path}`}
-        className="text-default-400 hover:text-default-100 text-xl font-normal"
+        className="text-default-400 hover:text-default-100 text-3xl font-normal"
       >
         {name}
       </Link>
@@ -21,16 +21,16 @@ function SidebarMenu() {
   return (
     <Drawer direction="left">
       <DrawerTrigger>
-        <div className="group flex cursor-pointer flex-col gap-1">
-          <span className="bg-default-400 group-hover:bg-default-100 h-0.5 w-4 transition-all duration-300"></span>
-          <span className="bg-default-400 group-hover:bg-default-100 h-0.5 w-3 transition-all duration-300"></span>
-          <span className="bg-default-400 group-hover:bg-default-100 h-0.5 w-4 transition-all duration-300"></span>
+        <div className="group flex cursor-pointer flex-col gap-1.5">
+          <span className="bg-default-400 group-hover:bg-default-100 h-1 w-5 transition-all duration-300"></span>
+          <span className="bg-default-400 group-hover:bg-default-100 h-1 w-4 transition-all duration-300"></span>
+          <span className="bg-default-400 group-hover:bg-default-100 h-1 w-5 transition-all duration-300"></span>
         </div>
       </DrawerTrigger>
       <DrawerContent className="flex h-full w-full flex-col justify-center p-8">
         <DrawerClose>
           <div className="absolute top-6 left-6 z-9999">
-            <X className="text-default-400 hover:text-default-100 size-6 cursor-pointer" />
+            <X className="text-default-400 hover:text-default-100 size-10 cursor-pointer" />
           </div>
         </DrawerClose>
         <nav>
