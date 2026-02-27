@@ -1,19 +1,17 @@
-interface ISectionHeader {
+function SectionHeader({
+  title,
+  description,
+}: {
   title: string;
   description: string;
-}
-function SectionHeader({ title, description }: ISectionHeader) {
+}) {
   return (
-    <div className="text-center mb-12 space-y-4">
-      <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-        My{" "}
-        <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-          {title}
-        </span>
-      </h1>
-      <p className="text-xl text-default-400 max-w-2xl mx-auto">
-        {description}
-      </p>
+    <div className="text-center">
+      <h2 className="text-gradient-neon mb-3 text-3xl font-bold sm:text-4xl">
+        {title}
+      </h2>
+      <p className="mx-auto max-w-lg text-[#8888aa]">{description}</p>
+      <div className="mx-auto mt-4 h-[2px] w-20 bg-gradient-to-r from-[#00d4ff] to-[#7b2ff7] opacity-60" />
     </div>
   );
 }

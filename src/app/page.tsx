@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 
 function WebDeveloperPortfolio() {
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen overflow-hidden bg-[#0a0a1a]">
       <Header />
       <Hero />
       <Skills />

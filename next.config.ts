@@ -4,8 +4,11 @@ const nextConfig: NextConfig = {
   // Enable experimental features for Next.js 16
   experimental: {
     // Enable optimized package imports
-    optimizePackageImports: ["lucide-react"],
+    optimizePackageImports: ["lucide-react", "@react-three/drei"],
   },
+
+  // Transpile Three.js packages
+  transpilePackages: ["three"],
 
   // Image optimization
   images: {
@@ -19,7 +22,6 @@ const nextConfig: NextConfig = {
 
   // Enable strict mode for better development experience
   reactStrictMode: true,
-  
 };
 
 export default nextConfig;

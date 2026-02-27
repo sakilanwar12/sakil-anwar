@@ -1,20 +1,20 @@
 import "@/styles/globals.css";
 import "@/styles/style.css";
-import FallingParticlesAnimation from "@/components/animations/falling-particles-animation";
 import MountedProvider from "@/providers/mounted-provider";
-import { fontAnton, fontRobotoFlex } from "@/config/fonts";
+import SmoothScrollProvider from "@/providers/SmoothScrollProvider";
+import { fontAnton, fontRobotoFlex, fontSpaceGrotesk } from "@/config/fonts";
 import { getSeoMeta } from "@/lib/get-seo-meta";
-import GridBackground from "@/components/GridBackground";
+import GlowingStars from "@/components/animations/GlowingStars";
 import SocialItems from "@/components/sections/Hero/SocialItems";
-import { MouseEffectProvider } from "@/context/MouseEffectContext";
-import MouseEffect from "@/components/MouseEffect";
+import CustomCursor from "@/components/CustomCursor";
 import { Toaster } from "react-hot-toast";
 import { MetaPixel } from "@/components/MetaPixel";
 import { Suspense } from "react";
 
 export const metadata = getSeoMeta({
-  title: "Portfolio - Sakil Anwar",
-  description: "Portfolio",
+  title: "Sakil Anwar — Frontend Developer Portfolio",
+  description:
+    "Premium interactive portfolio of Sakil Anwar, a Frontend Developer crafting exceptional digital experiences with React, Next.js, and modern web technologies.",
 });
 
 export default function RootLayout({
@@ -25,20 +25,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fontRobotoFlex.variable} ${fontAnton.variable} font-roboto-flex bg-background text-default-100 antialiased`}
+        className={`${fontRobotoFlex.variable} ${fontAnton.variable} ${fontSpaceGrotesk.variable} font-roboto-flex bg-background text-default-100 antialiased`}
       >
         <MountedProvider>
-          <MouseEffectProvider>
-            <MouseEffect />
+          <SmoothScrollProvider>
+            <CustomCursor />
             {children}
-          </MouseEffectProvider>
+          </SmoothScrollProvider>
 
-          <FallingParticlesAnimation />
-
-          <GridBackground />
+          <GlowingStars count={60} />
           <SocialItems />
         </MountedProvider>
-        <Toaster />
+        <Toaster
+          toastOptions={{
+            style: {
+              background: "rgba(15, 15, 35, 0.9)",
+              color: "#fff",
+              border: "1px solid rgba(0, 212, 255, 0.2)",
+              backdropFilter: "blur(10px)",
+            },
+          }}
+        />
         <Suspense fallback={null}>
           <MetaPixel />
         </Suspense>
