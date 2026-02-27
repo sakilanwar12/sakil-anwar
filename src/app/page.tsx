@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 
 function WebDeveloperPortfolio() {
   return (
-    <div className="min-h-screen">
+    <div>
       <Header />
       <Hero />
       <Skills />

@@ -10,7 +10,7 @@ function Hero() {
 
   return (
     <section
-      className="relative min-h-screen bg-gradient-to-br from-default-900 via-black/60 to-default-900 flex items-center justify-center px-4"
+      className="relative min-h-screen flex items-center justify-center px-4"
       id="hero"
     >
 

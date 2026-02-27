@@ -4,19 +4,15 @@ export const menus = [
     path: "/",
   },
   {
-    name: "Projects",
-    path: "/projects",
+    name: "About",
+    path: "/about",
   },
   {
-    name: "Resume",
-    path: "/resume",
+    name: "Work",
+    path: "/work",
   },
   {
     name: "Blog",
     path: "/blog",
-  },
-  {
-    name: "Contact",
-    path: "/contact",
-  },
+  }
 ];
