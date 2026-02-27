@@ -28,14 +28,9 @@ export default function RootLayout({
         className={`${fontRobotoFlex.variable} ${fontAnton.variable} font-roboto-flex bg-background text-default-100 antialiased`}
       >
         <MountedProvider>
-          <MouseEffectProvider>
-            <MouseEffect />
+    
             {children}
-          </MouseEffectProvider>
-
-          <FallingParticlesAnimation />
-
-          <GridBackground />
+  
           <SocialItems />
         </MountedProvider>
         <Toaster />
