@@ -5,25 +5,23 @@ import { useRef } from "react";
 
 const roles = [
   {
-    title: "Product Design Lead",
-    description: "Driving innovation across Fintech at",
-    link: { label: "Posh AI", href: "https://posh.ai" },
-    highlight: true, // purple bg on first card
-  },
-  {
-    title: "Builder & Game Creator",
-    description: "Vibe coding and shipping games like",
-    link: { label: "GRIDLOCK", href: "#" },
-  },
-  {
-    title: "Founder & Consultant",
+    title: "BSc (Hons) in Chemistry",
     description:
-      "Helping clients to craft and launch ideas @ Edge Kase Design Co.",
+      "I completed my graduation in Chemistry from Government Tolaram College, Narayanganj. However, I have a deep interest in programming. Alongside my academic studies, I pursued learning programming and web development.",
   },
   {
-    title: "Speaker",
-    description: "Sharing perspective and real-world experience through",
-    link: { label: "storytelling", href: "#" },
+    title: "Freelance Web Developer (Since 2022)",
+    description:
+      "Providing web design and development services since 2022 — specializing in Bootstrap-based websites, custom HTML templates, WordPress theme customization, plugin setup, and complete WordPress solutions.",
+  },
+  {
+    title: "Junior Frontend Web Developer — Spellon (2022–2023)",
+    description:
+      "Joined Spellon as a Junior Frontend Web Developer, where I built Bootstrap-based HTML templates, developed SCSS templates, designed front-end interfaces for WordPress themes, and customized WordPress templates.",
+  },
+  {
+    title: "Senior Frontend Web Developer — Codeshaper (2023–Present)",
+    description: "Started as a Junior Developer and advanced to Senior Frontend Developer. Built admin dashboards, reusable UI systems, and ThemeForest-approved templates, and contributed to modern web applications like Fennec AI and Toinpark.",
   },
   {
     title: "Community Builder",
@@ -35,37 +33,13 @@ const roles = [
     description: "Guided Designers through events and mentorship @",
     link: { label: "ADPList", href: "https://adplist.org" },
   },
-  {
-    title: "Entrepreneur",
-    description: "Creating pickleball gear and events @",
-    link: { label: "Arvo", href: "#" },
-  },
-  {
-    title: "Vacational Rental Owner",
-    description: "Building and operating a successful STR in",
-    link: { label: "Canyon Lake", href: "#" },
-  },
-  {
-    title: "Podcast Host",
-    description: "Conversations on design, career, and craft @",
-    link: { label: "Drinking with Designers", href: "#" },
-  },
 ];
 
-function RoleCard({
-  title,
-  description,
-  link,
-  highlight,
-}: (typeof roles)[number]) {
+function RoleCard({ title, description, link }: (typeof roles)[number]) {
   return (
-    <div
-      className={`rounded-2xl border border-white/8 p-6 transition-colors duration-300 hover:border-white/20 ${
-        highlight ? "bg-purple-950/60" : "bg-white/4"
-      }`}
-    >
-      <h3 className="text-default-100 mb-2 text-xl font-bold">{title}</h3>
-      <p className="text-default-300 text-sm leading-relaxed">
+    <div className="rounded-2xl transition-colors duration-300">
+      <h3 className="text-default-100 mb-4 text-xl font-bold">{title}</h3>
+      <p className="text-default-200 text-lg leading-relaxed font-normal">
         {description}{" "}
         {link && (
           <Link
@@ -83,7 +57,7 @@ function RoleCard({
 
 function RoleGrid() {
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-3 gap-10">
       {roles.map((role) => (
         <RoleCard key={role.title} {...role} />
       ))}
