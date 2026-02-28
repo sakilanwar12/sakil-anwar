@@ -21,17 +21,20 @@ const roles = [
   },
   {
     title: "Senior Frontend Web Developer — Codeshaper (2023–Present)",
-    description: "Started as a Junior Developer and advanced to Senior Frontend Developer. Built admin dashboards, reusable UI systems, and ThemeForest-approved templates, and contributed to modern web applications like Fennec AI and Toinpark.",
+    description:
+      "Started as a Junior Developer and advanced to Senior Frontend Developer. Built admin dashboards, reusable UI systems, and ThemeForest-approved templates, and contributed to modern web applications like Fennec AI and Toinpark.",
     link: { label: "Codeshaper", href: "https://codeshaper.net/" },
   },
   {
     title: "Senior Frontend Web Developer — Fennec AI (2024–Present)",
-    description: "Fennec (Global Event Management Platform) – Collaborated with the Fennec team to translate business requirements into MVP solutions, developing multi-role dashboards, inventory management, social features, and AI tools using Next.js and TypeScript.",
+    description:
+      "Fennec (Global Event Management Platform) – Collaborated with the Fennec team to translate business requirements into MVP solutions, developing multi-role dashboards, inventory management, social features, and AI tools using Next.js and TypeScript.",
     link: { label: "Fennec AI", href: "https://app.fennecapp.com/" },
   },
   {
     title: "Product & Dashboard Specialist",
-    description: "Specialized in building scalable admin dashboards and reusable UI systems. Developed multi-role SaaS interfaces and modular frontend architectures using Next.js, Vue.js, and TypeScript, with a strong focus on performance, maintainability, and clean code practices.",
+    description:
+      "Specialized in building scalable admin dashboards and reusable UI systems. Developed multi-role SaaS interfaces and modular frontend architectures using Next.js, Vue.js, and TypeScript, with a strong focus on performance, maintainability, and clean code practices.",
   },
 ];
 
@@ -76,7 +79,7 @@ function MyStory() {
   };
 
   return (
-    <div className="px-6">
+    <div>
       <p className="text-5xl leading-[68px]">
         {
           "Over the years, I’ve broken things, fixed them, solved problems, shipped products, and moved the needle. I’ve led teams, improved systems, and turned complex ideas into clean, scalable interfaces.  I’m a Senior Frontend Developer. This site is my place to humble-brag about the products I’ve built and the challenges I’ve conquered."
@@ -91,7 +94,10 @@ function MyStory() {
       <div className="h-[100px]"></div>
       <div ref={storyRef}>
         <div className="h-[70px]"></div>
-        <h4 className="mb-10 text-2xl leading-[68px] uppercase">Professional Journey</h4>
+        <h4 className="text-default-100 mb-10 text-3xl font-bold">
+          My Professional Journey
+        </h4>
+
         <div>
           <RoleGrid />
         </div>

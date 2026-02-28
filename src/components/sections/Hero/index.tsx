@@ -145,11 +145,11 @@ function Hero() {
     <section className="relative flex min-h-screen flex-col justify-center px-4">
       <div className="flex">
         <div className="text-default-400 flex-1">
-          <h2 className="text-[240px] leading-[260px] font-bold">
+          <h2 className="text-[200px] leading-[260px] font-bold">
             <span className="hover:text-default-100">Hey,</span>{" "}
             <span className="hover:text-default-100"> {" I'm"}</span>
           </h2>
-          <h3 className="text-[240px] leading-[240px] font-bold">
+          <h3 className="text-[200px] leading-[240px] font-bold">
             <span className="hover:text-default-100"> Sakil</span>{" "}
             <span className="hover:text-default-100">Anwar</span>
           </h3>

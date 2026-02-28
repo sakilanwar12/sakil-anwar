@@ -150,14 +150,13 @@
       linear-gradient(hsla(0, 0%, 100%, 0.1) 1px, transparent 0),
       linear-gradient(90deg, hsla(0, 0%, 100%, 0.1) 1px, transparent 0);
   }
-
 }
 @utility container {
   margin-inline: auto;
   padding-inline: 1rem;
 
   @variant xl {
-    max-width: 1210px;
+    max-width: 1528px;
   }
 }
 @utility grid-background {
@@ -207,4 +206,3 @@
     transform: translateY(100vh) scale(1);
   }
 }
-
