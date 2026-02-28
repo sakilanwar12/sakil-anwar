@@ -22,16 +22,16 @@ const roles = [
   {
     title: "Senior Frontend Web Developer — Codeshaper (2023–Present)",
     description: "Started as a Junior Developer and advanced to Senior Frontend Developer. Built admin dashboards, reusable UI systems, and ThemeForest-approved templates, and contributed to modern web applications like Fennec AI and Toinpark.",
+    link: { label: "Codeshaper", href: "https://codeshaper.net/" },
   },
   {
-    title: "Community Builder",
-    description: "Growing the design and tech community @",
-    link: { label: "Austin Tech & UX", href: "#" },
+    title: "Senior Frontend Web Developer — Fennec AI (2024–Present)",
+    description: "Fennec (Global Event Management Platform) – Collaborated with the Fennec team to translate business requirements into MVP solutions, developing multi-role dashboards, inventory management, social features, and AI tools using Next.js and TypeScript.",
+    link: { label: "Fennec AI", href: "https://app.fennecapp.com/" },
   },
   {
-    title: "Mentor & Event Host",
-    description: "Guided Designers through events and mentorship @",
-    link: { label: "ADPList", href: "https://adplist.org" },
+    title: "Product & Dashboard Specialist",
+    description: "Specialized in building scalable admin dashboards and reusable UI systems. Developed multi-role SaaS interfaces and modular frontend architectures using Next.js, Vue.js, and TypeScript, with a strong focus on performance, maintainability, and clean code practices.",
   },
 ];
 
@@ -72,7 +72,7 @@ function MyStory() {
     if (!storyRef.current) return;
     const targetY =
       storyRef.current.getBoundingClientRect().top + window.scrollY - 32;
-    smoothScrollTo(targetY, 1200);
+    smoothScrollTo(targetY, 1000);
   };
 
   return (
@@ -88,10 +88,10 @@ function MyStory() {
       >
         This is my Story
       </button>
-      <div className="h-[200px]"></div>
+      <div className="h-[100px]"></div>
       <div ref={storyRef}>
         <div className="h-[70px]"></div>
-        <h4 className="mb-10 text-2xl leading-[68px] uppercase">Highlights</h4>
+        <h4 className="mb-10 text-2xl leading-[68px] uppercase">Professional Journey</h4>
         <div>
           <RoleGrid />
         </div>
