@@ -34,7 +34,7 @@ function Footer() {
               <Link
                 key={i}
                 href={social.href}
-                className="text-default-400 rounded-full border border-white/5 bg-white/5 p-4 transition-all hover:border-cyan-500/30 hover:text-cyan-400"
+                className="text-default-400 rounded-full border border-white/5 bg-white/5 p-4 transition-all hover:border-[#3b82f6]/30 hover:text-[#3b82f6]"
               >
                 <social.icon size={20} />
               </Link>
@@ -64,13 +64,13 @@ function Footer() {
           <div className="flex gap-10">
             <Link
               href="#"
-              className="text-default-500 font-mono text-xs uppercase transition-colors hover:text-cyan-400"
+              className="text-default-500 font-mono text-xs uppercase transition-colors hover:text-[#3b82f6]"
             >
               Licensing
             </Link>
             <Link
               href="#"
-              className="text-default-500 font-mono text-xs uppercase transition-colors hover:text-cyan-400"
+              className="text-default-500 font-mono text-xs uppercase transition-colors hover:text-[#3b82f6]"
             >
               Changelog
             </Link>
