@@ -4,22 +4,29 @@ import Link from "next/link";
 
 function MyWork() {
   return (
-    <div className="my-20">
-      <h3 className="text-default-100 mb-10 text-3xl font-bold">My Work</h3>
-      <div>
-        <ProjectCardList />
-      </div>
-
-      <h2 className="mt-44 text-3xl leading-12 font-normal max-w-[80%]">
-        Across a myriad of industries, teams, and projects I've solved critical
-        user problems and business challenges, or as I would say, "slaying
-        dragons."
+    <section className="py-32">
+      <h2 className="mb-20 font-serif text-5xl font-bold md:text-7xl">
+        Selected <br /> Works
       </h2>
 
-      <Link href="/work" className="mt-16 text-xl flex items-center gap-2 text-default-100 hover:text-primary">
-        See more work <ArrowRight className="w-5 h-5 mt-0.5" />
-      </Link>
-    </div>
+      <ProjectCardList />
+
+      <div className="mt-44 max-w-4xl">
+        <h2 className="text-default-100 text-4xl leading-tight font-normal md:text-5xl">
+          Across a myriad of industries, teams, and projects I've solved
+          critical user problems and business challenges, or as I would say,
+          <span className="text-primary italic"> "slaying dragons."</span>
+        </h2>
+
+        <Link
+          href="/work"
+          className="group hover:text-primary mt-16 flex items-center gap-4 text-2xl font-bold text-white transition-all"
+        >
+          See more work
+          <ArrowRight className="size-6 transition-transform group-hover:translate-x-2" />
+        </Link>
+      </div>
+    </section>
   );
 }
 

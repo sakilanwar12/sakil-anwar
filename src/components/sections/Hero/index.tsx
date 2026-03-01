@@ -142,20 +142,61 @@ function HoverProfileImage() {
 }
 function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col justify-center px-4">
-      <div className="flex">
-        <div className="text-default-400 flex-1">
-          <h2 className="text-[200px] leading-[260px] font-bold">
-            <span className="hover:text-default-100">Hey,</span>{" "}
-            <span className="hover:text-default-100"> {" I'm"}</span>
+    <section className="mesh-gradient animate-mesh relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-20">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-24">
+        {/* Text Content */}
+        <div className="z-10 flex-1 text-center lg:text-left">
+          <h2 className="text-default-100 mb-4 text-2xl font-medium tracking-widest uppercase">
+            Senior Frontend Developer
           </h2>
-          <h3 className="text-[200px] leading-[240px] font-bold">
-            <span className="hover:text-default-100"> Sakil</span>{" "}
-            <span className="hover:text-default-100">Anwar</span>
-          </h3>
+          <h1 className="font-serif text-7xl leading-tight font-bold md:text-8xl lg:text-9xl">
+            Slaying <br />
+            <span className="text-primary italic">Dragons</span> with <br />
+            Clean Code.
+          </h1>
+          <p className="text-default-200 mt-8 max-w-xl text-xl leading-relaxed md:text-2xl">
+            I'm <span className="text-primary font-bold">Sakil Anwar</span>,
+            building modern, editorial, and premium web experiences for
+            high-impact brands and agencies.
+          </p>
+          <div className="mt-12 flex flex-wrap justify-center gap-6 lg:justify-start">
+            <Button
+              className="glow-button bg-primary hover:bg-primary/90 rounded-full px-10 py-6 text-xl font-bold text-white transition-all hover:scale-105"
+              size="lg"
+            >
+              View My Work
+            </Button>
+            <Button
+              color="outline"
+              className="rounded-full border-white/10 px-10 py-6 text-xl font-bold transition-all hover:scale-105 hover:bg-white/5"
+              size="lg"
+            >
+              Let's Talk
+            </Button>
+          </div>
         </div>
-        <div className="me-20 flex-none cursor-pointer">
-          <HoverProfileImage />
+
+        {/* Profile Presentation */}
+        <div className="relative flex-none">
+          <div className="relative h-[400px] w-[300px] md:h-[600px] md:w-[450px]">
+            {/* Soft Vignette/Blend Background */}
+            <div className="bg-primary/20 absolute inset-0 -bottom-10 rounded-full blur-3xl" />
+
+            <div className="relative h-full w-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+              <Image
+                src="/images/user.jpg"
+                alt="Sakil Anwar"
+                fill
+                className="object-cover grayscale transition-all duration-700 hover:scale-110 hover:grayscale-0"
+                priority
+              />
+              {/* Overlay for soft blending */}
+              <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-transparent to-transparent opacity-60" />
+            </div>
+
+            {/* Accent Element */}
+            <div className="border-primary/50 animate-spin-slow absolute -right-6 -bottom-6 h-32 w-32 rounded-full border-2 border-dashed" />
+          </div>
         </div>
       </div>
 

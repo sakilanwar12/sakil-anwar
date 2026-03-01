@@ -2,6 +2,7 @@
 import { smoothScrollTo } from "@/lib/smoothScrollTo";
 import Link from "next/link";
 import { useRef } from "react";
+import { motion } from "motion/react";
 
 const roles = [
   {
@@ -40,27 +41,35 @@ const roles = [
 
 function RoleCard({ title, description, link }: (typeof roles)[number]) {
   return (
-    <div className="rounded-2xl transition-colors duration-300">
-      <h3 className="text-default-100 mb-4 text-xl font-bold">{title}</h3>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="group relative rounded-2xl border border-white/5 bg-white/5 p-8 transition-colors hover:bg-white/10"
+    >
+      <h3 className="text-default-100 mb-6 text-2xl leading-tight font-bold">
+        {title}
+      </h3>
       <p className="text-default-200 text-lg leading-relaxed font-normal">
         {description}{" "}
         {link && (
           <Link
             href={link.href}
             target="_blank"
-            className="text-blue-400 transition-colors duration-200 hover:text-blue-300"
+            className="text-primary hover:underline"
           >
             {link.label}
           </Link>
         )}
       </p>
-    </div>
+    </motion.div>
   );
 }
 
 function RoleGrid() {
   return (
-    <div className="grid grid-cols-3 gap-10">
+    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       {roles.map((role) => (
         <RoleCard key={role.title} {...role} />
       ))}
@@ -71,38 +80,41 @@ function RoleGrid() {
 function MyStory() {
   const storyRef = useRef<HTMLDivElement>(null);
 
-  const scrollToStory = () => {
-    if (!storyRef.current) return;
-    const targetY =
-      storyRef.current.getBoundingClientRect().top + window.scrollY - 32;
-    smoothScrollTo(targetY, 1000);
-  };
-
   return (
-    <div>
-      <p className="text-5xl leading-[68px]">
-        {
-          "Over the years, I’ve broken things, fixed them, solved problems, shipped products, and moved the needle. I’ve led teams, improved systems, and turned complex ideas into clean, scalable interfaces.  I’m a Senior Frontend Developer. This site is my place to humble-brag about the products I’ve built and the challenges I’ve conquered."
-        }
-      </p>
-      <button
-        onClick={scrollToStory}
-        className="text-default-200 hover:text-default-100 border-default-200 hover:border-primary mt-20 inline-block cursor-pointer border-x-0 border-t-0 border-b-3 bg-transparent text-2xl font-medium transition-all duration-300 ease-in-out"
-      >
-        This is my Story
-      </button>
-      <div className="h-[100px]"></div>
-      <div ref={storyRef}>
-        <div className="h-[70px]"></div>
-        <h4 className="text-default-100 mb-10 text-3xl font-bold">
-          My Professional Journey
-        </h4>
+    <section className="py-32">
+      <div className="max-w-5xl">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-default-100 font-serif text-4xl leading-[1.4] md:text-5xl md:leading-[1.4]"
+        >
+          Over the years, I’ve broken things, fixed them, solved problems,
+          shipped products, and moved the needle. I’ve led teams, improved
+          systems, and turned complex ideas into clean, scalable interfaces.
+        </motion.p>
 
-        <div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="text-default-200 mt-8 text-2xl"
+        >
+          This site is my place to humble-brag about the products I’ve built and
+          the challenges I’ve conquered.
+        </motion.p>
+
+        <div className="mt-32" ref={storyRef}>
+          <h2 className="mb-16 font-serif text-5xl font-bold md:text-7xl">
+            My Professional <br /> Journey
+          </h2>
+
           <RoleGrid />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
