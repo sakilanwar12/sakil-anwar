@@ -4,10 +4,11 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 import ScrollDown from "@/components/ScrollDown";
+import Link from "next/link";
 
 function Hero() {
-  const headline = "Slaying Dragons with Clean Code.";
-  const words = headline.split(" ");
+  const title = "Crafting Scalable, Performant, & Accessible User Interfaces.";
+  const words = title.split(" ");
 
   const containerVars = {
     initial: { opacity: 0 },
@@ -31,8 +32,12 @@ function Hero() {
 
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-20">
-      {/* Dynamic Background Layer */}
-      <div className="mesh-gradient animate-mesh absolute inset-0 -z-10" />
+      {/* Dynamic Ethereal Background Layer */}
+      <div className="absolute inset-0 -z-10">
+        <div className="animate-mesh absolute inset-0 bg-[#000000]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,255,0.05)_0%,transparent_50%)]" />
+        <div className="absolute top-1/4 left-1/4 h-96 w-96 animate-pulse rounded-full bg-cyan-500/10 blur-[120px]" />
+      </div>
 
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-24">
         {/* Text Content */}
@@ -44,49 +49,52 @@ function Hero() {
         >
           <motion.h2
             variants={wordVars}
-            className="text-default-400 mb-4 text-xl font-medium tracking-widest uppercase"
+            className="mb-4 font-mono text-xl tracking-[0.3em] text-cyan-400 uppercase"
           >
-            Senior Frontend Developer
+            Senior Frontend Engineer
           </motion.h2>
-          <motion.h1 className="font-serif text-7xl leading-[1.1] font-bold md:text-8xl lg:text-[10rem]">
+
+          <motion.h1 className="font-serif text-6xl leading-[1.1] font-bold md:text-7xl lg:text-8xl">
             {words.map((word, i) => (
               <motion.span
                 key={i}
                 variants={wordVars}
-                className="mr-[0.2em] inline-block"
+                className="mr-[0.3em] inline-block last:mr-0"
               >
-                {word === "Dragons" ? (
-                  <span className="text-primary italic">Dragons</span>
-                ) : (
-                  word
-                )}
+                {word}
               </motion.span>
             ))}
           </motion.h1>
-          <motion.p
-            variants={wordVars}
-            className="text-default-200 mt-10 max-w-2xl text-xl leading-relaxed md:text-3xl"
-          >
-            I'm <span className="text-primary font-bold">Sakil Anwar</span>,
-            building modern, editorial, and premium web experiences for
-            high-impact brands and agencies.
-          </motion.p>
+
+          <motion.div variants={wordVars} className="mt-10 space-y-6">
+            <p className="text-default-100 max-w-2xl text-xl leading-relaxed font-medium md:text-2xl">
+              Over the years, I've broken, fixed, solved problems, and shipped
+              products. I've led teams, optimized systems, and transformed
+              complex ideas into high-performance, accessible interfaces.
+            </p>
+            <p className="text-default-400 max-w-2xl text-lg leading-relaxed md:text-xl">
+              I'm <span className="font-bold text-cyan-400">Sakil Anwar</span>,
+              building modern, editorial, and premium web experiences for
+              high-impact brands and agencies.
+            </p>
+          </motion.div>
+
           <motion.div
             variants={wordVars}
             className="mt-14 flex flex-wrap justify-center gap-6 lg:justify-start"
           >
             <Button
-              className="glow-button bg-primary hover:bg-primary/90 rounded-full px-12 py-8 text-2xl font-bold text-white transition-all hover:scale-105"
-              size="lg"
+              asChild
+              className="rounded-full border border-white/10 bg-white/5 px-12 py-8 text-2xl font-bold text-white backdrop-blur-md transition-all hover:scale-105 hover:border-cyan-500/50 hover:bg-white/10"
             >
-              View My Work
+              <Link href="#work">View Portfolio</Link>
             </Button>
             <Button
-              color="outline"
-              className="rounded-full border-white/10 px-12 py-8 text-2xl font-bold transition-all hover:scale-105 hover:bg-white/5"
-              size="lg"
+              asChild
+              color="ghost"
+              className="rounded-full px-12 py-8 text-2xl font-bold transition-all hover:bg-white/5 hover:text-cyan-400"
             >
-              Let's Talk
+              <Link href="/contact">Contact Me</Link>
             </Button>
           </motion.div>
         </motion.div>
@@ -99,10 +107,10 @@ function Hero() {
           className="relative flex-none"
         >
           <div className="relative h-[450px] w-[350px] md:h-[650px] md:w-[500px]">
-            {/* Soft Glow Background */}
-            <div className="bg-primary/20 absolute inset-0 -bottom-20 rounded-full opacity-40 blur-[120px]" />
+            {/* Ethereal Cyan Glow */}
+            <div className="absolute inset-0 -bottom-20 rounded-full bg-cyan-500/20 opacity-40 blur-[120px]" />
 
-            <div className="mask-vignette relative h-full w-full overflow-hidden">
+            <div className="mask-vignette relative h-full w-full overflow-hidden rounded-[2.5rem]">
               <Image
                 src="/images/user.jpg"
                 alt="Sakil Anwar"
@@ -111,11 +119,11 @@ function Hero() {
                 priority
               />
               {/* Soft blend overlay */}
-              <div className="absolute inset-0 bg-linear-to-t from-[#080808] via-transparent to-transparent opacity-90" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#000000] via-transparent to-transparent opacity-90" />
             </div>
 
             {/* Subtle accent border */}
-            <div className="border-primary/20 animate-spin-slow absolute -inset-4 rounded-3xl border border-dashed opacity-30" />
+            <div className="animate-spin-slow absolute -inset-4 rounded-3xl border border-dashed border-cyan-500/20 opacity-30" />
           </div>
         </motion.div>
       </div>
