@@ -3,6 +3,8 @@ import Header from "@/components/Header";
 import MyStory from "./Components/MyStory";
 import MyWork from "./Components/MyWork";
 import Experience from "@/components/sections/Experience";
+import Gallery from "@/components/sections/Gallery";
+import ClosingQuote from "@/components/sections/ClosingQuote";
 
 function WebDeveloperPortfolio() {
   return (
@@ -13,6 +15,8 @@ function WebDeveloperPortfolio() {
         <MyStory />
         <Experience />
         <MyWork />
+        <Gallery />
+        <ClosingQuote />
       </div>
     </main>
   );

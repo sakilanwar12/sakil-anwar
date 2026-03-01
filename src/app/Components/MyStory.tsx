@@ -2,7 +2,8 @@
 import { smoothScrollTo } from "@/lib/smoothScrollTo";
 import Link from "next/link";
 import { useRef } from "react";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
+import { cn } from "@/lib/utils";
 
 const roles = [
   {
@@ -42,22 +43,25 @@ const roles = [
 function RoleCard({ title, description, link }: (typeof roles)[number]) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true }}
-      className="group relative rounded-2xl border border-white/5 bg-white/5 p-8 transition-colors hover:bg-white/10"
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true, margin: "-100px" }}
+      className="hover-lift group relative overflow-hidden rounded-3xl border border-white/5 bg-white/2 p-10 transition-all"
     >
-      <h3 className="text-default-100 mb-6 text-2xl leading-tight font-bold">
+      {/* Background Glow on Hover */}
+      <div className="from-primary/5 absolute -inset-1 bg-radial via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+      <h3 className="text-default-100 relative mb-6 text-3xl leading-tight font-bold">
         {title}
       </h3>
-      <p className="text-default-200 text-lg leading-relaxed font-normal">
+      <p className="text-default-200 relative text-xl leading-relaxed font-normal">
         {description}{" "}
         {link && (
           <Link
             href={link.href}
             target="_blank"
-            className="text-primary hover:underline"
+            className="text-primary transition-all hover:underline"
           >
             {link.label}
           </Link>
@@ -69,7 +73,7 @@ function RoleCard({ title, description, link }: (typeof roles)[number]) {
 
 function RoleGrid() {
   return (
-    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
       {roles.map((role) => (
         <RoleCard key={role.title} {...role} />
       ))}
@@ -79,16 +83,17 @@ function RoleGrid() {
 
 function MyStory() {
   const storyRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(storyRef, { once: true, margin: "-200px" });
 
   return (
-    <section className="py-32">
-      <div className="max-w-5xl">
+    <section className="py-44">
+      <div className="max-w-6xl">
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
-          className="text-default-100 font-serif text-4xl leading-[1.4] md:text-5xl md:leading-[1.4]"
+          className="text-default-100 font-serif text-5xl leading-[1.4] md:text-7xl md:leading-[1.3]"
         >
           Over the years, I’ve broken things, fixed them, solved problems,
           shipped products, and moved the needle. I’ve led teams, improved
@@ -96,20 +101,27 @@ function MyStory() {
         </motion.p>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-default-200 mt-8 text-2xl"
+          className="text-default-400 mt-12 max-w-3xl text-3xl"
         >
           This site is my place to humble-brag about the products I’ve built and
           the challenges I’ve conquered.
         </motion.p>
 
-        <div className="mt-32" ref={storyRef}>
-          <h2 className="mb-16 font-serif text-5xl font-bold md:text-7xl">
+        <div className="mt-44" ref={storyRef}>
+          <motion.h2
+            className={cn(
+              "mb-24 font-serif text-6xl font-bold transition-all duration-1000 md:text-9xl",
+              isInView
+                ? "blur-0 translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0 blur-xl",
+            )}
+          >
             My Professional <br /> Journey
-          </h2>
+          </motion.h2>
 
           <RoleGrid />
         </div>
