@@ -11,7 +11,7 @@ function MyWork() {
 
       <ProjectCardList />
 
-      <div className="mt-44 max-w-4xl">
+      <div className="mt-44 w-full">
         <h2 className="text-default-100 text-4xl leading-tight font-normal md:text-5xl">
           Across a myriad of industries, teams, and projects I've solved
           critical user problems and business challenges, or as I would say,

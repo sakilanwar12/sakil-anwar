@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Project } from "./constant";
 import { motion } from "motion/react";
-import { ArrowUpRight, PlayCircle } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
@@ -17,81 +17,70 @@ function ProjectCard({ project, index }: ProjectCardProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{
-        duration: 1,
+        duration: 0.8,
         delay: index * 0.1,
         ease: [0.16, 1, 0.3, 1],
       }}
-      viewport={{ once: true, margin: "-100px" }}
-      className="group relative flex flex-col overflow-hidden rounded-[3rem] border border-white/5 bg-white/2 backdrop-blur-sm transition-all hover:border-cyan-500/20 lg:flex-row"
+      viewport={{ once: true, margin: "-50px" }}
+      className="group relative aspect-4/3 overflow-hidden rounded-xl border border-white/5 bg-white/2 backdrop-blur-sm transition-all hover:border-cyan-500/30"
     >
-      {/* Visual Side (Left) */}
-      <div className="relative aspect-video overflow-hidden lg:aspect-auto lg:w-3/5">
+      <Link href={link} className="block h-full w-full">
+        {/* Project Image */}
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover transition-transform duration-1000 ease-in-out group-hover:scale-105"
+          className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
         />
 
-        {/* Hover Overlay with Video Preview Hint */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-cyan-950/40 opacity-0 backdrop-blur-[2px] transition-opacity duration-500 group-hover:opacity-100">
-          <PlayCircle className="mb-4 size-20 animate-pulse text-cyan-400" />
-          <span className="font-mono text-sm tracking-widest text-white uppercase">
-            Image Hover: View video preview
-          </span>
-        </div>
-      </div>
+        {/* Immersive Overlay */}
+        <div className="absolute inset-0 flex flex-col justify-end bg-black/60 opacity-0 backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-100">
+          <div className="relative z-10 translate-y-4 transform p-8 transition-transform duration-500 group-hover:translate-y-0">
+            {/* Category/Index */}
+            <span className="mb-3 block font-mono text-[10px] tracking-widest text-cyan-400 uppercase">
+              0{index + 1} // {project.category.split(" — ")[0]}
+            </span>
 
-      {/* Content Side (Right) */}
-      <div className="relative flex flex-col justify-between border-t border-white/5 p-10 md:p-16 lg:w-2/5 lg:border-t-0 lg:border-l">
-        <div>
-          <motion.h4
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="mb-6 font-mono text-xs tracking-widest text-cyan-400 uppercase"
-          >
-            Selected Work / 0{index + 1}
-          </motion.h4>
-          <h3 className="mb-8 font-serif text-5xl leading-tight font-bold transition-colors group-hover:text-cyan-400">
-            {title}
-          </h3>
-          <p className="text-default-400 mb-12 line-clamp-4 text-xl leading-relaxed">
-            {description}
-          </p>
-        </div>
+            {/* Title */}
+            <h3 className="mb-4 font-serif text-3xl leading-tight font-bold text-white">
+              {title}
+            </h3>
 
-        <div className="space-y-10">
-          {/* Tech Stack Pills */}
-          <div className="flex flex-wrap gap-2">
-            {technologies.map((tech) => (
-              <span
-                key={tech}
-                className="text-default-300 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 font-mono text-xs backdrop-blur-md"
-              >
-                {tech}
-              </span>
-            ))}
+            {/* Description - Brief on mobile, shown on hover */}
+            <p className="text-default-300 mb-6 line-clamp-2 text-sm leading-relaxed opacity-0 transition-opacity delay-100 duration-500 group-hover:opacity-100">
+              {description}
+            </p>
+
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-1.5 opacity-0 transition-opacity delay-200 duration-500 group-hover:opacity-100">
+              {technologies.slice(0, 3).map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full border border-white/10 bg-white/10 px-3 py-1 font-mono text-base text-white backdrop-blur-md"
+                >
+                  {tech}
+                </span>
+              ))}
+              {technologies.length > 3 && (
+                <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 font-mono text-base text-white backdrop-blur-md">
+                  +{technologies.length - 3}
+                </span>
+              )}
+            </div>
           </div>
 
-          <Link
-            href={link}
-            className="group/link inline-flex items-center gap-4 text-xl font-bold text-white transition-colors hover:text-cyan-400"
-          >
-            Explorer Project
-            <div className="rounded-full border border-white/10 bg-white/5 p-3 transition-all group-hover/link:border-cyan-500/50">
-              <ArrowUpRight className="size-5" />
-            </div>
-          </Link>
-        </div>
+          {/* Arrow Link Icon - Top Right Corner */}
+          <div className="absolute top-8 right-8 z-20 rounded-full border border-white/20 bg-white/10 p-3 opacity-0 transition-all duration-500 group-hover:scale-110 group-hover:opacity-100">
+            <ArrowUpRight className="size-5 text-white" />
+          </div>
 
-        {/* Background texture */}
-        <div className="pointer-events-none absolute top-0 right-0 p-8 font-mono text-xs uppercase opacity-[0.03] select-none">
-          Engineering / {title.split(" ")[0]}
+          {/* Gradient Tint */}
+          <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent" />
         </div>
-      </div>
+      </Link>
     </motion.div>
   );
 }
