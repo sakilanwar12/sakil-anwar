@@ -51,7 +51,7 @@ function Hero() {
             variants={wordVars}
             className="mb-4 font-mono text-xl tracking-[0.3em] text-cyan-400 uppercase"
           >
-            Senior Frontend Engineer
+            Senior Frontend Developer
           </motion.h2>
 
           <motion.h1 className="font-serif text-6xl leading-[1.1] font-bold md:text-7xl lg:text-8xl">
