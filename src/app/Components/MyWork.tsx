@@ -4,9 +4,9 @@ import Link from "next/link";
 
 function MyWork() {
   return (
-    <section className="py-32">
+    <section className="py-32 container">
       <h2 className="mb-20 font-serif text-5xl font-bold md:text-7xl">
-        Selected <br /> Works
+        Selected  Works
       </h2>
 
       <ProjectCardList />

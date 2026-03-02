@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import MyStory from "./Components/MyStory";
 import MyWork from "./Components/MyWork";
@@ -16,15 +15,14 @@ function WebDeveloperPortfolio() {
     <main className="bg-background text-foreground min-h-screen">
       <Header />
       <Hero />
-      <div className="mx-auto max-w-7xl px-6 md:px-12">
-        <MyStory />
-        <Experience />
-        <Skills />
-        <MyWork />
-        <VisualPlayground />
-        <TechStack />
-        <ClosingQuote />
-      </div>
+      <MyWork />
+      <Experience />
+      <TechStack />
+      <MyStory />
+      <Skills />
+      <VisualPlayground />
+      <ClosingQuote />
+
       <Contact />
       <Footer />
     </main>
