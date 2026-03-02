@@ -19,11 +19,11 @@ function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 z-50 w-full px-10 py-5 transition-all duration-500",
+        "fixed top-0 left-0 z-50 w-full py-5 transition-all duration-500",
         isScrolled ? "frosted-glass py-3" : "bg-transparent",
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between">
+      <div className="mx-auto flex container items-center justify-between gap-6">
         <Navbar />
         <SocialItems />
       </div>
