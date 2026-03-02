@@ -14,5 +14,9 @@ export const menus = [
   {
     name: "Blog",
     path: "/blog",
+  },
+    {
+    name: "Contact",
+    path: "/contact",
   }
 ];

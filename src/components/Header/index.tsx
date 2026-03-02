@@ -1,11 +1,9 @@
 "use client";
 
 import Navbar from "./Nav";
-import { CalendarDays, ChevronRight } from "lucide-react";
-import { Button } from "../ui/button";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import SocialItems from "./SocialItems";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,34 +19,13 @@ function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 z-50 w-full px-10 py-4 transition-all duration-500",
+        "fixed top-0 left-0 z-50 w-full px-10 py-5 transition-all duration-500",
         isScrolled ? "frosted-glass py-3" : "bg-transparent",
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         <Navbar />
-        <div className="flex items-center gap-8">
-          <Button
-            asChild
-            className="glow-button pulse-blue bg-primary hover:bg-primary/90 group overflow-hidden rounded-full px-8 text-xl font-medium text-white"
-            size="lg"
-          >
-            <Link
-              href="https://cal.com/sakil-anwar-f6czuo/15min"
-              target="_blank"
-            >
-              <CalendarDays className="mr-2 size-5" />
-              Book a Call
-              <ChevronRight className="ml-1 size-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Button>
-          <Link
-            href={`/contact`}
-            className="text-default-400 hover:text-primary text-xl font-medium transition-colors"
-          >
-            Contact
-          </Link>
-        </div>
+        <SocialItems />
       </div>
     </header>
   );

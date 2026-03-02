@@ -1,4 +1,4 @@
-import Hero from "@/components/sections/Hero";
+
 import Header from "@/components/Header";
 import MyStory from "./Components/MyStory";
 import MyWork from "./Components/MyWork";
@@ -9,6 +9,7 @@ import TechStack from "@/components/sections/TechStack";
 import ClosingQuote from "@/components/sections/ClosingQuote";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
+import Hero from "./Components/Hero";
 
 function WebDeveloperPortfolio() {
   return (

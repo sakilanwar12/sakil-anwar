@@ -1,13 +1,9 @@
 import "@/styles/globals.css";
 import "@/styles/style.css";
-import FallingParticlesAnimation from "@/components/animations/falling-particles-animation";
 import MountedProvider from "@/providers/mounted-provider";
 import { fontAnton, fontPlayfair, fontRobotoFlex } from "@/config/fonts";
 import { getSeoMeta } from "@/lib/get-seo-meta";
-import GridBackground from "@/components/GridBackground";
-import SocialItems from "@/components/sections/Hero/SocialItems";
-import { MouseEffectProvider } from "@/context/MouseEffectContext";
-import MouseEffect from "@/components/MouseEffect";
+
 import { Toaster } from "react-hot-toast";
 import { MetaPixel } from "@/components/MetaPixel";
 import { Suspense } from "react";
@@ -30,7 +26,6 @@ export default function RootLayout({
         <MountedProvider>
           {children}
 
-          <SocialItems />
         </MountedProvider>
         <Toaster />
         <Suspense fallback={null}>

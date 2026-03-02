@@ -1,8 +1,12 @@
+import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { Avatar } from "./ui/avatar";
+
 function AppLogo() {
   return (
-    <h3 className="text-default-300 text-sm leading-[18px] font-bold uppercase">
-      Sakil Anwar .
-    </h3>
+    <Avatar className="size-10">
+      <AvatarImage src="/images/logo/me-circle.png" />
+      <AvatarFallback>SA</AvatarFallback>
+    </Avatar>
   );
 }
 
