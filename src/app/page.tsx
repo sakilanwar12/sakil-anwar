@@ -9,7 +9,6 @@ import Hero from "./Components/Hero";
 function WebDeveloperPortfolio() {
   return (
     <>
-
       <Hero />
       <MyWork />
       <Experience />
@@ -17,7 +16,6 @@ function WebDeveloperPortfolio() {
       <Skills />
       <ClosingQuote />
       <Contact />
-
     </>
   );
 }

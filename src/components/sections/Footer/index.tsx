@@ -63,19 +63,19 @@ function Footer() {
           <div className="flex flex-col items-end space-y-8">
             <div className="flex items-center gap-8">
               <Link
-                href="#about"
+                href="/about"
                 className="text-default-200 font-mono text-xs tracking-widest uppercase transition-colors hover:text-white"
               >
                 About
               </Link>
               <Link
-                href="#work"
+                href="/work"
                 className="text-default-200 font-mono text-xs tracking-widest uppercase transition-colors hover:text-white"
               >
                 My Works
               </Link>
               <Link
-                href="#contact"
+                href="/contact"
                 className="border-default-500/30 text-default-200 rounded-lg border px-6 py-2.5 font-mono text-xs tracking-widest uppercase transition-all hover:border-cyan-500/50 hover:text-cyan-400"
               >
                 Contact Me
@@ -106,7 +106,7 @@ function Footer() {
 
           <button
             onClick={scrollToTop}
-            className="group hover:border-default-400/30 flex size-12 cursor-pointer items-center justify-center rounded-full border border-default-100/20 bg-white/2 transition-all"
+            className="group hover:border-default-400/30 border-default-100/20 flex size-12 cursor-pointer items-center justify-center rounded-full border bg-white/2 transition-all"
           >
             <ArrowUp
               size={18}

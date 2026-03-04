@@ -107,7 +107,7 @@ function Hero() {
                 asChild
                 className="group relative h-14 overflow-hidden rounded-full bg-white px-10 text-lg font-bold text-black transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
               >
-                <Link href="/works">View Works</Link>
+                <Link href="/work">View Works</Link>
               </Button>
               <Button
                 asChild
@@ -149,7 +149,8 @@ function Hero() {
                       <span className="text-white">stack</span>
                       <span className="text-white">=</span>
                       <span className="text-emerald-400">
-                        ['React', 'Next.js', 'TypeScript',"Vue.js","Remix","Node.js"]
+                        ['React', 'Next.js',
+                        'TypeScript',"Vue.js","Remix","Node.js"]
                       </span>
                     </div>
                     <div className="flex gap-3">

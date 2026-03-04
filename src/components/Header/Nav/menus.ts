@@ -11,10 +11,6 @@ export const menus = [
     name: "Work",
     path: "/work",
   },
-  {
-    name: "Blog",
-    path: "/blog",
-  },
     {
     name: "Contact",
     path: "/contact",
