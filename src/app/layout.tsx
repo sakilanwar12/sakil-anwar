@@ -7,6 +7,8 @@ import { getSeoMeta } from "@/lib/get-seo-meta";
 import { Toaster } from "react-hot-toast";
 import { MetaPixel } from "@/components/MetaPixel";
 import { Suspense } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/sections/Footer";
 
 export const metadata = getSeoMeta({
   title: "Portfolio - Sakil Anwar",
@@ -24,8 +26,11 @@ export default function RootLayout({
         className={`${fontRobotoFlex.variable} ${fontAnton.variable} ${fontPlayfair.variable} font-roboto-flex bg-background text-default-100 antialiased`}
       >
         <MountedProvider>
-          {children}
-
+          <main className="bg-background text-foreground min-h-screen">
+            <Header />
+            {children}
+            <Footer />
+          </main>
         </MountedProvider>
         <Toaster />
         <Suspense fallback={null}>
