@@ -63,7 +63,7 @@ function SkillCard({
 
 function Skills() {
   return (
-    <section id="skills" className="bg-[#080808] py-44">
+    <section id="skills" className="bg-[#080808] pt-44 pb-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-24">
           <motion.span
@@ -79,11 +79,10 @@ function Skills() {
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4 md:grid-rows-3">
-          {/* Card 1: Component Architecture (Large Tall Left) */}
           <SkillCard
             title="Component Architecture"
             description="Scalable, reusable structures built with atomic design and compositional patterns."
-            className="md:col-span-2 md:row-span-2"
+            className="md:col-span-2 md:row-span-1"
             delay={0.1}
           >
             <div className="group/editor relative w-full max-w-sm overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-2xl">

@@ -48,7 +48,7 @@ function Contact() {
       {/* Background Ethereal Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 size-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3b82f6]/5 blur-[150px]" />
 
-      <div className="relative z-10 mx-auto max-w-2xl text-center">
+      <div className="relative z-10 mx-auto max-w-3xl text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ function Contact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-default-400 mb-12 text-xl leading-relaxed"
+          className="text-default-200 mb-12 text-xl leading-relaxed"
         >
           Looking for a developer who can create high-performance, interactive,
           and accessible web experiences? I'm currently open for new
@@ -91,7 +91,7 @@ function Contact() {
           <div className="space-y-2">
             <label
               htmlFor="name"
-              className="ml-4 font-mono text-[10px] tracking-widest text-[#888] uppercase"
+              className="font-mono text-xs tracking-widest text-default-200/80 uppercase"
             >
               Full Name
             </label>
@@ -107,7 +107,7 @@ function Contact() {
           <div className="space-y-2">
             <label
               htmlFor="email"
-              className="ml-4 font-mono text-[10px] tracking-widest text-[#888] uppercase"
+              className="font-mono text-xs tracking-widest text-default-200/80 uppercase"
             >
               Email Address
             </label>
@@ -124,7 +124,7 @@ function Contact() {
           <div className="space-y-2">
             <label
               htmlFor="message"
-              className="ml-4 font-mono text-[10px] tracking-widest text-[#888] uppercase"
+              className="font-mono text-xs tracking-widest text-default-200/80 uppercase"
             >
               Project Details
             </label>
