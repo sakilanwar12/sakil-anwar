@@ -23,9 +23,9 @@ function Header() {
         isScrolled ? "frosted-glass py-3" : "bg-transparent",
       )}
     >
-      <div className="mx-auto flex container items-center justify-between gap-6">
+      <div className="container mx-auto flex items-center justify-between gap-6">
         <Navbar />
-        <SocialItems />
+        <SocialItems className="max-[991px]:hidden" />
       </div>
     </header>
   );

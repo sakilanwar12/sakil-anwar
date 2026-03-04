@@ -7,6 +7,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+import { cn } from "@/lib/utils";
+
 interface ISocialLink {
   socialLink: string;
   icon: React.ReactNode;
@@ -24,9 +26,9 @@ function SocialLink({ socialLink, icon }: ISocialLink) {
   );
 }
 
-function SocialItems() {
+function SocialItems({ className }: { className?: string }) {
   return (
-    <div className="flex items-center gap-6">
+    <div className={cn("flex items-center gap-6", className)}>
       <SocialLink
         icon={<Linkedin className="size-6" />}
         socialLink="https://www.linkedin.com/in/md-sakil-anwar-4b6941241/"

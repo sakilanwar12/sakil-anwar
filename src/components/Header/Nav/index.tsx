@@ -27,25 +27,33 @@ function NavItem({ name, path, activePath }: INavItem) {
   );
 }
 
+import SidebarMenu from "./SidebarMenu";
+
 function Navbar() {
   const pathname = usePathname();
   return (
-    <div className="flex flex-1 items-center gap-7">
-      <AppLogo />
-      <nav>
-        <ul className="flex gap-7">
-          {menus.map((menu) => {
-            return (
-              <NavItem
-                key={menu.name}
-                name={menu.name}
-                path={menu.path}
-                activePath={pathname}
-              />
-            );
-          })}
-        </ul>
-      </nav>
+    <div className="flex flex-1 items-center justify-between gap-7">
+      <div className="flex items-center gap-7">
+        <AppLogo />
+        <nav className="max-[991px]:hidden">
+          <ul className="flex gap-7">
+            {menus.map((menu) => {
+              return (
+                <NavItem
+                  key={menu.name}
+                  name={menu.name}
+                  path={menu.path}
+                  activePath={pathname}
+                />
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
+
+      <div className="min-[992px]:hidden">
+        <SidebarMenu />
+      </div>
     </div>
   );
 }
