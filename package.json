@@ -9,8 +9,7 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "build:analyze": "ANALYZE=true next build",
-    "clean": "rm -rf .next out",
-    "preinstall": "node preinstall.js"
+    "clean": "rm -rf .next out"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.11",
