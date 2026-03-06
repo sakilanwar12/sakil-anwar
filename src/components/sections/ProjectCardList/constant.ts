@@ -12,7 +12,7 @@ export const projects: Project[] = [
     title: "Fennec Ai- Global Event Management Platform",
     description:
       "Fennec is an all in one Operating System that provides a marketplace of hyper-personalized AI / ML powered products and services helping nightlife businesses deliver an exceptional customer experience to improve customer retention, drive growth, streamline workflows and enhance operational efficiency. Turn data into decisions, and chaos into profits. Operating system the Nightlife Industry deserves!",
-    image: "/images/projects/fennec-ai.png",
+    image: "/images/projects/fennec-project.png",
     link: "#",
     category: "Fennec Ai- Global Event Management Platform",
     technologies: [
@@ -24,31 +24,47 @@ export const projects: Project[] = [
       "ShadCN UI",
     ],
   },
+    {
+    title: "ToiCoin - Crypto Exchange Platform",
+    description:
+      "ToiCoin is a crypto exchange platform that provides a marketplace of hyper-personalized AI / ML powered products and services helping nightlife businesses deliver an exceptional customer experience to improve customer retention, drive growth, streamline workflows and enhance operational efficiency. Turn data into decisions, and chaos into profits. Operating system the Nightlife Industry deserves!",
+    image: "/images/projects/toinpark-user.png",
+    link: "#",
+    category: "ToiCoin - Crypto Exchange Platform",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "RTK - Query",
+      "ShadCN UI",
+    ],
+  },
   {
-    title: "Build your own custom dashboard with Dashcode.",
+    title: "DashCode - React, Vuejs, NextJs, Laravel, HTML,Tailwind Dashboard Template",
     description:
       "Dashcode – A highly customizable admin dashboard template with multi-theme support, built using React, Next.js, Laravel, and Tailwind CSS. Includes a wide range of pre-built components and layouts, enabling developers to quickly create unique and professional interfaces across different tech stacks.",
     image: "/images/projects/dashcode-ui.png", 
     link: "#",
-    category: "Dashcode — Admin Dashboard",
+    category: "DashCode - React, Vuejs, NextJs, Laravel, HTML,Tailwind Dashboard Template",
     technologies: ["React", "Next.js", "Tailwind CSS", "Redux"],
   },
   {
-    title: "Streamline your workflow with our innovative tools.",
+    title: "DashTail - Tailwind, React Next Admin Dashboard Template with shadcn-ui",
     description:
-      "Our suite of productivity tools is designed to help individuals and teams work more efficiently. From task management to collaboration features, we provide everything you need to stay organized and achieve your goals.",
-    image: "/images/projects/project-1.jpg",
+      "DashTail is a modern and responsive admin dashboard template built using React, Next.js, and Tailwind CSS. It provides a seamless experience for users to manage their transportation and logistics operations. The template is built using React, Next.js, and Tailwind CSS, and includes a wide range of pre-built components and layouts, enabling developers to quickly create unique and professional interfaces across different tech stacks.",
+    image: "/images/projects/dashtail-project.png",
     link: "#",
-    category: "Productivity Suite — SaaS",
-    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL"],
+    category: "DashTail - Tailwind, React Next Admin Dashboard Template with shadcn-ui",
+    technologies: ["React", "Next.js", "Tailwind CSS", "TypeScript", "ShadCN UI"],
   },
-  {
-    title: "Experience the next generation of mobile apps.",
+   {
+    title: "Transco - Transport and Logistic React Template",
     description:
-      "We specialize in building high-performance and cross-platform mobile applications using React Native. Our apps are known for their smooth performance, intuitive user interfaces, and seamless integration with various APIs.",
-    image: "/images/projects/project-1.jpg", 
+      "Transco is a modern and responsive transport and logistics React template that provides a seamless experience for users to manage their transportation and logistics operations. The template is built using React, Next.js, and Tailwind CSS, and includes a wide range of pre-built components and layouts, enabling developers to quickly create unique and professional interfaces across different tech stacks.",
+    image: "/images/projects/transco-template.png",
     link: "#",
-    category: "Mobile App — iOS & Android",
-    technologies: ["React Native", "Expo", "Firebase"],
-  },
+    category: "Transco - Transport and Logistic React Template",
+    technologies: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
+  }
 ];
