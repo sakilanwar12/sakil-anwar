@@ -1,4 +1,4 @@
-import MyWork from "../Components/MyWork";
+import WorkProjectGrid from "@/components/sections/WorkProjectGrid";
 import SubHero from "../Components/SubHero";
 
 export default function WorkPage() {
@@ -8,7 +8,7 @@ export default function WorkPage() {
         title="My Works"
         subtitle="Crafting digital experiences with precision"
       />
-      <MyWork />
+      <WorkProjectGrid />
     </>
   );
 }
