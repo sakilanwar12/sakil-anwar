@@ -11,15 +11,16 @@ export const projects: Project[] = [
   {
     title: "Fennec Ai- Global Event Management Platform",
     description:
-      "Collaborated with the Fennec team to translate business requirements into MVP solutions, developing multi-role dashboards, inventory management, social features, and AI tools using Next.js and TypeScript.",
-    image: "/images/projects/fennec.png",
+      "Fennec – Modern event management platform for nightlife and live events. Built multi-role dashboards, inventory management, social features, and AI tools using Next.js and TypeScript, improving event operations and enabling real-time updates. Delivered a seamless experience for organizers and attendees.",
+    image: "/images/projects/fennec-ai.png",
     link: "#",
     category: "Fennec Ai- Global Event Management Platform",
     technologies: [
       "React",
       "Next.js",
       "Tailwind CSS",
-      "Framer Motion",
+      "TypeScript",
+      "RTK - Query",
       "ShadCN UI",
     ],
   },
