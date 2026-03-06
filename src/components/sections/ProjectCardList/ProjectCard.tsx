@@ -52,7 +52,7 @@ function ProjectCard({
               </h3>
 
               {/* Description - Brief on mobile, shown on hover */}
-              <p className="mb-6  text-sm leading-relaxed text-slate-300 max-w-[992px] opacity-0 transition-opacity delay-100 duration-500 group-hover:opacity-100 lg:text-lg">
+              <p className="mb-6  text-sm leading-relaxed text-slate-300 max-w-[1042px] opacity-0 transition-opacity delay-100 duration-500 group-hover:opacity-100 lg:text-lg">
                 {description}
               </p>
 
