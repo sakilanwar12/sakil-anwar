@@ -1,12 +1,32 @@
+"use client";
+
+import { useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import { projects } from "./constant";
+import { useScroll } from "motion/react";
 
 function ProjectCardList() {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
+
   return (
-    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-12">
-      {projects.map((project, index) => (
-        <ProjectCard key={index} project={project} index={index} />
-      ))}
+    <div ref={container} className="relative mt-20 flex flex-col gap-[10vh]">
+      {projects.map((project, index) => {
+        const targetScale = 1 - (projects.length - index) * 0.04;
+        return (
+          <ProjectCard
+            key={index}
+            project={project}
+            index={index}
+            range={[index * 0.25, 1]}
+            targetScale={targetScale}
+            progress={scrollYProgress}
+          />
+        );
+      })}
     </div>
   );
 }

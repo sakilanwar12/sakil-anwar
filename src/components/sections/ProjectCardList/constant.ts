@@ -9,12 +9,12 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Helping developers build production-ready projects, faster.",
+    title: "Fennec Ai- Global Event Management Platform",
     description:
-      "I led the development of Dashtail, an admin dashboard template reviewed and approved by ThemeForest. Designed with developers in mind, it provides a clean, scalable foundation that eliminates repetitive setup — so teams can focus on what matters most: building their product. From architecture decisions to component design, I owned the project end-to-end to deliver a solution trusted by the developer community.",
-    image: "/images/projects/project-1.jpg",
+      "Collaborated with the Fennec team to translate business requirements into MVP solutions, developing multi-role dashboards, inventory management, social features, and AI tools using Next.js and TypeScript.",
+    image: "/images/projects/fennec.png",
     link: "#",
-    category: "Dashtail — ThemeForest",
+    category: "Fennec Ai- Global Event Management Platform",
     technologies: [
       "React",
       "Next.js",
@@ -36,7 +36,7 @@ export const projects: Project[] = [
     title: "Streamline your workflow with our innovative tools.",
     description:
       "Our suite of productivity tools is designed to help individuals and teams work more efficiently. From task management to collaboration features, we provide everything you need to stay organized and achieve your goals.",
-    image: "/images/projects/project-1.jpg", // Using same image as placeholder
+    image: "/images/projects/project-1.jpg",
     link: "#",
     category: "Productivity Suite — SaaS",
     technologies: ["React", "TypeScript", "Node.js", "PostgreSQL"],
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     title: "Experience the next generation of mobile apps.",
     description:
       "We specialize in building high-performance and cross-platform mobile applications using React Native. Our apps are known for their smooth performance, intuitive user interfaces, and seamless integration with various APIs.",
-    image: "/images/projects/project-1.jpg", // Using same image as placeholder
+    image: "/images/projects/project-1.jpg", 
     link: "#",
     category: "Mobile App — iOS & Android",
     technologies: ["React Native", "Expo", "Firebase"],
