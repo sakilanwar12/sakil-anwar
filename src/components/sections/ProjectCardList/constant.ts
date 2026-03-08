@@ -26,9 +26,8 @@ export const projects: Project[] = [
   },
     {
     title: "ToiCoin - Crypto Exchange Platform",
-    description:
-      "ToiCoin is a crypto exchange platform that provides a marketplace of hyper-personalized AI / ML powered products and services helping nightlife businesses deliver an exceptional customer experience to improve customer retention, drive growth, streamline workflows and enhance operational efficiency. Turn data into decisions, and chaos into profits. Operating system the Nightlife Industry deserves!",
-    image: "/images/projects/toinpark-user.png",
+    description:'ToiCoin – Crypto Exchange Platform is a modern cryptocurrency trading platform designed to enable users to securely buy, sell, and manage digital assets. The platform features a responsive dashboard, real-time market data, secure authentication, and an intuitive user interface, providing a seamless and efficient trading experience for crypto users.',
+    image: "/images/projects/toi-coin.png",
     link: "#",
     category: "ToiCoin - Crypto Exchange Platform",
     technologies: [
