@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 function ClosingQuote() {
   return (
-    <section className="relative overflow-hidden pt-0 pb-64">
+    <section className="relative overflow-hidden pt-0 pb-32">
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, filter: "blur(20px)" }}
@@ -13,7 +13,7 @@ function ClosingQuote() {
           viewport={{ once: true }}
           className="relative z-10 text-center"
         >
-          <p className="font-serif text-5xl leading-tight text-white italic md:text-8xl">
+          <p className="font-serif text-4xl leading-tight text-white italic md:text-7xl">
             “Design is not just about beauty; it’s how users feel <br />
             <span className="text-cyan-400">and interact with it..</span>”
           </p>
@@ -21,7 +21,7 @@ function ClosingQuote() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="mt-16 flex flex-col items-center gap-4"
+            className="mt-10 flex flex-col items-center gap-4"
           >
             <span className="text-default-400 font-serif text-3xl">
               — Sakil Anwar

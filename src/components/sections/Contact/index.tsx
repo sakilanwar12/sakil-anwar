@@ -43,7 +43,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#000000] px-6 py-64"
+      className="relative overflow-hidden bg-[#000000] px-6 py-32"
     >
       {/* Background Ethereal Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 size-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#3b82f6]/5 blur-[150px]" />
@@ -53,7 +53,7 @@ function Contact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8 font-serif text-5xl font-bold text-[#f0f0f0] md:text-7xl"
+          className="mb-8 font-serif text-4xl font-bold text-[#f0f0f0] md:text-6xl"
         >
           Let's Build Something <br />{" "}
           <span className="text-[#3b82f6]">Amazing</span>
@@ -63,7 +63,7 @@ function Contact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-default-200 mb-12 text-xl leading-relaxed"
+          className="text-default-200 mb-12 text-lg leading-relaxed"
         >
           Looking for a developer who can create high-performance, interactive,
           and accessible web experiences? I'm currently open for new
@@ -91,7 +91,7 @@ function Contact() {
           <div className="space-y-2">
             <label
               htmlFor="name"
-              className="font-mono text-xs tracking-widest text-default-200/80 uppercase"
+              className="text-default-200/80 font-mono text-xs tracking-widest uppercase"
             >
               Full Name
             </label>
@@ -107,7 +107,7 @@ function Contact() {
           <div className="space-y-2">
             <label
               htmlFor="email"
-              className="font-mono text-xs tracking-widest text-default-200/80 uppercase"
+              className="text-default-200/80 font-mono text-xs tracking-widest uppercase"
             >
               Email Address
             </label>
@@ -124,7 +124,7 @@ function Contact() {
           <div className="space-y-2">
             <label
               htmlFor="message"
-              className="font-mono text-xs tracking-widest text-default-200/80 uppercase"
+              className="text-default-200/80 font-mono text-xs tracking-widest uppercase"
             >
               Project Details
             </label>
@@ -141,7 +141,7 @@ function Contact() {
           <button
             type="submit"
             disabled={loading}
-            className="group relative h-16 w-full cursor-pointer overflow-hidden rounded-2xl bg-[#3b82f6] px-8 font-bold text-white transition-all hover:scale-[1.02] active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
+            className="group relative h-14 w-full cursor-pointer overflow-hidden rounded-2xl bg-[#3b82f6] px-8 font-bold text-white transition-all hover:scale-[1.02] active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <div className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
             <div className="flex items-center justify-center gap-3">

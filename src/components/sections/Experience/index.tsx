@@ -24,10 +24,10 @@ function Experience() {
   return (
     <section
       id="experience"
-      className="overflow-hidden bg-[#000000] px-6 py-64"
+      className="overflow-hidden bg-[#000000] px-6 py-32"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-44">
+        <div className="mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ function Experience() {
           >
             Track Record
           </motion.h2>
-          <h2 className="font-serif text-6xl font-bold md:text-9xl">
+          <h2 className="font-serif text-4xl font-bold md:text-5xl">
             Professional <br /> Experience
           </h2>
         </div>
@@ -53,7 +53,7 @@ function Experience() {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="group relative mb-44 last:mb-0"
+              className="group relative mb-20 last:mb-0"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -87,14 +87,14 @@ function Experience() {
                       <span className="mb-4 inline-block font-mono text-xl tracking-wider text-cyan-400 uppercase">
                         {exp.duration}
                       </span>
-                      <h3 className="text-default-100 font-serif text-4xl font-bold transition-colors group-hover:text-cyan-400 md:text-6xl">
+                      <h3 className="text-default-100 font-serif text-3xl font-bold transition-colors group-hover:text-cyan-400 md:text-5xl">
                         {exp.role}
                       </h3>
-                      <h4 className="text-default-400 mt-4 text-2xl font-medium">
+                      <h4 className="text-default-400 mt-4 text-xl font-medium">
                         {exp.company}
                       </h4>
                     </div>
-                    <p className="text-default-200 max-w-xl text-xl leading-relaxed md:text-2xl">
+                    <p className="text-default-200 max-w-xl text-lg leading-relaxed md:text-xl">
                       {exp.description}
                     </p>
                   </div>

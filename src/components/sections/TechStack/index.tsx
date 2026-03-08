@@ -14,13 +14,13 @@ const technologies = [
 
 function TechStack() {
   return (
-    <section className="bg-[#000000] py-64">
+    <section className="bg-[#000000] py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-32">
+        <div className="mb-16">
           <span className="mb-4 block font-mono text-xs tracking-widest text-cyan-400 uppercase">
             Engineered with
           </span>
-          <h2 className="font-serif text-6xl font-bold md:text-8xl">
+          <h2 className="font-serif text-4xl font-bold md:text-5xl">
             Core Tech Stack
           </h2>
         </div>

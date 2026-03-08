@@ -4,14 +4,14 @@ import Link from "next/link";
 
 function MyWork() {
   return (
-    <section className="py-32 container">
-      <h2 className="mb-20 font-serif text-5xl font-bold md:text-7xl">
-        Selected  Works
+    <section className="container py-32">
+      <h2 className="mb-12 font-serif text-4xl font-bold md:text-5xl">
+        Selected Works
       </h2>
 
       <ProjectCardList />
 
-      <div className="mt-44 w-full">
+      <div className="mt-20 w-full">
         <h2 className="text-default-100 text-4xl leading-tight font-normal md:text-5xl">
           Across a myriad of industries, teams, and projects I've solved
           critical user problems and business challenges, or as I would say,
@@ -20,7 +20,7 @@ function MyWork() {
 
         <Link
           href="/work"
-          className="group hover:text-primary mt-16 flex items-center gap-4 text-2xl font-bold text-white transition-all"
+          className="group hover:text-primary mt-10 flex items-center gap-4 text-2xl font-bold text-white transition-all"
         >
           See more work
           <ArrowRight className="size-6 transition-transform group-hover:translate-x-2" />

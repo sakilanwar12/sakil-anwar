@@ -87,33 +87,42 @@ function Hero() {
 
             <motion.h1
               variants={wordVars}
-              className="font-serif text-5xl font-bold tracking-tight text-white md:text-7xl lg:text-8xl"
+              className="font-serif text-3xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl"
             >
               {headline}
             </motion.h1>
 
             <motion.p
               variants={wordVars}
-              className="text-default-200 mt-8 max-w-xl text-lg leading-relaxed md:text-xl md:leading-[1.6]"
+              className="text-default-200 mt-8 max-w-xl text-base leading-relaxed md:text-lg md:leading-[1.6]"
             >
               {bio}
             </motion.p>
 
             <motion.div
               variants={wordVars}
-              className="mt-12 flex flex-wrap gap-6"
+              className="mt-12 flex flex-wrap gap-4"
             >
               <Button
                 asChild
-                className="group relative h-14 overflow-hidden rounded-full bg-white px-10 text-lg font-bold text-black transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                className="group relative h-14 overflow-hidden rounded-full bg-white px-8 text-base font-bold text-black transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
               >
                 <Link href="/work">View Works</Link>
               </Button>
               <Button
                 asChild
-                className="hover:border-default-400 border-default-800 h-14 rounded-full border px-10 text-lg font-bold text-white transition-all hover:bg-white/5"
+                className="hover:border-default-400 border-default-800 h-14 rounded-full border px-8 text-base font-bold text-white transition-all hover:bg-white/5"
               >
                 <Link href="/contact">Contact Me</Link>
+              </Button>
+              <Button
+                asChild
+                color="outline"
+                className="h-14 rounded-full border border-white/10 bg-white/5 px-8 text-base font-bold text-white transition-all hover:border-cyan-500/50 hover:bg-cyan-500/5 hover:text-cyan-400"
+              >
+                <a href="/sakil-anwar-resume.pdf" download>
+                  Download Resume
+                </a>
               </Button>
             </motion.div>
           </motion.div>
