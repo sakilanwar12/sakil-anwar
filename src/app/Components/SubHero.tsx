@@ -53,7 +53,7 @@ function SubHero({ title, subtitle }: SubHeroProps) {
       >
         <motion.h1
           variants={itemVars}
-          className="font-serif text-5xl font-bold tracking-tight text-white md:text-7xl lg:text-8xl"
+          className="font-serif text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl"
         >
           {title}
         </motion.h1>

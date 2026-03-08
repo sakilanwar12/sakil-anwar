@@ -32,7 +32,7 @@ function ProjectCard({
           scale,
           top: `calc(-5vh + ${index * 25}px)`,
         }}
-        className="group relative h-[70vh] w-full overflow-hidden rounded-xl border border-transparent hover:border-default-700  bg-[#1A1A1A] backdrop-blur-sm transition-all  md:h-[80vh]"
+        className="group hover:border-default-700 relative h-[70vh] w-full overflow-hidden rounded-xl border border-transparent bg-[#1A1A1A] backdrop-blur-sm transition-all md:h-[80vh]"
       >
         <Link href={link} className="block h-full w-full">
           {/* Project Image */}
@@ -47,12 +47,12 @@ function ProjectCard({
           <div className="absolute inset-0 flex flex-col justify-end bg-black/20 opacity-0 backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-100">
             <div className="relative z-10 translate-y-4 transform p-8 transition-transform duration-500 group-hover:translate-y-0">
               {/* Title */}
-              <h3 className="mb-4 font-serif text-3xl leading-tight font-bold text-white lg:text-5xl">
+              <h3 className="mb-4 font-serif text-2xl leading-tight font-bold text-white lg:text-3xl">
                 {title}
               </h3>
 
               {/* Description - Brief on mobile, shown on hover */}
-              <p className="mb-6  text-sm leading-relaxed text-slate-300 max-w-[1042px] opacity-0 transition-opacity delay-100 duration-500 group-hover:opacity-100 lg:text-lg">
+              <p className="mb-6 max-w-[1042px] text-sm leading-relaxed text-slate-300 opacity-0 transition-opacity delay-100 duration-500 group-hover:opacity-100 lg:text-lg">
                 {description}
               </p>
 

@@ -5,7 +5,7 @@ import Link from "next/link";
 function MyWork() {
   return (
     <section className="container py-32">
-      <h2 className="mb-12 font-serif text-5xl font-bold md:text-7xl">
+      <h2 className="mb-12 font-serif text-4xl font-bold md:text-5xl">
         Selected Works
       </h2>
 

@@ -73,7 +73,7 @@ function Skills() {
           >
             Technical Prowess
           </motion.span>
-          <h2 className="font-serif text-5xl font-bold text-[#f0f0f0] md:text-8xl">
+          <h2 className="font-serif text-4xl font-bold text-[#f0f0f0] md:text-5xl">
             Skills & <br /> Expertise
           </h2>
         </div>

@@ -35,7 +35,7 @@ function Experience() {
           >
             Track Record
           </motion.h2>
-          <h2 className="font-serif text-5xl font-bold md:text-8xl">
+          <h2 className="font-serif text-4xl font-bold md:text-5xl">
             Professional <br /> Experience
           </h2>
         </div>

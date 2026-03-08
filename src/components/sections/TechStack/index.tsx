@@ -20,7 +20,7 @@ function TechStack() {
           <span className="mb-4 block font-mono text-xs tracking-widest text-cyan-400 uppercase">
             Engineered with
           </span>
-          <h2 className="font-serif text-5xl font-bold md:text-7xl">
+          <h2 className="font-serif text-4xl font-bold md:text-5xl">
             Core Tech Stack
           </h2>
         </div>
