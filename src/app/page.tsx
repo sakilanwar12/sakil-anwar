@@ -1,20 +1,22 @@
-import Footer from "@/components/sections/Footer";
-import Hero from "@/components/sections/Hero";
+import MyWork from "./Components/MyWork";
+import Experience from "@/components/sections/Experience";
 import Skills from "@/components/sections/Skills";
-import Projects from "@/components/sections/Projects";
-import Blog from "@/components/sections/Blog";
-import Header from "@/components/Header";
+import TechStack from "@/components/sections/TechStack";
+import ClosingQuote from "./Components/ClosingQuote";
+import Contact from "@/components/sections/Contact";
+import Hero from "./Components/Hero";
 
 function WebDeveloperPortfolio() {
   return (
-    <div className="min-h-screen">
-      <Header />
+    <>
       <Hero />
+      <MyWork />
+      <Experience />
+      <TechStack />
       <Skills />
-      <Projects />
-      <Blog />
-      <Footer />
-    </div>
+      <ClosingQuote />
+      <Contact />
+    </>
   );
 }
 

@@ -1,9 +1,8 @@
-
 import GridBlock from "./svg/GridBlock";
 
 function GridBackground() {
   return (
-    <div className="fixed inset-0 w-screen h-screen opacity-5 pointer-events-none z-0">
+    <div className="pointer-events-none fixed inset-0 z-0 h-screen w-full opacity-5">
       <GridBlock />
     </div>
   );

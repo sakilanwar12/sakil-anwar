@@ -1,16 +1,14 @@
 import "@/styles/globals.css";
 import "@/styles/style.css";
-import FallingParticlesAnimation from "@/components/animations/falling-particles-animation";
 import MountedProvider from "@/providers/mounted-provider";
-import { fontAnton, fontRobotoFlex } from "@/config/fonts";
+import { fontAnton, fontPlayfair, fontRobotoFlex } from "@/config/fonts";
 import { getSeoMeta } from "@/lib/get-seo-meta";
-import GridBackground from "@/components/GridBackground";
-import SocialItems from "@/components/sections/Hero/SocialItems";
-import { MouseEffectProvider } from "@/context/MouseEffectContext";
-import MouseEffect from "@/components/MouseEffect";
+
 import { Toaster } from "react-hot-toast";
 import { MetaPixel } from "@/components/MetaPixel";
 import { Suspense } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/sections/Footer";
 
 export const metadata = getSeoMeta({
   title: "Portfolio - Sakil Anwar",
@@ -25,18 +23,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fontRobotoFlex.variable} ${fontAnton.variable} font-roboto-flex bg-background text-default-100 antialiased`}
+        className={`${fontRobotoFlex.variable} ${fontAnton.variable} ${fontPlayfair.variable} font-roboto-flex bg-background text-default-100 antialiased`}
       >
         <MountedProvider>
-          <MouseEffectProvider>
-            <MouseEffect />
+          <main className="bg-background text-foreground min-h-screen">
+            <Header />
             {children}
-          </MouseEffectProvider>
-
-          <FallingParticlesAnimation />
-
-          <GridBackground />
-          <SocialItems />
+            <Footer />
+          </main>
         </MountedProvider>
         <Toaster />
         <Suspense fallback={null}>

@@ -1,19 +1,31 @@
-import AppLogo from "../AppLogo";
+"use client";
+
 import Navbar from "./Nav";
-import BookACall from "./BookACall";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+import SocialItems from "./SocialItems";
 
 function Header() {
-  return (
-    <header className="bg-default border-border fixed top-6 left-1/2 z-[9999] container w-full -translate-x-1/2 rounded-xl border-2 px-4 py-3 backdrop-blur-2xl">
-      <div className="flex items-center">
-        <div className="flex-none">
-          <AppLogo />
-        </div>
-        <div className="flex flex-1 justify-center">
-          <Navbar />
-        </div>
+  const [isScrolled, setIsScrolled] = useState(false);
 
-        <BookACall />
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <header
+      className={cn(
+        "fixed top-0 left-0 z-50 w-full py-5 transition-all duration-500",
+        isScrolled ? "frosted-glass py-3" : "bg-transparent",
+      )}
+    >
+      <div className="container mx-auto flex items-center justify-between gap-6">
+        <Navbar />
+        <SocialItems className="max-[991px]:hidden" />
       </div>
     </header>
   );
