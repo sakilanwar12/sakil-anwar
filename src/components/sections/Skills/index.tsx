@@ -44,10 +44,10 @@ function SkillCard({
       )}
     >
       <div className="relative z-10 flex h-full flex-col">
-        <h3 className="mb-3 font-serif text-3xl font-bold text-[#f0f0f0]">
+        <h3 className="mb-3 font-serif text-2xl font-bold text-[#f0f0f0]">
           {title}
         </h3>
-        <p className="mb-8 max-w-xs text-lg leading-relaxed text-[#888]">
+        <p className="mb-8 max-w-xs text-base leading-relaxed text-[#888]">
           {description}
         </p>
         <div className="flex flex-1 items-center justify-center">
@@ -73,7 +73,7 @@ function Skills() {
           >
             Technical Prowess
           </motion.span>
-          <h2 className="font-serif text-6xl font-bold text-[#f0f0f0] md:text-9xl">
+          <h2 className="font-serif text-5xl font-bold text-[#f0f0f0] md:text-8xl">
             Skills & <br /> Expertise
           </h2>
         </div>

@@ -13,7 +13,7 @@ function ClosingQuote() {
           viewport={{ once: true }}
           className="relative z-10 text-center"
         >
-          <p className="font-serif text-5xl leading-tight text-white italic md:text-8xl">
+          <p className="font-serif text-4xl leading-tight text-white italic md:text-7xl">
             “Design is not just about beauty; it’s how users feel <br />
             <span className="text-cyan-400">and interact with it..</span>”
           </p>

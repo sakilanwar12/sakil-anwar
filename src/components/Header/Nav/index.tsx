@@ -17,7 +17,7 @@ function NavItem({ name, path, activePath }: INavItem) {
       <Link
         href={path}
         className={cn(
-          "text-default-200 hover:text-default-100 text-2xl font-normal transition-colors",
+          "text-default-200 hover:text-default-100 text-lg font-normal transition-colors",
           path === activePath && "text-default-100",
         )}
       >

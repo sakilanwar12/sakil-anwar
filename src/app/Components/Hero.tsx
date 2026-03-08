@@ -87,14 +87,14 @@ function Hero() {
 
             <motion.h1
               variants={wordVars}
-              className="font-serif text-5xl font-bold tracking-tight text-white md:text-7xl lg:text-8xl"
+              className="font-serif text-4xl font-bold tracking-tight text-white md:text-6xl lg:text-7xl"
             >
               {headline}
             </motion.h1>
 
             <motion.p
               variants={wordVars}
-              className="text-default-200 mt-8 max-w-xl text-lg leading-relaxed md:text-xl md:leading-[1.6]"
+              className="text-default-200 mt-8 max-w-xl text-base leading-relaxed md:text-lg md:leading-[1.6]"
             >
               {bio}
             </motion.p>
@@ -105,13 +105,13 @@ function Hero() {
             >
               <Button
                 asChild
-                className="group relative h-14 overflow-hidden rounded-full bg-white px-10 text-lg font-bold text-black transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                className="group relative h-14 overflow-hidden rounded-full bg-white px-10 text-base font-bold text-black transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
               >
                 <Link href="/work">View Works</Link>
               </Button>
               <Button
                 asChild
-                className="hover:border-default-400 border-default-800 h-14 rounded-full border px-10 text-lg font-bold text-white transition-all hover:bg-white/5"
+                className="hover:border-default-400 border-default-800 h-14 rounded-full border px-10 text-base font-bold text-white transition-all hover:bg-white/5"
               >
                 <Link href="/contact">Contact Me</Link>
               </Button>
