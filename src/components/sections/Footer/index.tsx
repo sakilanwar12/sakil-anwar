@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Github, Twitter, Linkedin, Mail, ArrowUp } from "lucide-react";
+import { motion } from "motion/react";
 
 function Footer() {
   const scrollToTop = () => {
@@ -9,108 +10,122 @@ function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#000000] px-6 pt-32 pb-12">
-      {/* Top Border with Glow */}
-      <div className="via-default-500/20 absolute top-0 left-0 h-px w-full bg-linear-to-r from-transparent to-transparent" />
-      <div className="absolute top-0 left-1/2 h-1 w-24 -translate-x-1/2 rounded-full bg-cyan-500/20 blur-md" />
+    <footer className="relative overflow-hidden bg-[#050505] px-6 pt-24 pb-12">
+      {/* Premium Background Effects */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 left-1/4 h-1 w-1/2 -translate-x-1/2 rounded-full bg-cyan-500/20 blur-2xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(6,182,212,0.05),transparent_70%)]" />
+      </div>
 
       <div className="mx-auto max-w-7xl">
-        {/* Main Footer Content */}
-        <div className="mb-24 grid grid-cols-1 items-start gap-12 md:grid-cols-3">
-          {/* Left Column: Brandt & Role */}
-          <div className="flex flex-col space-y-4">
+        <div className="mb-20 grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-4">
+          {/* Brand Column */}
+          <div className="flex flex-col space-y-6">
             <div>
-              <span className="font-serif text-4xl font-bold tracking-tight text-white">
+              <span className="font-serif text-3xl font-bold tracking-tight text-white">
                 Sakil{" "}
-                <span className="text-default-200 font-medium">Anwar</span>
+                <span className="text-default-400 font-medium">Anwar</span>
               </span>
-              <p className="text-default-200 mt-2 font-mono text-xs tracking-[0.3em] uppercase">
-                Senior Frontend Developer
+              <p className="text-default-50 mt-2 font-mono text-[10px] tracking-[0.3em] uppercase">
+                Senior Frontend Engineer
               </p>
             </div>
-            <p className="text-default-300 font-serif text-sm italic">
-              Crafting interfaces that feel alive.
+            <p className="text-default-100 max-w-[200px] font-serif text-xs leading-relaxed italic">
+              Building digital experiences with precision, intention, and a
+              focus on performance.
             </p>
           </div>
 
-          {/* Center Column: Social Find Me */}
-          <div className="flex flex-col items-center space-y-6">
-            <span className="text-default-200 font-mono text-[10px] tracking-[0.4em] uppercase">
-              Find me at
+          {/* Quick Links */}
+          <div className="flex flex-col space-y-6">
+            <span className="font-mono text-[10px] tracking-[0.3em] text-white uppercase">
+              Navigation
             </span>
-            <div className="flex gap-4">
+            <nav className="flex flex-col space-y-3">
+              {[
+                { name: "Home", href: "/" },
+                { name: "Work", href: "/work" },
+                { name: "Contact", href: "/contact" },
+              ].map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-default-200 font-mono text-[11px] tracking-widest uppercase transition-colors hover:text-cyan-400"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Connect */}
+          <div className="flex flex-col space-y-6">
+            <span className="font-mono text-[10px] tracking-[0.3em] text-white uppercase">
+              Connect
+            </span>
+            <div className="flex flex-wrap gap-3">
               {[
                 { icon: Github, href: "https://github.com/sakilanwar12" },
                 {
                   icon: Linkedin,
                   href: "https://www.linkedin.com/in/md-sakil-anwar/",
                 },
-                { icon: Twitter, href: "#" },
                 { icon: Mail, href: "mailto:sakilanwar627@gmail.com" },
               ].map((social, i) => (
                 <Link
                   key={i}
                   href={social.href}
-                  className="text-default-200 flex size-12 items-center justify-center rounded-full border border-white/5 bg-white/2 transition-all hover:border-cyan-500/30 hover:bg-cyan-500/5 hover:text-cyan-400"
+                  target="_blank"
+                  className="text-default-400 flex size-10 items-center justify-center rounded-xl border border-white/5 bg-white/2 transition-all hover:border-cyan-500/30 hover:bg-cyan-500/5 hover:text-cyan-400"
                 >
-                  <social.icon size={20} strokeWidth={1.5} />
+                  <social.icon size={18} strokeWidth={1.5} />
                 </Link>
               ))}
             </div>
           </div>
 
-          {/* Right Column: Navigation & Status */}
-          <div className="flex flex-col items-end space-y-8">
-            <div className="flex items-center gap-8">
-              <Link
-                href="/about"
-                className="text-default-200 font-mono text-xs tracking-widest uppercase transition-colors hover:text-white"
-              >
-                About
-              </Link>
-              <Link
-                href="/work"
-                className="text-default-200 font-mono text-xs tracking-widest uppercase transition-colors hover:text-white"
-              >
-                My Works
-              </Link>
-              <Link
-                href="/contact"
-                className="border-default-500/30 text-default-200 rounded-lg border px-6 py-2.5 font-mono text-xs tracking-widest uppercase transition-all hover:border-cyan-500/50 hover:text-cyan-400"
-              >
-                Contact Me
-              </Link>
-            </div>
-            <div className="text-default-200 flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase">
+          {/* Status & CTA */}
+          <div className="flex flex-col space-y-6 lg:items-end">
+            <div className="flex items-center gap-3 font-mono text-[10px] tracking-widest text-emerald-500 uppercase">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75"></span>
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
               </span>
-              Available for new projects
+              Open for collaboration
             </div>
+            <Link
+              href="/contact"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white/5 px-6 py-3 font-mono text-[10px] tracking-widest text-white uppercase transition-all hover:bg-cyan-500 hover:text-black hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]"
+            >
+              Start a Project
+              <motion.span
+                animate={{ x: [0, 4, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5 }}
+              >
+                →
+              </motion.span>
+            </Link>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col items-center justify-between gap-6 border-t border-white/5 pt-12 md:flex-row">
-          <div className="text-default-200 font-mono text-[10px] tracking-[0.2em] uppercase">
-            Designed & Built by{" "}
-            <span className="text-default-300">Sakil Anwar</span> - © 2026
+        <div className="flex flex-col items-center justify-between gap-6 border-t border-white/5 pt-10 md:flex-row">
+          <div className="text-default-100 text-center font-mono text-[9px] tracking-[0.2em] uppercase md:text-left">
+            Designed & Built by <span className="text-white">Sakil Anwar</span>{" "}
+            • © 2026
           </div>
 
-          <div className="text-default-200/60 font-serif text-sm italic">
-            Made with{" "}
-            <span className="text-default-300/60 not-italic">precision</span> &
-            intention
+          <div className="text-default-600 hidden font-serif text-[11px] italic md:block">
+            Refining the web, one pixel at a time.
           </div>
 
           <button
             onClick={scrollToTop}
-            className="group hover:border-default-400/30 border-default-100/20 flex size-12 cursor-pointer items-center justify-center rounded-full border bg-white/2 transition-all"
+            className="group flex size-10 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/2 transition-all hover:border-cyan-500/30 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)]"
           >
             <ArrowUp
-              size={18}
-              className="text-default-100/60 transition-transform group-hover:-translate-y-1"
+              size={16}
+              className="text-default-400 transition-transform group-hover:-translate-y-1 group-hover:text-cyan-400"
             />
           </button>
         </div>
