@@ -63,9 +63,9 @@ function SkillCard({
 
 function Skills() {
   return (
-    <section id="skills" className="bg-[#080808] pt-44 pb-20">
+    <section id="skills" className="bg-[#080808] pt-20 pb-12">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-24">
+        <div className="mb-12">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

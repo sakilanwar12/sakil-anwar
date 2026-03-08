@@ -24,10 +24,10 @@ function Experience() {
   return (
     <section
       id="experience"
-      className="overflow-hidden bg-[#000000] px-6 py-64"
+      className="overflow-hidden bg-[#000000] px-6 py-32"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="mb-44">
+        <div className="mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ function Experience() {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="group relative mb-44 last:mb-0"
+              className="group relative mb-20 last:mb-0"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
