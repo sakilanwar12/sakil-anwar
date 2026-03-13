@@ -29,7 +29,7 @@ function SubHero({ title, subtitle }: SubHeroProps) {
   };
 
   return (
-    <section className="relative flex h-[50vh] min-h-[400px] items-center justify-center overflow-hidden pt-20">
+    <section className="relative flex h-[45vh] min-h-[340px] items-center overflow-hidden ">
       {/* Background System */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[#0a0a0a]" />
@@ -49,7 +49,7 @@ function SubHero({ title, subtitle }: SubHeroProps) {
         variants={containerVars}
         initial="initial"
         animate="animate"
-        className="relative z-10 container px-6 text-center"
+        className="relative z-10 container"
       >
         <motion.h1
           variants={itemVars}
@@ -59,7 +59,7 @@ function SubHero({ title, subtitle }: SubHeroProps) {
         </motion.h1>
         <motion.p
           variants={itemVars}
-          className="text-default-300 mx-auto mt-8 max-w-2xl text-base font-medium tracking-wide md:text-lg lg:text-xl"
+          className="text-default-200 mt-8 max-w-2xl text-base  md:text-lg lg:text-2xl"
         >
           {subtitle}
         </motion.p>

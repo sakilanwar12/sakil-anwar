@@ -6,7 +6,7 @@ export default function WorkPage() {
     <>
       <SubHero
         title="My Works"
-        subtitle="Crafting digital experiences with precision"
+        subtitle="Every project tells a story — here are mine"
       />
       <WorkProjectGrid />
     </>
